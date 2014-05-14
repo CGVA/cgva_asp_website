@@ -1,0 +1,26 @@
+﻿<!-- BEGIN:fragMyCGVANavigation.asp -->
+<table width='175' align='left' border="0" cellpadding="2" cellspacing="1" bgcolor="#FFFFFF">
+
+<tr bgcolor="#000066">
+<td align='center'><a class='menuBlack' href="http://www.cgva.org"><font class='cfontWhite12'><b>Return to CGVA</b></font></a></td>
+</tr>
+
+	<tr bgcolor="#000066">
+	<td align='center'><a class='menuBlack' href="MyProfile.aspx"><font class='cfontWhite12'><b>My Profile</b></font></a></td>
+	</tr>
+
+	<tr bgcolor="#000066">
+	<td align='center'><a class='menuBlack' href="MyEvents.aspx"><font class='cfontWhite12'><b>My Events</b></font></a></td>
+	</tr>
+
+	<tr bgcolor="#000066">
+	<td align='center'><a class='menuBlack' href="MyTeams.aspx"><font class='cfontWhite12'><b>My Teams</b></font></a></td>
+	</tr>
+
+	<tr bgcolor="#000066">
+	<td align='center'><a class='menuBlack' href="Password.aspx"><font class='cfontWhite12'><b>My Password Info</b></font></a></td>
+	</tr>
+
+</table>
+<!-- END:fragMyCGVANavigation.asp -->
+

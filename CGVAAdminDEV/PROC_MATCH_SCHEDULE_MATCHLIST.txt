@@ -1,0 +1,88 @@
+USE [cgva]
+GO
+
+/****** Object:  StoredProcedure [dbo].[MATCH_SCHEDULE_MATCHLIST]    Script Date: 02/02/2008 11:22:14 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+
+
+
+/****** Object:  StoredProcedure [dbo].[NewStoredProcedure]    Script Date: 12/28/2007 11:02:35 ******/
+ALTER PROCEDURE dbo.MATCH_SCHEDULE_MATCHLIST
+
+@WEEK int
+
+AS
+
+CREATE TABLE dbo.#TEMP
+(
+MATCH_ID	int,
+TIME_ID       int,
+MATCH_START_TIME	varchar(7),
+TEAM1_ID	int, 
+TEAM2_ID	int,
+TEAM1_NAME	varchar(300), 
+TEAM2_NAME	varchar(300),
+DIVISION_CD	varchar(6)
+)
+
+insert into dbo.#TEMP
+(MATCH_ID,
+TIME_ID,
+TEAM1_ID,
+TEAM2_ID)
+select ms.MATCH_ID,
+TIME_ID,
+ms.[TEAM1_TEAM_ID],
+ms.[TEAM2_TEAM_ID]
+from MATCH_SCHEDULE_TBL ms
+--left join MATCH_GAME_TBL mg on ms.MATCH_ID = mg.MATCH_ID
+WHERE ms.WEEK_ID = @WEEK
+
+
+
+--update team names
+update 	tt
+set 	tt.TEAM1_NAME = d.DIVISION_CD + '/' + t.TEAM_CD + '(' + t.TEAM_NAME + ')',
+	tt.DIVISION_CD = d.DIVISION_CD
+from	dbo.#TEMP tt
+left join TEAM_TBL t on tt.TEAM1_ID = t.TEAM_ID
+left join DIVISION_TBL d on t.DIVISION_ID = d.DIVISION_ID
+
+update 	tt
+set 	tt.TEAM2_NAME = d.DIVISION_CD + '/' + t.TEAM_CD + '(' + t.TEAM_NAME + ')',
+	tt.DIVISION_CD = d.DIVISION_CD
+from	dbo.#TEMP tt
+left join TEAM_TBL t on tt.TEAM2_ID = t.TEAM_ID
+left join DIVISION_TBL d on t.DIVISION_ID = d.DIVISION_ID
+
+update 	tt
+set 	tt.MATCH_START_TIME = t.MATCH_START_TIME
+from	dbo.#TEMP tt
+left join TIME_TBL t on tt.TIME_ID = t.TIME_ID
+
+
+SELECT 	MATCH_ID,
+	MATCH_START_TIME,
+                     TEAM1_NAME,
+	TEAM2_NAME
+FROM	dbo.#TEMP
+ORDER BY DIVISION_CD,MATCH_START_TIME, TEAM1_NAME,TEAM2_NAME
+
+
+
+
+
+
+
+
+
+GO
+

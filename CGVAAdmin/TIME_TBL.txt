@@ -1,0 +1,12 @@
+TIME_TBL
+
+PK	TIME_ID int    
+FK	EVENT_CD varchar 6     
+	MATCH_NUM smallint      
+	MATCH_START_TIME varchar 7 ('06:10PM') 
+
+TIME_ID    
+EVENT_CD     
+MATCH_NUM      
+MATCH_START_TIME
+

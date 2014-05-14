@@ -1,0 +1,57 @@
+USE [cgva]
+GO
+
+/****** Object:  StoredProcedure [dbo].[REGISTRATION]    Script Date: 02/02/2008 11:22:38 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+
+/****** Object:  StoredProcedure [dbo].[NewStoredProcedure]    Script Date: 12/28/2007 11:02:35 ******/
+ALTER PROCEDURE dbo.REGISTRATION
+
+@EVENT_CD varchar(6),
+@START_DATE smalldatetime,
+@STOP_DATE smalldatetime
+
+AS
+
+
+SELECT	 	--r.EVENT_CD,  
+		--e.EVENT_SHORT_DESC,
+		--e.EVENT_LONG_DESC,
+		--r.PERSON_ID,    
+		p.LAST_NAME as 'LAST NAME',
+                                           p.FIRST_NAME as 'FIRST NAME',
+		r.DATE as 'DATE',   
+		r.OPEN_PLAY_IND as 'OPEN PLAY',   
+		r.REGISTRATION_IND as 'REGISTERED',    
+		r.DOLLARS_COLLECTED as '$ COLLECTED',      
+		r.DOLLARS_OFF_COUPON as '$ OFF COUPON',
+		r.CHECK_AMT_COLLECTED as 'CHECK AMT', 
+		r.CHECK_NUM as 'CHECK #', 
+		r.NOTES as 'NOTES',
+                                          p.EMAIL as 'EMAIL',
+                                          p.[PRIMARY_PHONE_NUM] as 'PHONE #1',
+                                          p.[2ND_PHONE_NUM] as 'PHONE #2'
+FROM		REGISTRATION_TBL r
+LEFT JOIN	                     EVENT_TBL e ON r.EVENT_CD = e.EVENT_CD
+LEFT JOIN	                     db_accessadmin.PERSON_TBL p on r.PERSON_ID = p.PERSON_ID
+WHERE		e.EVENT_CD = @EVENT_CD
+--AND		r.DATE BETWEEN @START_DATE AND @STOP_DATE
+ORDER BY 	                     r.REGISTRATION_IND DESC, p.LAST_NAME, p.FIRST_NAME
+
+
+
+
+
+
+
+
+GO
+

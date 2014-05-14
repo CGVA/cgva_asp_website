@@ -1,0 +1,60 @@
+
+<!-- BEGIN: fragLinks.asp -->
+<table width='100%' border="0" cellpadding="0">
+
+<tr>
+<td bgcolor="#FF3300"><font color="#FFFFFF"><span class="style8">Match Mate</span></font></td>
+</tr>
+<tr>
+<td bgcolor="#FFFFFF"><p><font class='cfont10'>As a service to players and teams,
+CGVA will post Players Seeking Teams and Teams Seeking Players for local leagues
+and  tournaments. However, for NAGVA tournaments (like LAST DIG) please use the MatchMaker function on the <a href="http://www.nagva.org" target="_blank">www.nagva.org</a> website to find players/teams. This will reduce confusion and duplication of effort. For CGVA leagues and Volleypalooza, please email the following to
+<a href="mailto:cgva@cgva.org">cgva@cgva.org</a> with
+<strong>Match Mate</strong> in the subject:<br />
+</font><font class='cfont10'>1. The event<br />
+2. A </font><font class='cfont10'>description of what you are looking for<br />
+3. An expiration date to keep the posting until<br />
+4. Contact name, phone # and/or email address</font><br />
+<strong><em>&lt;See sample entries below&gt; </em></strong></p>
+  <p align="center">&nbsp;</p></td>
+</tr><tr><td bgcolor="#FFFFFF">&nbsp;</td>
+</tr><tr>
+  <td bgcolor="#FFFFFF">&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#FFFFFF"><table width="747" border="3" cellpadding="5">
+<tr>
+  <th colspan="4" bgcolor="#FF3300" scope="col"><font color="#FFFFFF">Players Seeking Teams </font></th>
+  </tr>
+<tr>
+<th width="139" scope="col"><strong>Event</strong></th>
+<th width="253" scope="col"><strong>Description</strong></th>
+<th width="126" scope="col"><strong>Expiration Date </strong></th>
+<th width="165" scope="col"><strong>Contact</strong></th>
+</tr>
+<tr>
+<th scope="col">Volleypalooza 2008 &lt;sample&gt; </th>
+<th scope="col">Seeking team to play with. My current rating is B. </th>
+<th scope="col">3/1/2008</th>
+<th scope="col">John Doe johndoe@cgva.org</th>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td bgcolor="#000066">&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#FF3300"><div align="center"><font class="style8"> Teams Seeking Players</font> </div></td>
+</tr>
+<tr>
+<td bgcolor="#FFFFFF"><table width="749" border="3" cellpadding="5">
+<tr>
+<th width="112" scope="col"><strong>Event</strong></th>
+<th width="240" scope="col"><strong>Description</strong></th>
+<th width="82" scope="col"><strong>Expiration Date </strong></th>
+<th width="251" scope="col"><strong>Contact</strong></th>
+</tr>
+
+</table>
+
+<!-- END: fragLinks.asp -->

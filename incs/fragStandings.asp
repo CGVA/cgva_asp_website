@@ -1,0 +1,144 @@
+<!-- BEGIN:fragStandings.asp -->
+<%
+	WEB_PROC_NAME = "RESULTS"
+	WEB_PROC_VARS = "@EVENT_CD='" & EVENT_CD & "',@DIVISION_ID='" & DIVISION_ID & "', @REPORT = 'N'"
+
+	SQL = WEB_PROC_NAME & " " & WEB_PROC_VARS
+	rw("<!-- SQL: " & SQL & "-->")
+
+	''rw("SQL: " & SQL)
+	''Response.End
+
+	set rs = cn.Execute(SQL)
+
+	if rs.EOF then
+		rw("<table bgcolor='#FFFFFF' width='100%' height='300' align='center' border='0' cellspacing='1' cellpadding='4'>")
+
+		rw("<tr valign='top'><td><font class='cfontError10'>No standings are available at this time. Please check back later.</font></td></tr>")
+
+		rw("</table>")
+
+	else
+		rsData = rs.GetRows()
+		rsCols = Ubound(rsData,1)
+		rsRows = Ubound(rsData,2)
+
+		dim headerArray()
+		For x = 0 to rsCols
+			redim preserve headerArray(x)
+			headerArray(x) = rs(x).Name
+		Next
+
+		set rs = rs.nextrecordset
+
+		if not rs.EOF then
+			rsData2 = rs.GetRows()
+			rsCols2 = Ubound(rsData2,1)
+			rsRows2 = Ubound(rsData2,2)
+		else
+			rsCols2 = -1
+			rsRows2 = -1
+		end if
+
+		rw("<table width='100%' align='center' border='0' cellspacing='1' cellpadding='4' bgcolor='#9999FF'>")
+
+		'Report column headers'
+		If rsCols2 > -1 Then
+			rw("<tr>")
+
+			rw("<th colspan='2' align='center' valign='bottom' BGCOLOR='#000066'><font class='cfontWhite10'>&nbsp;</font></th>")
+			rw("<th colspan='6' align='center' valign='bottom' BGCOLOR='#000066'><font class='cfontWhite10'>Divisional</font></th>")
+			rw("<th colspan='1' align='center' valign='bottom' BGCOLOR='#000066'><font class='cfontWhite10'>&nbsp;</font></th>")
+			rw("<th colspan='6' align='center' valign='bottom' BGCOLOR='#000066'><font class='cfontWhite10'>Cumulative</font></th>")
+
+			rw("</tr>")
+
+		End If
+
+		'Report column headers'
+		rw("<tr>")
+
+		For j = 0 to rsCols-1
+			rw("<th align='center' valign='bottom' BGCOLOR='#000066'><nobr><font class='cfontWhite10'>" & headerArray(j) & "</font></nobr></th>")
+		Next
+
+		''add spacer column if showing both division and overall stats
+		If rsCols2 > -1 Then
+			rw("<th align='center' valign='bottom' BGCOLOR='#000066'><font class='cfontWhite10'>&nbsp;</font></th>")
+
+			For j = 2 to rsCols-1
+				rw("<th align='center' valign='bottom' BGCOLOR='#000066'><nobr><font class='cfontWhite10'>" & headerArray(j) & "</font></nobr></th>")
+			Next
+		End If
+
+		rw("</tr>")
+
+		for i = 0 to rsRows
+
+			rw("<tr>")
+
+			ODD_ROW = NOT ODD_ROW
+
+			If ODD_ROW Then
+				BGCOLOR = "#FFFFFF"
+			Else
+				BGCOLOR = "#F0F0F0"
+			End If
+
+			For j = 0 to rsCols-1
+
+				If j = 1 then
+					 lalign="left"
+				Else
+					lalign="center"
+				End If
+
+				If j = 4 then
+					rsData(j, i) = FormatNumber(rsData(j, i),3)
+				End If
+
+				If j = 0 then
+					rw("<td align='" & lalign & "' bgcolor=""" & BGCOLOR & """><nobr><font class='cfont10'>" & i+1 & "</font></nobr></td>")
+				ElseIf j = 1 then
+					rw("<td align='" & lalign & "' bgcolor=""" & BGCOLOR & """><nobr><font class='cfont10'><a title='Click on team name for more details' href='teamStandings.asp?TEAM_NAME=" & Server.URLEncode(Replace(rsData(1, i),"'","&#39;")) & "&EVENT_CD=" & EVENT_CD & "&TEAM_ID=" & rsData(8, i) & "&DIVISION_ID=" & DIVISION_ID & "' target='_blank'>" & rsData(j, i) & "</a></font></nobr></td>")
+				Else
+					rw("<td align='" & lalign & "' bgcolor=""" & BGCOLOR & """><nobr><font class='cfont10'>" & rsData(j, i) & "</font></nobr></td>")
+				End If
+
+			Next
+
+			''add spacer column if showing both division and overall stats
+			If rsCols2 > -1 Then
+				rw("<td BGCOLOR='#000066'><font class='cfont10'>&nbsp;</font></td>")
+			End If
+
+			For j = 1 to rsCols2
+
+				If j = 1 then
+					 lalign="left"
+				Else
+					lalign="center"
+				End If
+
+				If j = 3 then
+					rsData2(j, i) = FormatNumber(rsData2(j, i),3)
+				End If
+
+				If j = 0 then
+					rw("<td align='" & lalign & "' bgcolor=""" & BGCOLOR & """><nobr><font class='cfont10'>" & i+1 & "</font></nobr></td>")
+				Else
+					rw("<td align='" & lalign & "' bgcolor=""" & BGCOLOR & """><nobr><font class='cfont10'>" & rsData2(j, i) & "</font></nobr></td>")
+				End If
+
+			Next
+
+
+			rw("</tr>")
+
+		next
+
+		rw("</table>")
+
+	end if
+%>
+<!-- END:fragStandings.asp -->

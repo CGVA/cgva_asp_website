@@ -1,0 +1,36 @@
+﻿add TSHIRT_SIZE to person.asp admin screen
+add draft pic field to person table, 
+add it to the fastlane report, 
+add it to the MyProfile screen, 
+add it to the Person.asp admin screen
+
+
+
+
+
+
+
+
+
+
+
+ x   request password page
+ x   My events
+ x   My Information
+
+x    reset password page
+
+    X- increase password field length in user_login table to 20 characters
+    make sure duplicate emails arent in the person table
+    make sure there is a duplicate check for new registration email addresses
+
+    PROD ONLY
+x    add TSHIRT size varchar(5) to person table
+x    modify USER_LOGIN_LOG_ENTRY_TBL, two field sizes (50,20)
+    web.config update
+x    TEMP_PASSWORD,password to USER_LOGIN_TBL
+x    add SKILLS_SURVEY_TBL
+x    add RATINGS_REQUEST_TBL
+x    new proc TEMP_PASSWORD_CREATION
+x    verify password field length in
+    run the temp password creation

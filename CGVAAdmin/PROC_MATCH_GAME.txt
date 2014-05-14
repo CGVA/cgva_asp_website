@@ -1,0 +1,102 @@
+USE [cgva]
+GO
+
+/****** Object:  StoredProcedure [dbo].[MATCH_GAME]    Script Date: 02/02/2008 11:21:46 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+
+/****** Object:  StoredProcedure [dbo].[NewStoredProcedure]    Script Date: 12/28/2007 11:02:35 ******/
+ALTER PROCEDURE dbo.MATCH_GAME
+
+@WEEK int
+
+AS
+
+CREATE TABLE dbo.#TEMP
+(
+MATCH_ID		int,
+GAME_NUM		smallint, 
+TEAM1_ID		int, 
+TEAM2_ID		int,
+TEAM1_SCORE 		smallint, 
+TEAM2_SCORE 		smallint, 
+DBL_FORFEIT_IND 	char(1), 
+REF_FORFEIT_IND 	char(1), 
+TEAM1_NAME		varchar(300), 
+TEAM2_NAME		varchar(300),
+DIVISION_CD		varchar(6),
+TIME_ID       		int,
+MATCH_START_TIME	varchar(7)
+)
+
+insert into dbo.#TEMP(MATCH_ID,
+TIME_ID,
+GAME_NUM, 
+TEAM1_ID,
+TEAM2_ID,
+TEAM1_SCORE, 
+TEAM2_SCORE,
+DBL_FORFEIT_IND,
+REF_FORFEIT_IND)
+select mg.MATCH_ID,
+ms.TIME_ID,
+mg.GAME_NUM,
+mg.[TEAM1_ID],
+mg.[TEAM2_ID],
+mg.[TEAM1_SCORE],
+mg.[TEAM2_SCORE],
+mg.DBL_FORFEIT_IND,
+mg.REF_FORFEIT_IND
+from MATCH_GAME_TBL mg
+left join MATCH_SCHEDULE_TBL ms on mg.MATCH_ID = ms.MATCH_ID
+WHERE ms.WEEK_ID = @WEEK
+
+
+--update team names
+update 	tt
+set 	tt.TEAM1_NAME = d.DIVISION_CD + '/' + t.TEAM_CD + '(' + t.TEAM_NAME + ')',
+	tt.DIVISION_CD = d.DIVISION_CD
+from	dbo.#TEMP tt
+left join TEAM_TBL t on tt.TEAM1_ID = t.TEAM_ID
+left join DIVISION_TBL d on t.DIVISION_ID = d.DIVISION_ID
+
+update 	tt
+set 	tt.TEAM2_NAME = d.DIVISION_CD + '/' + t.TEAM_CD + '(' + t.TEAM_NAME + ')',
+	tt.DIVISION_CD = d.DIVISION_CD
+from	dbo.#TEMP tt
+left join TEAM_TBL t on tt.TEAM2_ID = t.TEAM_ID
+left join DIVISION_TBL d on t.DIVISION_ID = d.DIVISION_ID
+
+--update time
+update 	tt
+set 	tt.MATCH_START_TIME = t.MATCH_START_TIME
+from	dbo.#TEMP tt
+left join TIME_TBL t on tt.TIME_ID = t.TIME_ID
+
+
+
+SELECT 	MATCH_ID,
+	GAME_NUM, 
+	TEAM1_ID, 
+	TEAM2_ID,
+	TEAM1_SCORE, 
+	TEAM2_SCORE, 
+	TEAM1_NAME,
+	TEAM2_NAME,
+	MATCH_START_TIME,
+	DBL_FORFEIT_IND,
+	REF_FORFEIT_IND
+FROM	dbo.#TEMP
+ORDER BY DIVISION_CD,MATCH_START_TIME,TEAM1_NAME,TEAM2_NAME,GAME_NUM
+
+
+
+GO
+

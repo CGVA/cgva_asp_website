@@ -1,0 +1,118 @@
+USE [cgva]
+GO
+
+/****** Object:  StoredProcedure [dbo].[RATINGS]    Script Date: 02/02/2008 11:14:03 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+/******	
+- Report/Screen to show Full Player list per Event by Division and Team.  This 
+	would show the breakdown of players by team and division with emails/contact 
+	info.
+******/
+
+/****** Object:  StoredProcedure [dbo].[NewStoredProcedure]    Script Date: 12/28/2007 11:02:35 ******/
+ALTER PROCEDURE dbo.RATINGS
+
+@EVENT_CD varchar(6) = ''
+--@START_DATE smalldatetime,
+--@STOP_DATE smalldatetime
+
+AS
+
+create table dbo.#TEMP
+(EVENT_CD		varchar(6),
+PERSON_ID 		int,
+FIRST_NAME 		[varchar](25),
+LAST_NAME 		[varchar](35),
+EMAIL 			[varchar](50),
+EFF_DATE 		datetime,  
+RATING_PERSON_ID1 	int,     
+RATING_PERSON1 		[varchar](100),     
+RATING_PERSON_ID2 	int,   
+RATING_PERSON2 		[varchar](100),   
+RATING_PERSON_ID3 	int,    
+RATING_PERSON3 		[varchar](100),    
+RATING_SCORE  	 	decimal(8,2)
+)
+
+if @EVENT_CD <> ''
+BEGIN
+	insert into dbo.#TEMP
+		(EVENT_CD,
+		PERSON_ID)
+	SELECT 	EVENT_CD,PERSON_ID
+	FROM 	REGISTRATION_TBL
+	WHERE 	EVENT_CD = @EVENT_CD
+	AND 	REGISTRATION_IND = 'Y'
+END
+else
+BEGIN
+	insert into dbo.#TEMP
+		(EVENT_CD,
+		PERSON_ID)
+	SELECT 	NULL,PERSON_ID
+	FROM 	db_accessadmin.PERSON_TBL
+	WHERE LOGICAL_DELETE_IND = 'N'
+END
+
+update 		t
+set		t.EFF_DATE = r.EFF_DATE,
+		t.RATING_PERSON_ID1 = r.RATING_PERSON_ID1,
+		t.RATING_PERSON_ID2 = r.RATING_PERSON_ID2,
+		t.RATING_PERSON_ID3 = r.RATING_PERSON_ID3,
+		t.RATING_SCORE = r.RATING_SCORE
+		FROM dbo.#TEMP t
+LEFT JOIN	RATINGS_TBL r
+ON		t.PERSON_ID = r.PERSON_ID
+WHERE 		r.EFF_DATE = (SELECT MAX(EFF_DATE) FROM RATINGS_TBL WHERE PERSON_ID = t.PERSON_ID)
+
+update 		t
+set		t.FIRST_NAME = p.FIRST_NAME,
+		t.LAST_NAME = p.LAST_NAME,
+		t.EMAIL = p.EMAIL
+		FROM		dbo.#TEMP t
+LEFT JOIN	db_accessadmin.PERSON_TBL p
+ON		t.PERSON_ID = p.PERSON_ID
+
+--raters 1/2/3
+update 		t
+set		t.RATING_PERSON1 = p.LAST_NAME + ', ' + p.FIRST_NAME
+		FROM		dbo.#TEMP t
+LEFT JOIN	db_accessadmin.PERSON_TBL p
+ON		t.RATING_PERSON_ID1 = p.PERSON_ID
+
+update 		t
+set		t.RATING_PERSON2 = p.LAST_NAME + ', ' + p.FIRST_NAME
+		FROM		dbo.#TEMP t
+LEFT JOIN	db_accessadmin.PERSON_TBL p
+ON		t.RATING_PERSON_ID2 = p.PERSON_ID
+
+update 		t
+set		t.RATING_PERSON3 = p.LAST_NAME + ', ' + p.FIRST_NAME
+		FROM		dbo.#TEMP t
+LEFT JOIN	db_accessadmin.PERSON_TBL p
+ON		t.RATING_PERSON_ID3 = p.PERSON_ID
+
+
+
+SELECT	 	LAST_NAME as 'LAST NAME',
+		FIRST_NAME as 'FIRST NAME',
+		EMAIL as 'EMAIL ADDRESS',
+		RATING_SCORE as 'RATING',
+		EFF_DATE as 'RATING DATE',
+		RATING_PERSON1 as 'RATER #1',
+		RATING_PERSON2 as 'RATER #2',
+		RATING_PERSON3 as 'RATER #3'
+FROM		dbo.#TEMP
+ORDER BY 	LAST_NAME,
+		FIRST_NAME,
+		EMAIL
+
+
+
+GO
+

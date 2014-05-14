@@ -1,0 +1,138 @@
+<!-- BEGIN: fragLeagueRules.asp -->
+<table width='100%' border="0" cellpadding="0">
+<tr>
+<td bgcolor="#FF3300" class="style8">CGVA League Rules and Procedures and Participant Code of Conduct </td>
+</tr>
+
+<tr>
+<td bgcolor="#FFFFFF">
+	<p><font class='cfont10'>CGVA&rsquo;s MISSION STATEMENT<br />
+	To promote the pursuit of competitive volleyball in the Colorado GLBT community through a balance of athletic and social activities, including recruiting, coaching, mentoring, and development of leagues and tournaments to benefit all individuals.</font></p>
+	<p><font class='cfont10'>LEAGUE PARTICIPATION<br />
+	All participants must be currently registered for the league and have signed the CGVA waiver.  Final decisions rest with the CGVA Board of Directors.  Unsportsmanlike or improper conduct will not be tolerated and will be subject to the appropriate penalty, including, but not limited to, warnings, suspension, or expulsion from the league. </font></p>
+	<p><font class='cfont10'>CAPTAIN&rsquo;S RESPONSIBILITIES<br />
+	1.	The captain is responsible for knowing all of the league guidelines and rules which can be found on the website, www.cgva.org (sub policy, league participation, etc&hellip;)<br />
+	2.	The captain is responsible for having all of his/her team&rsquo;s contact information, and making sure that team members have his/hers.<br />
+	3.	The captain is responsible for attaining subs when one or more of his/her players will not be able to attend, (this means that his/her players are also responsible for letting the captain know, in advance when possible, that he/she will be unavailable.)<br />
+	4.	The captain is responsible for making sure that his/her team shows up on time to get warmed up and ready to play/officiate the matches their team is scheduled to.<br />
+	5.	The captain is responsible for getting information and updates to his/her team.<br />
+	6.	The captain is responsible for signing the score sheet after the game and making sure that the information on it is correct.<br />
+	7.	The captain is responsible for designating an &ldquo;acting captain&rdquo; if he/she is absent.<br />
+	8.	The captain is responsible for letting CGVA have current contact information and e-mail addresses.<br />
+	9.	Captains must ensure that their team has a minimum of 1 certified referee.  Teams not having a certified referee will be forced to forfeit matches as outlined below.<br />
+	Captains, please get in the habit of checking the website and your e-mail often so that you and your team will be aware of any updated information, parties, and team standings that may be sent out or posted on the website.</font></p>
+	<p><font class='cfont10'>MATCH RULES<br />
+	1.	Matches will start promptly at their scheduled time. <br />
+	2.	The 35-minute matches consist of a 5-minute warm-up and two games. <br />
+	3.	All games will be played to 21 points with a cap of 23.  All games will be rally scoring. <br />
+	4.	If two teams are tied at the end of the time allotted, then the next point scored will win the game.<br />
+	5.	Teams are granted two timeouts per game except the final two minutes of the allotted match time. <br />
+	6.	Teams may play with a minimum of four players on the court and can play with two permitted substitutions (see substitution policy).  Teams may play with only three core players one time during the season, otherwise they must forfeit their game(s).<br />
+	7.	We no longer use the &ldquo;ghost player&rdquo; rule.  Teams playing with less than six players do NOT lose service or otherwise track their missing players, and can designate three front row positions.<br />
+	8.	If an injury or emergency causes a team to have less than four players during a match, the team will not be penalized and the match will continue.<br />
+	9.	If a ball from another court enters the court and interrupts play, play must be immediately stopped and must be restarted with no penalty to either team.</font></p>
+	<p><font class='cfont10'>DIVISIONS<br />
+      <font class='cfont10'>Divisions for league play are defined as follows. CGVA reserves  the right to re-define divisions as needed based on player and team  registrations.</p>
+	<ul>
+	  <li>Div 2/3: If a team has at least one player rated level 1, 2, or 3,  that team must play in Div 2/3. Players with lower ratings may play on a Div  2/3 team.</li>
+	  <li>Div 4: An average team rating of 4.0 - 4.5 is required to play in  Div 4; however, no team member can have a rating of 1, 2, or 3.</li>
+	  <li>Div 5: An average team rating of 4.5 - 5.5 is required to play in  Div 5; however, no team member can have a rating of 1, 2, or 3.</li>
+	  <li>Div 6: An average team rating below 5.5 is required to play in Div  6; however, no team member can have a rating of 1, 2, or 3.</li>
+	  </ul>
+	<p><font class='cfont10'>SUBSTITUTION POLICY<br />
+	No new players may be added to a team&rsquo;s roster.  Any team that needs a substitute player can choose any available player from their division or lower.  Teams cannot choose a player from a &ldquo;higher&rdquo; division.  If an officiating team only has 4 players, they cannot provide a substitute player.  A team with six original team members present cannot substitute any players.  It is the captain&rsquo;s responsibility to bring any player issues to the League Committee.  Any exceptions to this rule will be considered on a case-by-case basis.</font></p>
+	<p><font class='cfont10'>PROTEST POLICY<br />
+	Any captain that wishes to make a protest during league play must do so in writing to the League Committee within 24 hours of the incident in question.  The scheduled match must be completed in the time frame allotted.</font><br />
+	<br />
+	<font class='cfont10'>CGVA's INTER-LEAGUE SUBSTITUTION POLICY <br />
+	The   captain of any fully paid team (six or more paid players) in either CGVA spring   league may designate in writing up to three players from the other CGVA spring   league to play as approved &quot;inter-league substitutes&quot; on its team. The player   must be fully paid in the other league and must be playing in the same division   as or lower than the team he or she is a substitute on. The captain must make   this designation in writing to his or   her league director any time   before the start of the third night of league play so that the approved   inter-league substitutes can be shown on the team's roster.<br />
+	<br />
+	In   all other respects, an inter-league   substitute will function as a normal intra-league substitute   under CGVA's current substitution policies including but not limited to   the requirement for four core (original) team members to be present to   constitute a valid team, no substitutions when six or more core team members are   present, and no substitutes during tournament play, among others.</font><br />
+	<p align="left"><font class='cfont10'>OPEN  PLAY POLICY</font><br />
+	  <font class='cfont10'>Open  play should adhere to the following guidelines:	  </p>
+	<ul><font class='cfont10'>
+	  <li>If  others are waiting to play on the court, a team may only play a maximum of two  games, then rotate off the court, even if the team won the last game &ndash; no &ldquo;king  of the hill.&rdquo;</li>
+	  <li>To  play on a court, a single representative from each team wishing to play must  wait (in order) courtside/in between courts to hold his/her team&rsquo;s place in  line.</li>
+	  <li>The  next team to play must keep score for the current game, which will also serve  as an indicator of who will play next.</li>
+	  <li>If  you do not have a full team to play, you may still wait in line, then pick up  players once it is your turn to play.</li>
+	  <li>Any  issues regarding open play should be brought to the attention of the league  director(s).</li>
+	  </ul>
+	<p align="left"><font class='cfont10'>PARTICIPANTS CODE OF CONDUCT<br />
+	</font><font class='cfont10'>To ensure good sportsmanship on and off of the court, CGVA has adopted the following participants' code of conduct to reinforce the rules contained in the current USAV indoor volleyball regulations: </font></p>
+	<ul>
+	<li><font class='cfont10'>Participants must accept referees' decisions with sportsmanlike conduct, without disputing them. In case of doubt, clarification may be requested only through the team captain. </font></li>
+	<li><font class='cfont10'>Participants must refrain from actions or attitudes aimed at influencing the decisions of the referees or covering up faults committed by their team. </font></li>
+	<li><font class='cfont10'>Rude conduct (for example, yelling or expressing contempt), offensive conduct (for example, profanity), and aggression (actual or threatened) will be sanctioned according to USAV regulations. </font></li>
+	<li><font class='cfont10'>Kicking, throwing, or slamming a volleyball or any other object that risks injury to others will be sanctioned as rude conduct. Doing any of these actions in a manner directed at a specific individual will be sanctioned as aggression. <br />
+	</font></li>
+	<li><font class='cfont10'>Referees, scorekeepers, and line judges shall not use a cell phone, iPod , or any similar device and they may not wear a &ldquo;hoodie&rdquo; in an effort to conceal these devices. Moreover, referees, scorekeepers, and line judges shall not hold conversations with bystanders or other team members while officiating a match. Please show the teams you are officiating the same respect and attention you would desire while on the court. </font></li>
+	<li><font class='cfont10'>The possession of illegal drugs or weapons at any CGVA-sponsored event will result in the participant's removal from the venue. </font></li>
+	<li><font class='cfont10'>The consumption of alcohol is discouraged to the extent that it inhibits the participant's ability to officiate professionally or participate respectfully. </font></li>
+	</ul>
+	<p align="left"><font class='cfont10'>Certified officials are able to administer yellow and red cards during play as specified by USAV regulations. The issuing of a yellow or red card shall be documented by the scorekeeper. Moreover, a league committee member or any CGVA board member may expel or disqualify any participant directly observed engaging in offensive conduct or aggression.</font><br />
+	  <br />
+	CGVA RATINGS GUIDELINES </p>
+	<table border="1" cellspacing="0" cellpadding="0" width="817">
+      <tr>
+        <td width="85" valign="center" height="40"><p><strong>&nbsp;</strong></p></td>
+        <td width="70" valign="center"><font class='cfont10'><p align="center"><strong>Level</strong></p></td>
+        <td valign="center"><p align="center"><font class='cfont10'><strong>Rating</strong></p></td>
+        <td width="150"  valign="center"><p align="center"><font class='cfont10'><strong>Description</strong></p></td>
+      </tr>
+      <tr>
+<td width="85" valign="center"><font class='cfont10'><p align="center">Expert</p></td>
+<td width="70" rowspan="5"><font class='cfont10'><p align="center">Competitive</p></td>
+
+
+
+        <td width="78" valign="center"><font class='cfont10'><p align="center">AA</p></td>
+        <td width="411" valign="center"><font class='cfont10'><p align="center">A player who consistently displays top caliber development and    execution of all volleyball skills.</p></td>
+      </tr>
+      <tr>
+        <td width="85" valign="center"><font class='cfont10'><p align="center">Advanced</p></td>
+        
+        <td width="78" valign="center"><font class='cfont10'><p align="center">A</p></td>
+        <td width="411" valign="center"><font class='cfont10'>A player who constentaly displays advanced development of the skills of    passing, setting, or spiking to compete as a specialist or an all-around    player with the ability to consistently execute the dynamics of power    volleyball.</td>
+      </tr>
+      <tr>
+        <td width="85" valign="center"><font class='cfont10'><p align="center">Intermediate</p></td>
+        
+        <td width="78" valign="center"><font class='cfont10'><p align="center">BB</p></td>
+        <td width="411" valign="center"><font class='cfont10'><p>A player who    consistently displays intermediate development of two or more    &quot;specialty&quot; skills of serving, hitting (including rolling and dinking),    setting, passing, or blocking. Comfortable with defensive positions,    transitions, and various offensive schemes. Regularly uses plays, strategy,    and teamwork. </p></td>
+      </tr>
+      <tr>
+        <td width="85" valign="center"><font class='cfont10'><p align="center">Upper B</p></td>
+        
+        <td width="78" valign="center"><font class='cfont10'><p align="center">B</p></td>
+        <td width="411" valign="top"><font class='cfont10'><p>Better and more consistent with the basic individual    skills of serving, hitting, passing, setting, and blocking. Should fully    understand the 6-2 offense and perimeter defense, and be familiar with a 5-1    offense . Starting to use teamwork and offensive and defensive strategy.</p></td>
+      </tr>
+      <tr>
+        <td width="85" valign="center"><font class='cfont10'><p align="center">Lower B</p></td>
+        
+        <td width="78" valign="center"><font class='cfont10'><p align="center">B</p></td>
+        <td width="411" valign="top"><font class='cfont10'>
+        <p>Competent but inconsistent with the basic individual  skills of serving, hitting, passing, setting, and blocking. Learning positions in a 6-2 offense; basic defensive positioning.</p></td>
+      </tr>
+      <tr>
+        <td width="85" rowspan="2"><font class='cfont10'><p align="center">Recreational</p></td>
+        <td width="70" valign="center"><font class='cfont10'><p align="center">Beginner</p></td>
+        
+        <td width="78" valign="center"><font class='cfont10'><p align="center">C (Rec)</p></td>
+        <td width="411" valign="top"><font class='cfont10'><p>Learning the basic individual skills: serving, hitting, passing,    setting, and blocking. Learning positions in serve-receive and a center-set    offense.</p></td>
+      </tr>
+      <tr>
+        <td width="70" valign="center"><font class='cfont10'><p align="center">Novice</p></td>
+        
+        <td width="78" valign="center"><font class='cfont10'><p align="center">C (Rec)</p></td>
+        <td width="411" valign="top"><font class='cfont10'><p>New to the game,    first experience with volleyball. <br /></p></td>
+      </tr>
+    </table>
+	<font class='cfont10'><p>* A NAGVA rating of AA, A, or BB dictates the corresponding  CGVA level. A NAGVA rating of B means that the CGVA player can be rated no  higher than a 4.</p>
+	<p align="left"><br />
+	</p>
+</td>
+</tr>
+
+</table>
+
+<!-- END: fragLeagueRules.asp -->

@@ -1,0 +1,35 @@
+<!-- BEGIN:fragMainPage.asp -->
+<head>
+</head>
+<table width='100%' border="0" cellpadding="0">
+  <tr bgcolor="#FF3300">
+    <td height="20" class="style8">Latest News</td>
+  </tr>
+
+<tr>
+<td>
+<p />
+<div style="font-size:larger; FONT-FAMILY: Arial;text-align:center;">
+<b>
+
+SAVE THE DATE! February 11th is the annual CGVA fundraiser Miss Queen of Aces. It will be held at Hamburger Mary's Club M. Tickets are $10 at the door with doors opening at 7 p.m. Arrive early as this event will sell out!
+<p />
+The Fifteenth annual <a href="http://lastdigindenver.org" target="_blank">Last Dig in Denver</a> Volleyball Tournament will be held April 14th and 15th, 2012. Registration is now open! Go to <a href="http://www.nagva.org" target="_blank">www.nagva.org</a> for more information and a link to the registration site.</b>
+<br /><br />
+</div>
+
+<div style="text-align:center;">
+<img src="images/MissQueenOfAces.jpg" width="600" />
+</div>
+<p />
+
+
+</td>
+</tr>
+
+  <tr>
+    <td height="19" bgcolor="#FF3300" class="style8">CGVA Calendar </td>
+  </tr>
+</table>
+<iframe src="http://www.google.com/calendar/embed?showTitle=0&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=cgva%40cgva.org&amp;color=%232952A3&amp;src=usa__en%40holiday.calendar.google.com&amp;color=%23AB8B00&amp;src=p%23weather%40group.v.calendar.google.com&amp;color=%23A32929&amp;ctz=America%2FDenver" style=" border:solid 1px #777 " width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<!-- END:fragMainPage.asp -->

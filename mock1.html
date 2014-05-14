@@ -1,0 +1,542 @@
+<!-- BEGIN:fragHeader.asp -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>CGVA Home</title>
+<!-- END:fragHeader.asp -->
+
+<!-- scripts can go here -->
+<script>
+<!--
+<!--
+
+	//+++++++++++++++++   image preloads   ++++++++++++++++
+
+	//image preloads for navigation links
+	var home = new Image();
+	home.src = "images/home_0.gif";
+
+	var home_on = new Image();
+	home_on.src = "images/home_1.gif";
+
+	var home_off = new Image();
+	home_off.src = "images/home_2.gif";
+
+
+	var directions = new Image();
+	directions.src = "images/directions_0.gif";
+
+	var directions_on = new Image();
+	directions_on.src = "images/directions_1.gif";
+
+	var directions_off = new Image();
+	directions_off.src = "images/directions_0.gif";
+
+
+	var league_rules = new Image();
+	league_rules.src = "images/league rules_0.gif";
+
+	var league_rules_on = new Image();
+	league_rules_on.src = "images/league rules_1.gif";
+
+	var league_rules_off = new Image();
+	league_rules_off.src = "images/league rules_2.gif";
+
+
+	var officiating = new Image();
+	officiating.src = "images/officiating_0.gif";
+
+	var officiating_on = new Image();
+	officiating_on.src = "images/officiating_1.gif";
+
+	var officiating_off = new Image();
+	officiating_off.src = "images/officiating_2.gif";
+
+	var last_dig = new Image();
+	last_dig.src = "images/last dig_0.gif";
+
+	var last_dig_on = new Image();
+	last_dig_on.src = "images/last dig_1.gif";
+
+	var last_dig_off = new Image();
+	last_dig_off.src = "images/last dig_2.gif";
+
+	var volleypalooza = new Image();
+	volleypalooza.src = "images/volleypalooza_0.gif";
+
+	var volleypalooza_on = new Image();
+	volleypalooza_on.src = "images/volleypalooza_1.gif";
+
+	var volleypalooza_off = new Image();
+	volleypalooza_off.src = "images/volleypalooza_2.gif";
+
+
+	var about_us = new Image();
+	about_us.src = "images/about us_0.gif";
+
+	var about_us_on = new Image();
+	about_us_on.src = "images/about us_1.gif";
+
+	var about_us_off = new Image();
+	about_us_off.src = "images/about us_2.gif";
+
+
+	var photos = new Image();
+	photos.src = "images/photos_0.gif";
+
+	var photos_on = new Image();
+	photos_on.src = "images/photos_1.gif";
+
+	var photos_off = new Image();
+	photos_off.src = "images/photos_2.gif";
+
+
+	var links = new Image();
+	links.src = "images/links_0.gif";
+
+	var links_on = new Image();
+	links_on.src = "images/links_1.gif";
+
+	var links_off = new Image();
+	links_off.src = "images/links_2.gif";
+
+
+	var matchmate = new Image();
+	matchmate.src = "images/match mate_0.gif";
+
+	var matchmate_on = new Image();
+	matchmate_on.src = "images/match mate_1.gif";
+
+	var matchmate_off = new Image();
+	matchmate_off.src = "images/match mate_2.gif";
+
+
+	var contact_us = new Image();
+	contact_us.src = "images/contact us_0.gif";
+
+	var contact_us_on = new Image();
+	contact_us_on.src = "images/contact us_1.gif";
+
+	var contact_us_off = new Image();
+	contact_us_off.src = "images/contact us_2.gif";
+
+	var cSchedule_0 = new Image();
+	cSchedule_0.src = "images/schedule_0.gif";
+
+	var cSchedule_1 = new Image();
+	cSchedule_1.src = "images/schedule_1.gif";
+
+	var cSchedule_2 = new Image();
+	cSchedule_2.src = "images/schedule_2.gif";
+
+	var cStandings_0 = new Image();
+	cStandings_0.src = "images/standings_0.gif";
+
+	var cStandings_1 = new Image();
+	cStandings_1.src = "images/standings_1.gif";
+
+	var cStandings_2 = new Image();
+	cStandings_2.src = "images/standings_2.gif";
+
+	var cTeams_0 = new Image();
+	cTeams_0.src = "images/teams_0.gif";
+
+	var cTeams_1 = new Image();
+	cTeams_1.src = "images/teams_1.gif";
+
+	var cTeams_2 = new Image();
+	cTeams_2.src = "images/teams_2.gif";
+
+	//tournament graphic
+	var cTournament_0 = new Image();
+	cTournament_0.src = "images/tournament_0.gif";
+
+	var cTournament_1 = new Image();
+	cTournament_1.src = "images/tournament_1.gif";
+
+	var cTournament_2 = new Image();
+	cTournament_2.src = "images/tournament_2.gif";
+
+	/*Dynamic event graphics*/
+	var v2009SL = new Image();
+v2009SL.src = "images/2009_Spring_Mondays_0.gif";
+
+var v2009SL_on = new Image();
+v2009SL_on.src = "images/2009_Spring_Mondays_1.gif";
+
+var v2009SL_off = new Image();
+v2009SL_off.src = "images/2009_Spring_Mondays_2.gif";
+
+
+var v2009SD = new Image();
+v2009SD.src = "images/2009_Spring_Fridays_0.gif";
+
+var v2009SD_on = new Image();
+v2009SD_on.src = "images/2009_Spring_Fridays_1.gif";
+
+var v2009SD_off = new Image();
+v2009SD_off.src = "images/2009_Spring_Fridays_2.gif";
+
+
+
+	//+++++++++++++++++   functions   ++++++++++++++++++++
+/*
+		var x = new Image();
+		x.src = "images/x_0.gif";
+
+		var x_on = new Image();
+		x_on.src = "images/x_1.gif";
+
+		var x_off = new Image();
+		x_off.src = "images/x_2.gif";
+*/
+
+
+	//function to do mouseover
+	function imgOver(imgName){
+	document[imgName].src=eval(imgName + "_on" + ".src");
+	//alert(document[imgName].src);
+	}
+
+	//function to do deactivate
+	function imgOut(imgName){
+	document[imgName].src=eval(imgName + ".src");
+	//alert(document[imgName].src);
+	}
+
+	//function to do unpressed division graphic
+	function imgUp(imgName){
+	document[imgName].src=eval(imgName + "_up.src");
+	//alert(document[imgName].src);
+	}
+
+	//function to do depressed division graphic
+	function imgDown(imgName){
+	document[imgName].src=eval(imgName + "_down.src");
+	//alert(document[imgName].src);
+	}
+
+	//function to do rollover division graphic
+	function imgRollover(imgName){
+	document[imgName].src=eval(imgName + "_over.src");
+	//alert(document[imgName].src);
+	}
+
+	//////////////////////////////////////////////////////////////
+	//function to do unpressed schedule/standings/team graphic
+	function imgUp0(imgName){
+	document[imgName].src=eval(imgName + "_0.src");
+	//alert(document[imgName].src);
+	}
+
+	//function to do rollover schedule/standings/team graphic
+	function imgRollover1(imgName){
+	document[imgName].src=eval(imgName + "_1.src");
+	//alert(document[imgName].src);
+	}
+
+	//function to do depressed schedule/standings/team graphic
+	function imgDown2(imgName){
+	document[imgName].src=eval(imgName + "_2.src");
+	//alert(document[imgName].src);
+	}
+
+	function updateScheduleChoice()
+	{
+		choice = FORM.SCHEDULE_CHOICE.options[FORM.SCHEDULE_CHOICE.selectedIndex].value;
+		//alert(choice);
+		redirectLocation = "index.asp?EVENT_CD=&DIVISION_ID=&CHOICE=SCHEDULE&SCHEDULE_CHOICE=" + choice;
+		//alert(redirectLocation);
+		window.location = redirectLocation;
+	}
+
+
+
+-->
+</script>
+
+</head>
+
+<!-- BEGIN: header.asp -->
+<body leftmargin="0" topmargin="0" rightmargin="0" bottommargin="0">
+<link rel="stylesheet" type="text/css" href="/incs/style2.css">
+<!-- END: header.asp -->
+
+<table bgcolor='#393536' width='780' align='center' border='0' cellpadding='0' cellspacing='0'>
+<tr>
+<td colspan='3'><!-- BEGIN: fragSiteHeaderGraphics.asp -->
+
+<table width='100%' border="0" cellpadding="0" cellspacing="0" bordercolor="#393536" bgcolor="#393536">
+
+<tr>
+<td><a href="http://www.cgva.org/index.asp"><img src="images/cgva3.jpg" alt="Go to CGVA Home Page" border="0" /></a></td>
+<td>
+
+	<table>
+	<tr>
+	<td><div align="center" class="style3">Welcome to the Official Website of the Colorado Gay Volleyball Association! </div></td>
+	</tr>
+
+	<tr>
+	<td><img src="images/banner.gif" alt="" /></td>
+	</tr>
+	</table>
+
+</td>
+</tr>
+
+</table>
+
+
+<!-- End: fragSiteHeaderGraphics.asp -->
+
+
+</td>
+</tr>
+
+<tr>
+<td valign='top'><!-- BEGIN:fragNavigation.asp -->
+<table width='175' align='left' border="0" cellpadding="0" cellspacing="0" bgcolor="#393536">
+
+<tr>
+<td><a class='menuBlack' href="http://www.cgva.org/index.asp"><img src='images/home_0.gif' border='0' name='home' alt='Home' id="home" onmouseover="imgOver('home')" onmouseout="imgOut('home')" /></a></td>
+</tr>
+
+<!-- Dynamic pull of active events-->
+
+	<tr>
+	<td><a class='menuBlack' href="index.asp?EVENT_CD=2009SL"><img src='images/2009_Spring_Mondays_0.gif' border='0' name='v2009SL' id='v2009SL' alt='2009 Spring League Mondays @ SportsBridge' onmouseover="imgOver('v2009SL')" onmouseout="imgOut('v2009SL')" /></a></td>
+	</tr>
+
+	<tr>
+	<td><a class='menuBlack' href="index.asp?EVENT_CD=2009SD"><img src='images/2009_Spring_Fridays_0.gif' border='0' name='v2009SD' id='v2009SD' alt='2009 Spring League Fridays @ Denver University' onmouseover="imgOver('v2009SD')" onmouseout="imgOut('v2009SD')" /></a></td>
+	</tr>
+
+
+<tr>
+<td><a class='menuBlack' href="index.asp?PAGE=Directions"><img src='images/directions_0.gif' border='0' name='directions' alt='Directions' id="directions" onmouseover="imgOver('directions')" onmouseout="imgOut('directions')" /></a></td>
+</tr>
+
+<tr>
+<td><a class='menuBlack' href="index.asp?PAGE=LeagueRules"><img src='images/league rules_0.gif' border='0' name='league_rules' alt='League Rules' id="league_rules" onmouseover="imgOver('league_rules')" onmouseout="imgOut('league_rules')" /></a></span></td>
+</tr>
+
+<tr>
+<td><a class='menuBlack' href="index.asp?PAGE=Officiating"><img src='images/officiating_0.gif' border='0' name='officiating' alt='Officiating' id="officiating" onmouseover="imgOver('officiating')" onmouseout="imgOut('officiating')" /></a></td>
+</tr>
+
+<tr>
+<td><a class='menuBlack' href="index.asp?PAGE=LastDig"><img src='images/last dig_0.gif' border='0' name='last_dig' alt='Last Dig' id="last_dig" onmouseover="imgOver('last_dig')" onmouseout="imgOut('last_dig')" /></a></td>
+</tr>
+
+<tr>
+<td><a class='menuBlack' href="index.asp?PAGE=Volleypalooza"><img src='images/volleypalooza_0.gif' border='0' name='volleypalooza' alt='Volleypalooza' id="volleypalooza" onmouseover="imgOver('volleypalooza')" onmouseout="imgOut('volleypalooza')" /></a></td>
+</tr>
+
+<tr>
+<td><a class='menuBlack' href="index.asp?PAGE=Mission"><img src='images/about us_0.gif' border='0' name='about_us' alt='About Us' id="about_us" onmouseover="imgOver('about_us')" onmouseout="imgOut('about_us')" /></a></td>
+</tr>
+
+<tr>
+<td><a class='menuBlack' href="index.asp?PAGE=Photos"><img src='images/photos_0.gif' border='0' name='photos' alt='Photos' id="photos" onmouseover="imgOver('photos')" onmouseout="imgOut('photos')" /></a></td>
+</tr>
+
+<tr>
+<td><a class='menuBlack' href="index.asp?PAGE=Links"><img src='images/links_0.gif' border='0' name='links' alt='Links' id="links" onmouseover="imgOver('links')" onmouseout="imgOut('links')" /></a></td>
+</tr>
+
+<tr>
+<td><a class='menuBlack' href="index.asp?PAGE=MatchMate"><img src='images/match mate_0.gif' border='0' name='matchmate' alt='Match Mate' id="matchmate" onmouseover="imgOver('matchmate')" onmouseout="imgOut('matchmate')" /></a></td>
+</tr>
+
+<tr>
+<td><a class='menuBlack' href="index.asp?PAGE=ContactUs"><img src='images/contact us_0.gif' border='0' name='contact_us' alt='Contact Us' id="contact_us" onmouseover="imgOver('contact_us')" onmouseout="imgOut('contact_us')" /></td>
+</tr>
+
+</table>
+<!-- END:fragNavigation.asp -->
+
+</td>
+<td>&nbsp;</td>
+<td valign='top' width='100%'>
+
+	<table width='100%' bgcolor="#393536" border="0" cellpadding='0' cellspacing='0'>
+
+	<tr>
+	<td>
+		<table cellpadding='0' cellspacing='0'>
+		<tr>
+
+		</tr>
+		</table>
+	</td>
+	</tr>
+
+
+
+		<tr bgcolor="#FFFFFF">
+		<td>
+			<!-- BEGIN:fragMainPage.asp -->
+<table width='100%' border="0" cellpadding="0">
+
+<tr bgcolor="#FF3300">
+<td height="20" class="style8">Latest News</td>
+</tr>
+
+<!--
+<tr>
+  <td height="185"><p align="center"><strong>CGVA Beer Bust Fundraiser at the Denver Wrangler </strong><strong></strong></p>
+    <p>CGVA will be pouring beer at the Denver Wrangler on <span id="lw_1234272115_0">   Sunday, February 15 from 4-8PM. </span>The <a href="http://www.denverwrangler.com/">Denver Wrangler bar</a> is    located at <span id="lw_1234272115_1">1700   Logan Street in Denver</span>. The cost is only $8 for a bottomless cup of beer and hours of fun!&nbsp;</p>
+    <p>If you   are interested in volunteering to pour beer, please email Brian Seiber at <a href="mailto:brian@cgva.org" target="_blank" rel="nofollow" ymailto="mailto:brian@cgva.org"><span id="lw_1234272115_2">brian@cgva.org</span></a> ASAP.&nbsp;</p>
+    <p align="center"><br />
+      <strong>Last Dig in </strong><strong>Denver</strong><strong> XII Draws  Near! </strong></p>
+    <p align="center">Registration is open for the  CGVA-hosted Last Dig in Denver XII tournament April 18 and 19, 2009.&nbsp; Teams are already signing up as they know we  have a limited number of teams in each of three divisions (Modified A/AA, BB  and B).&nbsp; Get your team signed up today so  you&rsquo;re not left out!</p>
+    <p align="center">Please visit the <a href="fragLastDig.asp">Last Dig</a> page  for more details on the tournament.&nbsp;  Please continue to visit often as updated information will continue to  be posted &ndash; i.e. Registration dates and times, Saturday seeding information,  Sunday&rsquo;s end-of-tournament banquet, host hotel, and more!</p>
+    <p align="center">&nbsp;</p></td>
+</tr>
+-->
+
+<tr>
+<td height="185">
+	<font class='cfont12'>
+	<p align="center"><b>Attention all Monday and Friday Night League Players!</b></p>
+	</font>
+	<div>Check out the updated CGVA photo page for pictures   from the 2008 Fall end of league parties and CGVA's interleague social held   2/21/09 at Hamburger Mary's. </div>
+	<div><br />
+	  </div>
+	<div>If you did not get your league t-shirt, first check   with others on your team -- as shirts were handed out by team. If no one from   your team picked up shirts, please see your league directors.</div>
+	<font class='cfont12'>
+	<p align="center" /><br />
+	  <strong>Last Dig in Denver XII Draws  Near! </strong>
+	<p>Registration is open for the  CGVA-hosted Last Dig in Denver XII tournament April 18 and 19, 2009.&nbsp; Teams are already signing up as they know we  have a limited number of teams in each of three divisions (Modified A/AA, BB  and B).&nbsp; Get your team signed up today so  you&rsquo;re not left out!</p>
+	<p>Please visit the <a href="index.asp?PAGE=LastDig">Last Dig</a> page  for more details on the tournament.&nbsp;  Please continue to visit often as updated information will continue to  be posted &ndash; i.e. Registration dates and times, Saturday seeding information,  Sunday&rsquo;s end-of-tournament banquet, host hotel, and more!</p>
+	<p>&nbsp;</p>
+	</font></td>
+</tr>
+
+
+<tr>
+<td height="203">
+  <font class='cfont12'>
+  <p align="center"><strong>CGVA's Spring Leagues</strong></p>
+  CGVA's spring leagues are up and running <span id="lw_1234271182_0">on   Fridays</span> and Mondays. See the pages for each league for standings,   schedules, team rosters and more.<br />
+  <ul>
+    <li><a href="http://www.cgva.org/index.asp?EVENT_CD=2009SD">Spring 2009 Fridays at DU </a></li>
+    <li><a href="http://www.cgva.org/index.asp?EVENT_CD=2009SL">Spring 2009 Mondays at SportsBridge</a></li>
+  </ul>
+  <p align="center">&nbsp;</p>
+  <p align="center">&nbsp;</p>
+  </font>
+  </td>
+</tr>
+
+
+<tr>
+<td height="20" bgcolor="#FF3300"><span class="style8">Important Dates</span></td>
+</tr>
+
+<tr>
+<td>
+
+	<table width='100%' cellpadding='0' cellspacing='2' border='1'>
+
+	<tr>
+	<th width="20%" bordercolor="#000000"><font class='cfont12'>Date</font></th>
+	<th width="80%" bordercolor="#000000"><font class='cfont12'>Detail</font></th>
+	</tr>
+
+	<!--
+	<tr>
+	  <td height="28" valign='top' nowrap="nowrap" bordercolor="#000000"><strong>Sunday, Feb. 15 </strong></td>
+	  <td valign='top' bordercolor="#000000">Wrangler Beer Bust fundraiser from 4-8PM. $8 for all the beer you can drink. If interested in volunteering to pour beer, please contact Brian Seiber at <a href="mailto:brian@cgva.org">brian@cgva.org</a>. <br /></td>
+	  </tr>
+	-->
+
+	<tr>
+	  <td height="28" valign='top' nowrap="nowrap" bordercolor="#000000"><strong>Tuesday, March 10 </strong></td>
+	  <td valign='top' bordercolor="#000000">CGVA Board meeting. If you are interested in attending, please contact the CGVA Secretary, Dave Lamont, via email at <a href="mailto:dave_nj35@yahoo.com.">dave_nj35@yahoo.com.</a></td>
+	  </tr>
+	<tr>
+	  <td height="28" valign='top' nowrap="nowrap" bordercolor="#000000"><strong>March 20 </strong></td>
+	  <td valign='top' bordercolor="#000000"><a href="http://www.cgva.org/index.asp?PAGE=LastDig">Last Dig Tournament</a> early registration deadline. </td>
+	  </tr>
+	<tr>
+	  <td height="28" valign='top' nowrap="nowrap" bordercolor="#000000"><strong>March 27 </strong></td>
+	  <td valign='top' bordercolor="#000000"><a href="http://www.cgva.org/index.asp?PAGE=LastDig">Last Dig Tournament</a> final registration deadline. </td>
+	  </tr>
+	<tr>
+	  <td height="28" valign='top' nowrap="nowrap" bordercolor="#000000"><strong>March 27 &amp; April 3 </strong></td>
+	  <td valign='top' bordercolor="#000000"><a href="http://www.cgva.org/index.asp?EVENT_CD=2009SD">Spring 2009 Fridays at DU </a>end of league tournament. </td>
+	  </tr>
+	<tr>
+	  <td height="28" valign='top' nowrap="nowrap" bordercolor="#000000"><strong>March 30 &amp; April 6 </strong></td>
+	  <td valign='top' bordercolor="#000000"><a href="http://www.cgva.org/index.asp?EVENT_CD=2009SL">Spring 2009 Mondays at SportsBridge</a> end of league tournament. </td>
+	  </tr>
+	<tr>
+	  <td height="28" valign='top' nowrap="nowrap" bordercolor="#000000"><strong>Tuesday, April 7 </strong></td>
+	  <td valign='top' bordercolor="#000000">CGVA Board meeting. If you are interested in attending, please contact the CGVA Secretary, Dave Lamont, via email at <a href="mailto:dave_nj35@yahoo.com.">dave_nj35@yahoo.com.</a></td>
+	  </tr>
+	<tr>
+	  <td height="28" valign='top' nowrap="nowrap" bordercolor="#000000"><strong>April 18 &amp; 19 </strong></td>
+	  <td valign='top' bordercolor="#000000"><a href="http://www.cgva.org/index.asp?PAGE=LastDig">Last Dig Tournament </a></td>
+	  </tr>
+	<tr>
+	  <td height="28" valign='top' nowrap="nowrap" bordercolor="#000000"><strong>Sunday, May 3 </strong></td>
+	  <td valign='top' bordercolor="#000000">Wrangler Beer Bust fundraiser from 4-8PM. $8 for all the beer you can drink. If interested in volunteering to pour beer, please contact Brian Seiber at <a href="mailto:brian@cgva.org">brian@cgva.org</a>. </td>
+	  </tr>
+	<tr>
+	  <td height="28" valign='top' nowrap="nowrap" bordercolor="#000000"><strong>Tuesday, May 12 </strong></td>
+	  <td valign='top' bordercolor="#000000">CGVA Board meeting. If you are interested in attending, please contact the CGVA Secretary, Dave Lamont, via email at <a href="mailto:dave_nj35@yahoo.com.">dave_nj35@yahoo.com.</a></td>
+	  </tr>
+	<tr>
+	  <td height="28" valign='top' nowrap="nowrap" bordercolor="#000000"><strong>Tuesday, June 9 </strong></td>
+	  <td valign='top' bordercolor="#000000">CGVA Board meeting. If you are interested in attending, please contact the CGVA Secretary, Dave Lamont, via email at <a href="mailto:dave_nj35@yahoo.com.">dave_nj35@yahoo.com.</a></td>
+	  </tr>
+	<tr>
+	  <td height="28" valign='top' nowrap="nowrap" bordercolor="#000000"><strong>Saturday, July 11 </strong></td>
+	  <td valign='top' bordercolor="#000000">CGVA Annual Meeting - All Day! If you are interested in attending, please contact the CGVA Secretary, Dave Lamont, via email at <a href="mailto:dave_nj35@yahoo.com.">dave_nj35@yahoo.com.</a></td>
+	  </tr>
+
+
+	<!--
+	<tr>
+	<td width='20%' valign='top' height="28" nowrap><strong><font class='cfont10'>Monday, Oct. 13 </font></strong></td>
+	<td valign='top'><font class='cfont10'>CGVA Board Meeting. Please contact secretary Ernest Coca @ <strong><font size="3" face="Tahoma, Times New Roman, Arial"><strong><font color="#000000" size="2"><a href="mailto:ernest@cgva.org">ernest@cgva.org</a></font></strong></font></strong> for information on attending the meeting. </font></td>
+	</tr>
+-->
+	</table>
+</td>
+</tr>
+</table>
+
+<!-- END:fragMainPage.asp -->
+
+	</td>
+	</tr>
+
+
+	<tr>
+	<td height='20'></td>
+	</tr>
+
+	</table>
+
+</td>
+</tr>
+
+</table>
+
+<!-- BEGIN:fragSiteContact.asp -->
+<table width='100%'>
+
+<tr>
+<td valign="top" bgcolor="#393536">
+	<div align="center"><font color="#FFFFFF" size="1" face="Tahoma, Times New Roman, Arial">General Contact Info :</font>
+	<font color="#0000FF" size="1" face="Tahoma, Times New Roman, Arial"> <a href="mailto:cgva@cgva.org"><font color="#00FFFF">cgva@cgva.org</font></a> <font color="#FFFFFF">| CGVA PO Box 18576 Denver, CO&nbsp; 80218-0576</font></font> <font color="#FFFFFF" size="1" face="Tahoma, Times New Roman, Arial">| </font><font size="1" face="Tahoma, Times New Roman, Arial"><a href="MONTHLY.html" target="_blank"><font color="#00FFFF">Monthly Web Stats</font></a></font></div></td>
+</tr>
+</table>
+<!-- END:fragSiteContact.asp -->
+
+
+</body>
+</html>

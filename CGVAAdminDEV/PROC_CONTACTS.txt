@@ -1,0 +1,175 @@
+USE [cgva]
+GO
+
+/****** Object:  StoredProcedure [dbo].[CONTACTS]    Script Date: 02/02/2008 11:21:05 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+
+
+
+
+
+/******	
+- Report/Screen to show Full Player list per Event by Division and Team.  This 
+	would show the breakdown of players by team and division with emails/contact 
+	info.
+******/
+
+/****** Object:  StoredProcedure [dbo].[NewStoredProcedure]    Script Date: 12/28/2007 11:02:35 ******/
+ALTER PROCEDURE dbo.CONTACTS
+
+@EVENT_CD varchar(6) = ''
+--@START_DATE smalldatetime,
+--@STOP_DATE smalldatetime
+
+AS
+
+create table dbo.#TEMP
+(EVENT_CD		varchar(6),
+DIVISION_ID		int,
+[DIVISION_CD] 		[varchar](6),
+[DIVISION_DESC] 	[varchar](25),
+TEAM_ID			int,
+TEAM_CD 		varchar(3),    
+TEAM_NAME 		varchar(50),
+CAPTAIN_IND		char(1),
+PERSON_ID 		int,
+FIRST_NAME 		[varchar](25),
+LAST_NAME 		[varchar](35),
+EMAIL 			[varchar](50),
+[PRIMARY_PHONE_NUM] 	[varchar](10),
+[2ND_PHONE_NUM] 	[varchar](10),
+[3RD_PHONE_NUM] 	[varchar](10),
+[ADDRESS_LINE1] 	[varchar](40),
+[ADDRESS_LINE2] 	[varchar](40),
+[CITY] 			[varchar](30) NULL,
+[STATE] 		[varchar](2) NULL,
+[ZIP] 			[varchar](10) NULL,
+RATING_SCORE 		decimal(8,2),
+EFF_DATE 		datetime
+)
+
+if @EVENT_CD <> ''
+BEGIN
+	insert into dbo.#TEMP
+		(EVENT_CD,
+		PERSON_ID)
+	SELECT 	EVENT_CD,PERSON_ID
+	FROM 	REGISTRATION_TBL
+	WHERE 	EVENT_CD = @EVENT_CD
+	AND 	REGISTRATION_IND = 'Y'
+END
+else
+BEGIN
+	insert into dbo.#TEMP
+		(EVENT_CD,
+		PERSON_ID)
+	SELECT 	NULL,PERSON_ID
+	FROM 	db_accessadmin.PERSON_TBL
+	WHERE LOGICAL_DELETE_IND = 'N'
+END
+
+update 		t
+set		t.FIRST_NAME = p.FIRST_NAME,
+		t.LAST_NAME = p.LAST_NAME,
+		t.EMAIL = p.EMAIL,
+		t.[PRIMARY_PHONE_NUM] = p.[PRIMARY_PHONE_NUM],
+		t.[2ND_PHONE_NUM] = p.[2ND_PHONE_NUM],
+		t.[3RD_PHONE_NUM] = p.[3RD_PHONE_NUM],
+		t.[ADDRESS_LINE1] = p.[ADDRESS_LINE1],
+		t.[ADDRESS_LINE2] = p.[ADDRESS_LINE2],
+		t.[CITY] = p.[CITY],
+		t.[STATE] = p.[STATE],
+		t.[ZIP] = p.[ZIP]
+FROM		dbo.#TEMP t
+LEFT JOIN	db_accessadmin.PERSON_TBL p
+ON		t.PERSON_ID = p.PERSON_ID
+
+update 		t
+set		t.TEAM_ID = tm.TEAM_ID,
+		t.CAPTAIN_IND = tm.CAPTAIN_IND,
+		t.TEAM_CD = tt.TEAM_CD,
+		t.TEAM_NAME = tt.TEAM_NAME,
+		t.DIVISION_ID = d.DIVISION_ID,
+		t.DIVISION_CD = d.DIVISION_CD,
+		t.DIVISION_DESC = d.DIVISION_DESC
+FROM		dbo.#TEMP t
+LEFT JOIN	TEAM_MEMBER_TBL tm 	ON t.PERSON_ID = tm.PERSON_ID
+LEFT JOIN	TEAM_TBL tt 		ON tm.TEAM_ID = tt.TEAM_ID
+LEFT JOIN	DIVISION_TBL d 		ON tt.DIVISION_ID = d.DIVISION_ID
+WHERE		d.EVENT_CD = @EVENT_CD
+
+update 		t
+set		t.RATING_SCORE= r.RATING_SCORE,
+		t.EFF_DATE = r.EFF_DATE 
+FROM		dbo.#TEMP t
+LEFT JOIN	RATINGS_TBL r
+ON		t.PERSON_ID = r.PERSON_ID
+WHERE           r.EFF_DATE = 	(SELECT MAX(EFF_DATE) 
+				FROM RATINGS_TBL 
+				WHERE PERSON_ID = t.PERSON_ID)
+
+IF @EVENT_CD <> ''
+BEGIN
+	SELECT	 	IsNull(DIVISION_CD,'') as 'DIVISION CODE',
+			IsNull(DIVISION_DESC,'') as 'DIVISION NAME',
+			IsNull(TEAM_CD,'') as 'TEAM CODE',
+			IsNull(TEAM_NAME,'') as 'TEAM NAME',
+			Replace(CAPTAIN_IND,'N','') as 'CAPTAIN',
+			LAST_NAME as 'LAST NAME',
+			FIRST_NAME as 'FIRST NAME',
+			RATING_SCORE as 'RATING',
+			EFF_DATE as 'RATING DATE',
+			EMAIL as 'EMAIL ADDRESS',
+			[PRIMARY_PHONE_NUM] as 'PHONE #1',
+			[2ND_PHONE_NUM] as 'PHONE #2',
+			[3RD_PHONE_NUM] as 'PHONE #3',
+			[ADDRESS_LINE1] as 'ADDRESS LINE 1',
+			[ADDRESS_LINE2] as 'ADDRESS LINE 2',
+			[CITY] as 'CITY',
+			[STATE] as 'ST',
+			[ZIP] as 'ZIP CODE'
+	FROM		dbo.#TEMP
+	ORDER BY 	DIVISION_CD,
+			DIVISION_DESC,
+			TEAM_CD,
+			TEAM_NAME,
+			LAST_NAME,
+			FIRST_NAME,
+			EMAIL
+END
+ELSE
+BEGIN
+	SELECT	 	LAST_NAME as 'LAST NAME',
+			FIRST_NAME as 'FIRST NAME',
+			EMAIL as 'EMAIL ADDRESS',
+			[PRIMARY_PHONE_NUM] as 'PHONE #1',
+			[2ND_PHONE_NUM] as 'PHONE #2',
+			[3RD_PHONE_NUM] as 'PHONE #3',
+			[ADDRESS_LINE1] as 'ADDRESS LINE 1',
+			[ADDRESS_LINE2] as 'ADDRESS LINE 2',
+			[CITY] as 'CITY',
+			[STATE] as 'ST',
+			[ZIP] as 'ZIP CODE',
+                                                                RATING_SCORE as 'RATING',
+                                                                EFF_DATE as 'RATING DATE'
+	FROM		dbo.#TEMP
+	ORDER BY 	LAST_NAME,
+			FIRST_NAME,
+			EMAIL
+END
+
+
+
+
+
+
+GO
+

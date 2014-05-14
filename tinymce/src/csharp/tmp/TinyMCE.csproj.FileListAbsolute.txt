@@ -1,0 +1,6 @@
+C:\inetpub\wwwroot\bin\Moxiecode.TinyMCE.xml
+C:\inetpub\wwwroot\bin\Moxiecode.TinyMCE.dll
+C:\inetpub\wwwroot\bin\Moxiecode.TinyMCE.pdb
+C:\j\tinymce\src\csharp\tmp\ResolveAssemblyReference.cache
+C:\j\tinymce\src\csharp\tmp\Moxiecode.TinyMCE.dll
+C:\j\tinymce\src\csharp\tmp\Moxiecode.TinyMCE.pdb

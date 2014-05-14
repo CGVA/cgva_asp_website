@@ -1,0 +1,29 @@
+MATCH_GAME_TBL 
+
+FK	MATCH_ID int
+	GAME_NUM smallint 
+FK	TEAM1_ID int 
+FK	TEAM2_ID int
+	TEAM1_SCORE smallint 
+	TEAM2_SCORE smallint 
+	DBL_FORFEIT_IND	char(1) DEFAULT('N')
+	REF_FORFEIT_IND char(1) DEFAULT('N')
+
+
+composite primary key
+---------------------
+MATCH_ID
+GAME_NUM 
+
+
+MATCH_ID
+GAME_NUM 
+TEAM1_ID 
+TEAM2_ID
+TEAM1_SCORE 
+TEAM2_SCORE 
+
+DBL_FORFEIT_IND
+REF_FORFEIT
+
+

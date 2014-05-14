@@ -1,0 +1,12 @@
+WEEK_TBL
+
+PK	WEEK_ID int    
+FK	EVENT_CD varchar 6     
+	WEEK_NUM smallint    
+	DATE datetime
+
+WEEK_ID    
+EVENT_CD     
+WEEK_NUM    
+DATE
+

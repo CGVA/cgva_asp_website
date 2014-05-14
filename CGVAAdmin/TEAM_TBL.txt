@@ -1,0 +1,13 @@
+TEAM_TBL
+
+PK	TEAM_ID int     
+FK	DIVISION_ID int     
+	TEAM_CD varchar 3    
+	TEAM_NAME varchar 50
+
+TEAM_ID
+DIVISION_ID     
+TEAM_CD    
+TEAM_NAME
+
+

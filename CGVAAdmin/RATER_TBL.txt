@@ -1,0 +1,5 @@
+RATER_TBL 
+
+FK	PERSON_ID int 
+
+PERSON_ID

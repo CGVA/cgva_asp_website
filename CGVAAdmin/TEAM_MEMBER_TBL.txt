@@ -1,0 +1,15 @@
+TEAM_MEMBER_TBL
+
+FK	PERSON_ID int     
+FK	TEAM_ID int      
+	CAPTAIN_IND char 1     
+	CERTIFIED_REF_IND char 1 
+
+PERSON_ID     
+TEAM_ID      
+CAPTAIN_IND    
+CERTIFIED_REF_IND 
+
+
+
+

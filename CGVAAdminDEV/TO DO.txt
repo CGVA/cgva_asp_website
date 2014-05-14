@@ -1,0 +1,267 @@
+TO DO
+XX		DIVISION_TBL       
+XX		EVENT_TBL        
+XX		EVENT_TYPE_TBL        
+XX		FIRST_CONTACT_TBL        
+XX		LOCATION_TBL        
+XX		PERSON_TBL
+X N/A		RATER_TBL        
+X		RATINGS_TBL       
+XX		REGISTRATION_TBL  
+
+X		TEAM_TBL        
+X		TEAM_MEMBER_TBL       
+X		TIME_TBL       
+X		WEEK_TBL 
+X		MATCH_GAME_TBL        
+X		MATCH_SCHEDULE_TBL        
+
+
+
+		
+BIRTH_DATE to smalldatetime in PERSON_TBL
+ADD ACTIVE FLAG for RATER_TBL
+change decimal to 5,2,2 length, precision, scale in RATINGS_TBL
+I added the extra columns to the REGISTRATION_TBL
+ratings history table?
+
+
+12/7/2007
+I added ID column to Registration table for ease of modifying records
+I added ID column to Match Game table for ease of modifying records
+TEAM1_MVP_ID MatchSchedule - needs to be nullable as the MVP wont be known when the match is set up   
+TEAM2_MVP_ID MatchSchedule - needs to be nullable as the MVP wont be known when the match is set up      
+
+
+X	redo all validation for modify screens to be like the registration.asp page - UGH!
+X	MAINTAIN - I should be able to see, but not change the PERSON_ID  from the maintenance screen. 
+X	ADD & MAINTAIN - Validate the email address.
+X	ADD - What if I have two people with the same first and last name, how will I know which one to pick from this screen. Are you keeping that from happening in the person_tbl maintenance, if so, then we are okay. (Add Person ID to the DDLs).
+x	validate the date entry field(that it is a date) Week.asp
+x	validate the court number entry field(that it is an integer) MatchSchedule.asp
+
+X	PERSON_TBL - validate logical delete indicator to other affected tables
+x	player ratings - cant make all people have a rating just to update one person's rating
+x	player ratings - add new records to the table for a person who's rating info has been updated
+X	TeamMember.asp - top list of all players, remaining players (7-10) only available players not on other teams
+x	player ratings - watch db error thrown on adding same person, date, rater 1 with new rating
+x	player ratings - only display most recent rating for a person
+x	player ratings - allow ability to add notes to existing record, without having to change a persons rating, eff date, rater #1
+X	MatchGame add match time to the DDLs
+X	Registration - modify screen is SLOW
+X	Registration - modify to only pull active events
+X	Person - modify screen is SLOW
+X	Ratings - modify screen is SLOW (because of Person DDL)
+X	MatchGame - add time column to upper display and sort by division, time, game
+x	TeamMember_submit.asp - trap for adding the same person twice to the same team 
+x	MatchGame trap for adding same game # to the same match more than once	
+x	Week - only show active events in DDL
+x	Time - only show active events in DDL
+
+x	modify event table to add/modify week ind
+x	event - validate modify  to prevent two events with same code
+x	location - validate modify  to prevent two locations with same code
+x	MatchSchedule trap for adding a team to the same time more than once (as a playing or ref team)
+x	MatchSchedule trap for adding more than one match to the same time and court, regardless of teams
+
+x	add double forfeit indicator to match game table
+x	handle double forfeit indicator in results display
+
+3/30
+x	add ref forfeit indicator to match game table
+x	handle ref forfeit indicator in results display
+
+4/25
+x	add role type screen
+x	add person access screen
+x	add security to all pages
+	
+
+
+8/2
+	- Replacement webpage for:
+x	    Schedules
+x	    Teams
+x	    Statistics
+
+x	add graphic value to event_tbl (dev/prod)
+	add dynamic graphics for division on template page
+	
+x	add graphic field to division and event add/delete screens
+x	add photos to person table (PHOTO_FILENAME varchar(20))
+	
+8/6
+x	add	'through week x' for fragStandings header' if there is a week selected
+		otherwise, all data will show on the page with a generic 'standings'
+		in the header bar
+	
+
+x	automatically add browse to "person access table" for all new people
+x	add the ability to add photos to personnel folder
+x	add the ability to direct an uploaded file to Minutes, Financial, etc folders
+
+8/13/2008
+x	report of all player names, who has picture, who has rating, who has registered
+	
+
+8/15/2008
+x	modify data pulls to suppress last name pulls based on the indicator for all display pages
+x	add sub pages to entire template site
+	
+x	add page to add login credentials
+	
+8/22/2008
+x	certified ref tables
+x	certified ref screens
+x	incorporate ref status into TEAM report
+x	button graphics for event table now dynamic to BUTTON_REF_TBL
+x	extended notes in RATINGS_TBL to 100
+x	debugged some template.asp conversion pages
+	
+	
+	
+8/23/2008
+x	link team member table to cert ref table (remove cert ref field from here)
+x	modify TEAM_WEB PROC to pull from cert ref table
+x	button graphics for division table now dynamic to BUTTON_REF_TBL
+x	division graphics dynamic
+x	standings/teams/schedule graphic rollovers completed
+	
+	
+	Add these fields to Registration Table and Reg Entry/Modify Screens:
+x	INTEREST_IN_BEING_CAPTIN_IND (Y or N value) - The Entry screen should have something like "For Draft Only" next to it.
+x	VOLUNTEER_INTEREST_IND (Y or N Value)
+x	fix dark blue color on many of the admin screens
+x	suppress inactive events for division, time and week entry screens
+
+
+9/21/2008
+x	streamlined active period page for league directors
+x	add button on left side of bar on MatchSchedule
+
+	fix issue with DDL on match schedule after a week has been scheduled, the DDL doesnt
+	have all weeks listed in it still
+	
+	
+	
+	make the schedule default to the current week, have old weeks drop off, allow a DDL to select show all
+	
+	modify results report to show the ranks of teams by division
+	**adding the division code to the resultset will cause modifications needed for
+	reports_report.asp and fragStandings**
+	
+	update "person access table" with 'browse' for all current people
+	redirect people to the appropriate start page based on login credentials
+	
+	need a field on the registration that we can explicitly hit that says they 
+	signed a waiver, then we will really know if someone checks that box 
+	AND we can still get the financial data and player data setup and still can pull out 
+	a report of non-waiver signers
+
+	
+
+	add a ratings history search (by person)
+	TeamMember.asp - view all teams within a division (later)
+	Delete ability - Division
+	Delete ability - Event
+	Delete ability - Event_Type
+	Delete ability - First_Contact 
+	Delete ability - Location 
+	Delete ability - Rater 
+	Delete ability - Ratings
+	Delete ability - Registration (watch other tables integrity)
+
+	MatchSchedule delete ability(watch foreign key to games table)
+	revamp MatchSchedule to be - select a week, show all matches for that week plus an add new at the bottom
+	
+	certified refs report. The person responsible for managing referee certification will 
+	want a list of all certified refs, those in progress, certification start and 
+	expiration dates, and possibly contact info so that he or she can recruit upper 
+	division refs as mentors to those in lower divisions. I suppose that report should also 
+	contain location, team and division to facilitate scheduling of volunteers. The league 
+	directors will want similar info but only to ensure that each team has at least one 
+	certified ref. Maybe that last bit could be just another indicator column in the 
+	registration report that you and Charlie are currently working on. But, make sure that 
+	there is a provision for showing a difference between certified, in progress, expiring 
+	this league, and already expired.
+
+X	We'll also want a ratings report. At the moment, the only use for this would be to 
+	double-check that all info from the ratings spreadsheet was input into the database. 
+	It's not that I don't trust you guys, it's that mistakes and omissions always happen.
+	
+	
+	
+
+
+add 	- Report/Screen to show Registered/Paid players per Event. This would be used by 
+date	anyone on the board to see who is currently registered for an event for 
+filter	planning.
+
+x	- Report/Screen to show Full Player list per Event by Division and Team.  This 
+	would show the breakdown of players by team and division with emails/contact 
+	info.
+
+x	- Export to excel of database contact information in total OR per event.  This 
+	would be used by anyone who needs the whole database (ie: P/R, League Director, 
+	etc).
+
+
+--delete from MATCH_GAME_TBL
+--delete from MATCH_SCHEDULE_TBL
+--delete from TIME_TBL
+--delete FROM WEEK_TBL
+--delete from TEAM_MEMBER_TBL
+--delete from TEAM_TBL
+--delete from DIVISION_TBL
+--delete from REGISTRATION_TBL
+--delete from EVENT_TBL
+--delete from RATER_TBL
+--delete from RATINGS_TBL
+--delete FROM LOCATION_TBL
+
+
+Hi John,
+ 
+SO here are my notes (and other ideas) for tables from our meeting.  
+Let me know what you think of the field and table names.  
+I thought that the division_ref_tbl could be just a button_ref_tbl 
+if we need to reference buttons in other places.
+ 
+New tables:
+ 
+* = Existing field in another table with a datatype we should use.
+ 
+USER_LOGIN_TBL
+PERSON_ID *
+USERNAME
+PASSWORD
+SECURITY_QUESTION
+REMINDER
+ANSWER
+ 
+ 
+ROLE_TYPE_TBL
+ROLE_TYPE
+ROLE_TYPE_DESC
+ 
+(The following ROLE_TYPE values we defined: "ADMIN","BOD","BROWSE","EDIT")
+ 
+I decided to add description field so as we add things we can annotate on what pages 
+they will be used.
+ 
+ 
+PERSON_ACCESS_TBL
+PERSON_ID *
+ROLE_TYPE * (above)
+ 
+ 
+USER_LOGIN_LOG_ENTRY_TBL
+ENTRY_USERNAME * (above)
+ENTRY_PASSWORD
+ENTRY_DATETIME 
+ENTRY_SUCCESS_IND ('Y' or 'N')
+ 
+BUTTON_REF_TBL
+BUTTON_REF_STRING
+BUTTON_FILENAME
+ 

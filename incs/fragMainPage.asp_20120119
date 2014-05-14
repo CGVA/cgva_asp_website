@@ -1,0 +1,30 @@
+<!-- BEGIN:fragMainPage.asp -->
+<head>
+</head>
+<table width='100%' border="0" cellpadding="0">
+  <tr bgcolor="#FF3300">
+    <td height="20" class="style8">Latest News</td>
+  </tr>
+
+<tr>
+<td>
+<p />
+<div style="font-size:larger; FONT-FAMILY: Arial;text-align:center;"><b>Spring League 2012 - Online Registration Opens Sunday 11/20/11. Click on the MyCGVA link to sign up.</b>
+<br /><br />
+</div>
+
+<div style="text-align:center;">
+<img src="images/CGVA_Spring_Flyer2.jpg" />
+</div>
+<p />
+
+
+</td>
+</tr>
+
+  <tr>
+    <td height="19" bgcolor="#FF3300" class="style8">CGVA Calendar </td>
+  </tr>
+</table>
+<iframe src="http://www.google.com/calendar/embed?showTitle=0&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=cgva%40cgva.org&amp;color=%232952A3&amp;src=usa__en%40holiday.calendar.google.com&amp;color=%23AB8B00&amp;src=p%23weather%40group.v.calendar.google.com&amp;color=%23A32929&amp;ctz=America%2FDenver" style=" border:solid 1px #777 " width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<!-- END:fragMainPage.asp -->

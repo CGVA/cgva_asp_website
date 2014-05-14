@@ -1,0 +1,41 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html40/strict.dtd">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <meta name="author" content="John Cross"><meta name="description" content="Tournament information for Last Dig in Denver hosted by CGVA."><meta name="keywords" content="CGVA, Volleyball, Last Dig, Denver, Gay, NAGVA, Tournament"><title>Schedule - Last Dig in Denver</title><link rel="stylesheet" type="text/css" media="all" href="main.css"><link rel="stylesheet" type="text/css" media="all" href="colorschemes/colorscheme1/colorscheme.css"><link rel="stylesheet" type="text/css" media="all" href="style.css"><script type="text/javascript" src="live_tinc.js"></script></head><body id="main_body"><div id="page_all"><div id="container"><div id="main_nav_container"><ul id="main_nav_list"><li><a class="main_nav_item" href="index.html">Home</a></li><li><a class="main_nav_item" href="Registration.aspx">Registration</a></li><li><a class="main_nav_active_item" href="Schedule.html">Schedule</a></li><li><a class="main_nav_item" href="facility.html">Facility</a></li><li><a class="main_nav_item" href="Hotel.html">Hotel</a></li><li><a class="main_nav_item" href="sponsors.html">Sponsors</a></li><li><a class="main_nav_item" href="aboutus.html">About Us</a></li></ul></div><div id="main_container"><div id="key_visual">&nbsp;
+                    </div>
+                    <div id="logo"></div>
+                    <div id="sub_container1">
+                    	<div id="sub_nav_container">
+	                    	<ul class="sub_nav_list">
+	                    		<li><a class="sub_nav_item" href="social.html">Social</a>
+	                    		</li>
+	                    		<li><a class="sub_nav_item" href="poolplay.html">Pool Court Usage</a>
+	                    		</li>
+	                    		<li><a class="sub_nav_item" href="poolplay.html">B Pool Schedule</a>
+	                    		</li>
+	                    		<li><a class="sub_nav_item" href="poolplay.html">BB Pool Schedule</a>
+	                    		</li>
+	                    		<li><a class="sub_nav_item" href="poolplay.html">Mod A Schedule</a>
+	                    		</li>
+	                    		<li><a class="sub_nav_item" href="tournament.html">Tournament</a>
+	                    		</li>
+	                    	</ul>
+                    	</div>
+                    </div>
+                    <div id="sub_container2">
+                    	<div id="slogan">
+                    	</div>
+                    	<div class="content" id="content_container">
+                    		<p><span style="font-size:14px;">Registration will be held at <a target="_blank" title="Hamburger Mary's" href="http://www.hamburgermarysdenver.com/">Hamburger Mary's</a> Friday evening and will also be available at the gym prior to pool play.&nbsp; Click on the Social menu to the left to get more information on Registration, Seeding, and Awards parties.</span><br>
+                    			</p>
+                    		<p><span style="font-size:14px;">For pool play, one pool will be beginning at approximately 8am on Saturday, while most pools will start play at 12:30pm.&nbsp; So unless you are in the unlucky group starting early, you'll get the morning off and can stay out a bit later Friday night!&nbsp; Click on the Pool Play menu to the left to get more details.</span>
+                    			</p>
+                    		<p><span style="font-size:14px;">Tournament brackets and standings will be posted after the Seeding party Saturday night.&nbsp; Click on the Tournament link to the left for further information.<br></span>
+                    			</p>
+                    		<p><br>
+                    			</p>
+                    	</div>
+                    </div>
+<div id="footer_text">Presented by CGVA, www.cgva.org.  Last Updated 1/11/10</div></div></div></div><!-- wfxbuild / 1.0 / layout6-15-l1 / 2010-01-12 03:05:30 CET--></body></html>

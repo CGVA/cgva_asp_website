@@ -1,0 +1,64 @@
+<!-- BEGIN:fragNavigation.asp -->
+<table width='175' align='left' border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+
+<tr>
+<td><a class='menuBlack' href="http://www.cgva.org/index.asp"><img src='../images/home_0.gif' border='0' name='home' alt='Home' id="home" onmouseover="imgOver('home')" onmouseout="imgOut('home')" /></a></td>
+</tr>
+
+<tr>
+<td><a class='menuBlack' href="http://www.cgva.org/MyCGVA/Login.aspx"><img src='../images/mycgva_0.gif' border='0' name='mycgva' alt='MyCGVA' id="mycgva" onmouseover="imgOver('mycgva')" onmouseout="imgOut('mycgva')" /></a></td>
+</tr>
+
+<!-- Dynamic pull of active events-->
+<%For i = 0 to rsActiveEventRows%>
+	<tr>
+	<td><a class='menuBlack' href="index.asp?EVENT_CD=<%=rsActiveEventData(0,i)%>"><img src='../images/<%=rsActiveEventData(3,i)%>_0.gif' border='0' name='v<%=Replace(rsActiveEventData(0,i)," ","")%>' id='v<%=Replace(rsActiveEventData(0,i)," ","")%>' alt='<%=rsActiveEventData(1,i) & " @ " & rsActiveEventData(2,i)%>' onmouseover="imgOver('v<%=Replace(rsActiveEventData(0,i)," ","")%>')" onmouseout="imgOut('v<%=Replace(rsActiveEventData(0,i)," ","")%>')" /></a></td>
+	</tr>
+<%Next%>
+
+<tr>
+<td><a class='menuBlack' href="index.asp?PAGE=Directions"><img src='../images/directions_0.gif' border='0' name='directions' alt='Directions' id="directions" onmouseover="imgOver('directions')" onmouseout="imgOut('directions')" /></a></td>
+</tr>
+
+<tr>
+<td><a class='menuBlack' href="index.asp?PAGE=LeagueRules"><img src='../images/league rules_0.gif' border='0' name='league_rules' alt='League Rules' id="league_rules" onmouseover="imgOver('league_rules')" onmouseout="imgOut('league_rules')" /></a></span></td>
+</tr>
+
+<tr>
+<td><a class='menuBlack' href="index.asp?PAGE=Officiating"><img src='../images/officiating_0.gif' border='0' name='officiating' alt='Officiating' id="officiating" onmouseover="imgOver('officiating')" onmouseout="imgOut('officiating')" /></a></td>
+</tr>
+
+<!--
+<tr>
+<td><a class='menuBlack' href="index.asp?PAGE=LastDig"><img src='../images/last dig_0.gif' border='0' name='last_dig' alt='Last Dig' id="last_dig" onmouseover="imgOver('last_dig')" onmouseout="imgOut('last_dig')" /></a></td>
+</tr>
+-->
+
+<!-- JPC 5/2/2009
+<tr>
+<td><a class='menuBlack' href="index.asp?PAGE=Volleypalooza"><img src='../images/volleypalooza_0.gif' border='0' name='volleypalooza' alt='Volleypalooza' id="volleypalooza" onmouseover="imgOver('volleypalooza')" onmouseout="imgOut('volleypalooza')" /></a></td>
+</tr>
+-->
+<tr>
+<td><a class='menuBlack' href="index.asp?PAGE=Mission"><img src='../images/about us_0.gif' border='0' name='about_us' alt='About Us' id="about_us" onmouseover="imgOver('about_us')" onmouseout="imgOut('about_us')" /></a></td>
+</tr>
+
+<tr>
+<td><a class='menuBlack' href="index.asp?PAGE=Photos"><img src='../images/photos_0.gif' border='0' name='photos' alt='Photos' id="photos" onmouseover="imgOver('photos')" onmouseout="imgOut('photos')" /></a></td>
+</tr>
+
+<tr>
+<td><a class='menuBlack' href="index.asp?PAGE=Links"><img src='../images/links_0.gif' border='0' name='links' alt='Links' id="links" onmouseover="imgOver('links')" onmouseout="imgOut('links')" /></a></td>
+</tr>
+
+<tr>
+<td><a class='menuBlack' href="index.asp?PAGE=MatchMate"><img src='../images/match mate_0.gif' border='0' name='matchmate' alt='Match Mate' id="matchmate" onmouseover="imgOver('matchmate')" onmouseout="imgOut('matchmate')" /></a></td>
+</tr>
+
+<tr>
+<td><a class='menuBlack' href="index.asp?PAGE=ContactUs"><img src='../images/contact us_0.gif' border='0' name='contact_us' alt='Contact Us' id="contact_us" onmouseover="imgOver('contact_us')" onmouseout="imgOut('contact_us')" /></td>
+</tr>
+
+</table>
+<!-- END:fragNavigation.asp -->
+

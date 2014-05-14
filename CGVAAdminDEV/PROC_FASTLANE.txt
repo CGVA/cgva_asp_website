@@ -1,0 +1,129 @@
+USE [cgva]
+GO
+
+/****** Object:  StoredProcedure [dbo].[FASTLANE]    Script Date: 02/02/2008 11:21:27 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+/******	
+- Report/Screen to show Full Player list per Event by Division and Team.  This 
+	would show the breakdown of players by team and division with emails/contact 
+	info.
+******/
+
+/****** Object:  StoredProcedure [dbo].[NewStoredProcedure]    Script Date: 12/28/2007 11:02:35 ******/
+ALTER PROCEDURE dbo.FASTLANE
+
+--@EVENT_CD varchar(6) = ''
+--@START_DATE smalldatetime,
+--@STOP_DATE smalldatetime
+
+AS
+
+create table dbo.#TEMP
+(PERSON_ID 		int,
+FIRST_NAME 		[varchar](25),
+LAST_NAME 		[varchar](35),
+RATING_SCORE		decimal(8,2),
+--BL_FALL2007		char(1),
+DU_SPRING2008		char(1),
+BL_SPRING2008		char(1),
+BL_SPRING2008_FEES_COLLECTED	money,
+DU_SPRING2008_FEES_COLLECTED	money
+
+)
+
+
+insert into dbo.#TEMP
+		(PERSON_ID)
+	SELECT 	DISTINCT(PERSON_ID)
+	FROM 	REGISTRATION_TBL
+	WHERE 	EVENT_CD IN ('2007FL','2008SL','2008SD')
+
+update 		t
+set		t.FIRST_NAME = p.FIRST_NAME,
+		t.LAST_NAME = p.LAST_NAME
+		FROM		dbo.#TEMP t
+LEFT JOIN	db_accessadmin.PERSON_TBL p
+ON		t.PERSON_ID = p.PERSON_ID
+
+update 		t
+set		t.RATING_SCORE= r.RATING_SCORE
+FROM		dbo.#TEMP t
+LEFT JOIN	RATINGS_TBL r
+ON		t.PERSON_ID = r.PERSON_ID
+WHERE           r.EFF_DATE = 	(SELECT MAX(EFF_DATE) 
+				FROM RATINGS_TBL 
+				WHERE PERSON_ID = t.PERSON_ID)
+
+--registered for fall bladium?
+--update		t
+--set		t.BL_FALL2007 = Replace(r.REGISTRATION_IND,'N','')
+--FROM		dbo.#TEMP t
+--LEFT JOIN	REGISTRATION_TBL r
+--ON		t.PERSON_ID = r.PERSON_ID
+--WHERE           r.EVENT_CD = '2007FL'
+
+--registered for spring bladium?
+update		t
+set		t.BL_SPRING2008 = Replace(r.REGISTRATION_IND,'N','')
+FROM		dbo.#TEMP t
+LEFT JOIN	REGISTRATION_TBL r
+ON		t.PERSON_ID = r.PERSON_ID
+WHERE           r.EVENT_CD = '2008SL'
+
+--registered for spring DU?
+update		t
+set		t.DU_SPRING2008 = Replace(r.REGISTRATION_IND,'N','')
+FROM		dbo.#TEMP t
+LEFT JOIN	REGISTRATION_TBL r
+ON		t.PERSON_ID = r.PERSON_ID
+WHERE           r.EVENT_CD = '2008SD'
+
+--bladium 2008 fees collected
+update 		t 
+set		t.BL_SPRING2008_FEES_COLLECTED = 	(SELECT 	SUM(r.DOLLARS_COLLECTED + r.CHECK_AMT_COLLECTED - r.DOLLARS_OFF_COUPON)      
+							FROM		REGISTRATION_TBL r
+							WHERE           t.PERSON_ID = r.PERSON_ID
+							AND		r.EVENT_CD = '2008SL')
+	FROM dbo.#TEMP t
+
+--DU 2008 fees collected
+update 		t 
+set		t.DU_SPRING2008_FEES_COLLECTED = 	(SELECT 	SUM(r.DOLLARS_COLLECTED + r.CHECK_AMT_COLLECTED - r.DOLLARS_OFF_COUPON)      
+							FROM		REGISTRATION_TBL r
+							WHERE           t.PERSON_ID = r.PERSON_ID
+							AND		r.EVENT_CD = '2008SD')
+	FROM dbo.#TEMP t
+
+
+
+
+
+SELECT	 	LAST_NAME as 'LAST NAME',
+		FIRST_NAME as 'FIRST NAME',
+		RATING_SCORE as 'RATING',
+		--BL_FALL2007 as 'REGISTERED - BLADIUM 2007',
+		DU_SPRING2008 as 'REGISTERED - DU 2008',
+		DU_SPRING2008_FEES_COLLECTED  as 'FEES - DU 2008',		
+		BL_SPRING2008 as 'REGISTERED - BLADIUM 2008',
+		BL_SPRING2008_FEES_COLLECTED  as 'FEES - BLADIUM 2008'	
+FROM		dbo.#TEMP
+WHERE		((DU_SPRING2008 = 'Y' AND DU_SPRING2008_FEES_COLLECTED >= 55)
+		OR
+		(BL_SPRING2008 = 'Y' AND BL_SPRING2008_FEES_COLLECTED = 75))
+ORDER BY 	LAST_NAME,
+		FIRST_NAME
+
+
+
+
+
+GO
+

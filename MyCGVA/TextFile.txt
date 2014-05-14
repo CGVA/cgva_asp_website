@@ -1,0 +1,14 @@
+﻿request password page
+My events
+My Information
+
+reset password page
+
+X- increase password field length in user_login table to 20 characters
+make sure duplicate emails arent in the person table
+make sure there is a duplicate check for new registration email addresses
+
+PROD ONLY
+add TSHIRT size to person table
+modify USER_LOGIN_LOG_ENTRY_TBL two field sizes
+

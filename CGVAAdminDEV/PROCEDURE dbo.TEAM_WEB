@@ -1,0 +1,82 @@
+USE [cgva]
+GO
+
+/****** Object:  StoredProcedure [dbo].[TEAM_WEB]    Script Date: 02/02/2008 11:23:18 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+/******	
+- 	Report/Screen to show Full Player list per Event by Division and Team.  This 
+	would show the breakdown of players by team and division with emails/contact 
+	info and all paid fees (minus $ off coupons) for this event.
+******/
+
+/****** Object:  StoredProcedure [dbo].[NewStoredProcedure]    Script Date: 12/28/2007 11:02:35 ******/
+CREATE PROCEDURE dbo.TEAM_WEB
+
+@EVENT_CD varchar(6),
+@DIVISION_ID int
+
+AS
+
+create table dbo.#TEMP
+(EVENT_CD		varchar(6),
+DIVISION_ID		int,
+TEAM_ID			int,
+TEAM_CD 		varchar(3),    
+TEAM_NAME 		varchar(50),
+CAPTAIN_IND		char(1),
+CERTIFIED_REF_IND	char(1),
+PERSON_ID 		int,
+FIRST_NAME 		[varchar](25),
+LAST_NAME 		[varchar](35))
+
+insert into dbo.#TEMP
+	(TEAM_CD,
+	TEAM_NAME,
+	CAPTAIN_IND,
+	CERTIFIED_REF_IND,
+	PERSON_ID)
+SELECT 		t.TEAM_CD,
+		t.TEAM_NAME,
+		tm.CAPTAIN_IND,
+		tm.CERTIFIED_REF_IND,
+		tm.PERSON_ID
+FROM 		DIVISION_TBL d
+LEFT JOIN	TEAM_TBL t ON d.DIVISION_ID = t.DIVISION_ID
+LEFT JOIN	TEAM_MEMBER_TBL tm ON t.TEAM_ID = tm.TEAM_ID
+WHERE	 	d.EVENT_CD = @EVENT_CD
+AND 		d.DIVISION_ID = @DIVISION_ID
+
+
+update 		t
+set		t.FIRST_NAME = p.FIRST_NAME,
+		t.LAST_NAME = p.LAST_NAME
+FROM		dbo.#TEMP t
+LEFT JOIN	db_accessadmin.PERSON_TBL p
+ON		t.PERSON_ID = p.PERSON_ID
+
+				
+SELECT	 	IsNull(TEAM_CD,'') as 'TEAM CODE',
+		IsNull(TEAM_NAME,'') as 'TEAM NAME',
+		Replace(CAPTAIN_IND,'N','') as 'CAPTAIN',
+		Replace(CERTIFIED_REF_IND,'N','') as 'CERTIFIED REF',
+		LAST_NAME as 'LAST NAME',
+		FIRST_NAME as 'FIRST NAME'
+FROM		dbo.#TEMP
+ORDER BY 	TEAM_CD,
+		TEAM_NAME,
+		CAPTAIN_IND DESC,
+		LAST_NAME,
+		FIRST_NAME
+
+DROP TABLE dbo.#TEMP
+
+GO
+

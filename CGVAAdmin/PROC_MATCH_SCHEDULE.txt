@@ -1,0 +1,134 @@
+USE [cgva]
+GO
+
+/****** Object:  StoredProcedure [dbo].[SCHEDULE]    Script Date: 02/02/2008 11:22:57 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+--this proc will get the match schedule for a selected event/division
+--used for display on the main website schedule links
+
+
+/****** Object:  StoredProcedure [dbo].[NewStoredProcedure]    Script Date: 12/28/2007 11:02:35 ******/
+ALTER PROCEDURE dbo.MATCH_SCHEDULE
+
+@EVENT_CD varchar(6),
+@DIVISION_ID int
+
+AS
+
+CREATE TABLE dbo.#TEMP
+(
+MATCH_ID 		    int,     
+WEEK_ID 		    int,  
+TIME_ID 		    int,      
+COURT_NUM 		    smallint,      
+TEAM1_TEAM_ID 		int,      
+TEAM2_TEAM_ID 		int,      
+REF_TEAM_ID 		int,     
+TEAM1_NAME		    varchar(300), 
+TEAM2_NAME		    varchar(300),
+REF_NAME		    varchar(300),
+TEAM1_DIVISION_ID  	int,
+TEAM2_DIVISION_ID   int,
+REF_DIVISION_ID     int,
+TEAM1_DIVISION_CD	varchar(6),
+TEAM2_DIVISION_CD	varchar(6),
+REF_DIVISION_CD		varchar(6),
+MATCH_START_TIME	varchar(7),
+WEEK_NUM    		smallint,
+vDATE			    datetime
+)
+
+insert into dbo.#TEMP(
+		    MATCH_ID,
+		    TIME_ID,
+		    WEEK_ID,
+		    COURT_NUM,
+		    TEAM1_TEAM_ID,
+		    TEAM2_TEAM_ID,
+		    REF_TEAM_ID,
+		    WEEK_NUM,
+		    vDATE,
+		    MATCH_START_TIME
+		)
+select 
+		    ms.MATCH_ID,
+		    ms.TIME_ID,
+		    ms.WEEK_ID,
+		    ms.COURT_NUM,
+		    ms.TEAM1_TEAM_ID,
+		    ms.TEAM2_TEAM_ID,
+		    ms.REF_TEAM_ID,
+		    w.WEEK_NUM,
+		    w.[DATE],
+		    t.MATCH_START_TIME
+from 		MATCH_SCHEDULE_TBL ms
+left join 	TIME_TBL t on ms.TIME_ID = t.TIME_ID
+left join 	WEEK_TBL w on ms.WEEK_ID = w.WEEK_ID
+WHERE 		w.EVENT_CD = @EVENT_CD 
+AND 		t.EVENT_CD = @EVENT_CD 
+
+
+--update team names/division information
+update 	    tt
+--set 	    tt.TEAM1_NAME = d.DIVISION_CD + '/' + t.TEAM_CD + '(' + t.TEAM_NAME + ')',
+set 	    tt.TEAM1_NAME = t.TEAM_CD,
+            tt.TEAM1_DIVISION_ID = t.DIVISION_ID,
+	        tt.TEAM1_DIVISION_CD = d.DIVISION_CD
+from	    dbo.#TEMP tt
+left join   TEAM_TBL t on tt.TEAM1_TEAM_ID = t.TEAM_ID
+left join   DIVISION_TBL d on t.DIVISION_ID = d.DIVISION_ID
+
+update 	    tt
+--set 	    tt.TEAM2_NAME = d.DIVISION_CD + '/' + t.TEAM_CD + '(' + t.TEAM_NAME + ')',
+set 	    tt.TEAM2_NAME = t.TEAM_CD,
+            tt.TEAM2_DIVISION_ID = t.DIVISION_ID,
+	        tt.TEAM2_DIVISION_CD = d.DIVISION_CD
+from	    dbo.#TEMP tt
+left join   TEAM_TBL t on tt.TEAM2_TEAM_ID = t.TEAM_ID
+left join   DIVISION_TBL d on t.DIVISION_ID = d.DIVISION_ID
+
+update 	    tt
+--set 	    tt.REF_NAME = d.DIVISION_CD + '/' + t.TEAM_CD + '(' + t.TEAM_NAME + ')',
+set 	    tt.REF_NAME = t.TEAM_CD,
+            tt.REF_DIVISION_ID = t.DIVISION_ID,
+	        tt.REF_DIVISION_CD = d.DIVISION_CD
+from	    dbo.#TEMP tt
+left join   TEAM_TBL t on tt.REF_TEAM_ID = t.TEAM_ID
+left join   DIVISION_TBL d on t.DIVISION_ID = d.DIVISION_ID
+
+
+--get rid of any information that isnt for the requested division id
+--cross divisional play or reffing should still appear in this list
+
+delete from     dbo.#TEMP
+where           TEAM1_DIVISION_ID != @DIVISION_ID
+and             TEAM2_DIVISION_ID != @DIVISION_ID
+AND             REF_DIVISION_ID   != @DIVISION_ID   
+
+SELECT 	    --DIVISION_CD,
+            CAST(WEEK_NUM AS VARCHAR(50)) + ' (' + CONVERT(varchar,vDATE,101) + ')',
+
+
+            MATCH_START_TIME,
+            TEAM1_NAME,
+            TEAM2_NAME,
+            REF_NAME,
+            COURT_NUM            
+FROM	    dbo.#TEMP
+ORDER BY    --DIVISION_CD,
+            WEEK_NUM,
+            MATCH_START_TIME,
+            COURT_NUM,
+            TEAM1_NAME,
+            TEAM2_NAME
+
+
+
+GO
+

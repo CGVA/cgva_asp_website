@@ -1,0 +1,1028 @@
+<%@ Language=VBScript %>
+
+<!-- #include virtual = "/incs/dbConnection.inc" -->
+<%
+	Response.Expires = -1
+	Response.Buffer = true
+	Response.Clear
+	Response.CacheControl = "no-cache"
+	Server.ScriptTimeout = 600
+
+''	If Session("USER_ID") = "" then
+''		Session("Err") = "Your session has timed out. Please log in again."
+''		Response.Redirect("/logout.asp")
+''	End If
+
+	sql = "SELECT FIRST_CONTACT_ID,FIRST_CONTACT_DESC FROM FIRST_CONTACT_TBL "_
+		& "ORDER BY UPPER(FIRST_CONTACT_DESC)"
+
+	set rs = cn.Execute(sql)
+
+	if not rs.EOF then
+		rsFCData = rs.GetRows
+		rsFCRows = UBound(rsFCData,2)
+	else
+		rw("Error:Missing First Contacts.")
+		Response.End
+	end if
+
+%>
+
+<!-- #include virtual="/incs/fragHeader.asp" -->
+<title>CGVA - Personnel Administration</title>
+
+<script language='JavaScript'>
+<!--
+
+function echeck(str) {
+
+		var at="@";
+		var dot=".";
+		var lat=str.indexOf(at);
+		var lstr=str.length;
+		var ldot=str.indexOf(dot);
+		if (str.indexOf(at)==-1)
+		{
+		   alert("Invalid E-mail ID");
+		   return false;
+		}
+
+		if (str.indexOf(at)==-1 || str.indexOf(at)==0 || str.indexOf(at)==lstr)
+		{
+		   alert("Invalid E-mail ID");
+		   return false;
+		}
+
+		if (str.indexOf(dot)==-1 || str.indexOf(dot)==0 || str.indexOf(dot)==lstr){
+		    alert("Invalid E-mail ID");
+		    return false;
+		}
+
+		 if (str.indexOf(at,(lat+1))!=-1){
+		    alert("Invalid E-mail ID");
+		    return false;
+		 }
+
+		 if (str.substring(lat-1,lat)==dot || str.substring(lat+1,lat+2)==dot){
+		    alert("Invalid E-mail ID");
+		    return false;
+		 }
+
+		 if (str.indexOf(dot,(lat+2))==-1){
+		    alert("Invalid E-mail ID");
+		    return false;
+		 }
+
+		 if (str.indexOf(" ")!=-1){
+		    alert("Invalid E-mail ID");
+		    return false;
+		 }
+
+ 		 return true;
+	}
+
+function ValidateEmail(emailID){
+
+	if (echeck(emailID)==false)
+	{
+		//emailID.focus();
+		return false;
+	}
+	return true;
+ }
+
+ function validateInsert()
+{
+
+
+	if(INSERT.FIRST_NAME.value == "")
+	{
+		alert("Please enter a first name.");
+		INSERT.FIRST_NAME.focus();
+		return false;
+	}
+
+	if(INSERT.LAST_NAME.value == "")
+	{
+		alert("Please enter a last name.");
+		INSERT.LAST_NAME.focus();
+		return false;
+	}
+
+	if(INSERT.EMAIL.value != "")
+	{
+		ValidateEmail(INSERT.EMAIL.value);
+	}
+
+	if(INSERT.FIRST_CONTACT_ID.selectedIndex == 0)
+	{
+		alert("Please enter how this person was first contacted.");
+		INSERT.FIRST_CONTACT_ID.focus();
+		return false;
+	}
+
+	//alert("error check completed.");
+	//return false;
+	return true;
+}
+
+
+////////////////////////////////////////////////////////////////////////////
+
+function validateModify()
+{
+	var selectedValue = "x";
+	if(MODIFY.ID.length > 1)
+	{
+
+		for(i = 0;i < MODIFY.ID.length;i++)
+		{
+
+			if(MODIFY.ID[i].checked)
+			{
+				selectedValue = i;
+
+				if(MODIFY.FIRST_NAME[selectedValue].value == "")
+				{
+					alert("Please enter a first name for the record being modified.");
+					MODIFY.FIRST_NAME[selectedValue].focus();
+					return false;
+				}
+
+
+				if(MODIFY.LAST_NAME[selectedValue].value == "")
+				{
+					alert("Please enter a last name for the record being modified.");
+					MODIFY.LAST_NAME[selectedValue].focus();
+					return false;
+				}
+
+				if(MODIFY.EMAIL[selectedValue].value != "")
+				{
+					ValidateEmail(MODIFY.EMAIL[selectedValue].value);
+					//alert("Please enter a last name for the record being modified.");
+					//MODIFY.LAST_NAME[selectedValue].focus();
+					//return false;
+				}
+
+				/* not needed for modify as only choices are displayed (not -select-)
+				if(MODIFY.FIRST_CONTACT_ID[selectedValue].selectedIndex == 0)
+				{
+					alert("Please enter a first contact ID for the record being modified.");
+					MODIFY.FIRST_CONTACT_ID[selectedValue].focus();
+					return false;
+				}
+				*/
+			}
+
+
+		}
+
+		if(selectedValue == "x")
+		{
+			alert("Please select a record to modify.");
+			MODIFY.ID[0].focus();
+			return false;
+		}
+
+
+	}
+	else
+	{
+
+		if(MODIFY.ID.checked)
+		{
+			selectedValue = 1;
+		}
+
+
+		if(selectedValue == "x")
+		{
+			alert("Please select a record to modify.");
+			MODIFY.ID.focus();
+			return false;
+		}
+
+		if(MODIFY.FIRST_NAME.value == "")
+		{
+			alert("Please enter a first name.");
+			MODIFY.FIRST_NAME.focus();
+			return false;
+		}
+
+		if(MODIFY.LAST_NAME.value == "")
+		{
+			alert("Please enter a last name.");
+			MODIFY.LAST_NAME.focus();
+			return false;
+		}
+
+		if(MODIFY.EMAIL.value == "")
+		{
+			ValidateEmail(MODIFY.EMAIL.value);
+			//alert("Please enter a last name.");
+			//MODIFY.EMAIL.focus();
+			//return false;
+		}
+
+		/* not needed for modify as only choices are displayed (not -select-)
+		if(MODIFY.FIRST_CONTACT_ID.selectedIndex == 0)
+		{
+			alert("Please enter a first contact ID.");
+			MODIFY.LAST_NAME.focus();
+			return false;
+		}
+		*/
+
+	}
+
+	//alert("error check completed.");
+	//return false;
+	return true;
+}
+
+function extracheck(obj)
+{
+	If(obj.disabled == true)
+	{
+		return !obj.disabled;
+	}
+	Else
+	{
+		return obj.disabled;
+	}
+}
+
+function disableCheck(obj)
+{
+
+	rowValue = obj.value;
+	var idValue = eval("MODIFY.ID" + rowValue);
+	//var PERSON_ID = eval("MODIFY.PERSON_ID" + rowValue);
+	var FIRST_NAME = eval("MODIFY.FIRST_NAME" + rowValue);
+	var LAST_NAME = eval("MODIFY.LAST_NAME" + rowValue);
+	var EMAIL = eval("MODIFY.EMAIL" + rowValue);
+	var BIRTH_DATE = eval("MODIFY.BIRTH_DATE" + rowValue);
+	var GENDER = eval("MODIFY.GENDER" + rowValue);
+	var PRIMARY_PHONE_NUM = eval("MODIFY.PRIMARY_PHONE_NUM" + rowValue);
+	var PHONE2 = eval("MODIFY.PHONE2" + rowValue);
+	var PHONE3 = eval("MODIFY.PHONE3" + rowValue);
+	var ADDRESS_LINE1 = eval("MODIFY.ADDRESS_LINE1" + rowValue);
+	var ADDRESS_LINE2 = eval("MODIFY.ADDRESS_LINE2" + rowValue);
+	var CITY = eval("MODIFY.CITY" + rowValue);
+	var STATE = eval("MODIFY.STATE" + rowValue);
+	var ZIP = eval("MODIFY.ZIP" + rowValue);
+	var EMERGENCY_FIRST_NAME = eval("MODIFY.EMERGENCY_FIRST_NAME" + rowValue);
+	var EMERGENCY_LAST_NAME = eval("MODIFY.EMERGENCY_LAST_NAME" + rowValue);
+	var EMERGENCY_PHONE = eval("MODIFY.EMERGENCY_PHONE" + rowValue);
+	var SUPPRESS_EMAIL_IND = eval("MODIFY.SUPPRESS_EMAIL_IND" + rowValue);
+	var SUPPRESS_SNAIL_MAIL_IND = eval("MODIFY.SUPPRESS_SNAIL_MAIL_IND" + rowValue);
+	var SUPPRESS_LAST_NAME_IND = eval("MODIFY.SUPPRESS_LAST_NAME_IND" + rowValue);
+	var FIRST_CONTACT_ID = eval("MODIFY.FIRST_CONTACT_ID" + rowValue);
+	var PHOTO_FILENAME = eval("MODIFY.PHOTO_FILENAME" + rowValue);
+	//var DATE_ADDED = eval("MODIFY.DATE_ADDED" + rowValue);
+	//var USER_ADDED = eval("MODIFY.USER_ADDED" + rowValue);
+	//var DATE_UPDATED = eval("MODIFY.DATE_UPDATED" + rowValue);
+	//var USER_UPDATED = eval("MODIFY.USER_UPDATED" + rowValue);
+	//var LOGICAL_DELETE_IND = eval("MODIFY.LOGICAL_DELETE_IND" + rowValue);
+	//var DATE_DELETED = eval("MODIFY.DATE_DELETED" + rowValue);
+	//var USER_DELETED = eval("MODIFY.USER_DELETED" + rowValue);
+	var NAGVA_RATING = eval("MODIFY.NAGVA_RATING" + rowValue);
+	var LOGICAL_DELETE_IND = eval("MODIFY.LOGICAL_DELETE_IND" + rowValue);
+
+	if(idValue.checked)
+	{
+		//PERSON_ID.disabled = false;
+		FIRST_NAME.disabled = false;
+		LAST_NAME.disabled = false;
+		EMAIL.disabled = false;
+		BIRTH_DATE.disabled = false;
+		GENDER.disabled = false;
+		PRIMARY_PHONE_NUM.disabled = false;
+		PHONE2.disabled = false;
+		PHONE3.disabled = false;
+		ADDRESS_LINE1.disabled = false;
+		ADDRESS_LINE2.disabled = false;
+		CITY.disabled = false;
+		STATE.disabled = false;
+		ZIP.disabled = false;
+		EMERGENCY_FIRST_NAME.disabled = false;
+		EMERGENCY_LAST_NAME.disabled = false;
+		EMERGENCY_PHONE.disabled = false;
+		SUPPRESS_EMAIL_IND.disabled = false;
+		SUPPRESS_SNAIL_MAIL_IND.disabled = false;
+		SUPPRESS_LAST_NAME_IND.disabled = false;
+		FIRST_CONTACT_ID.disabled = false;
+		PHOTO_FILENAME.disabled = false;
+		//DATE_ADDED.disabled = false;
+		//USER_ADDED.disabled = false;
+		//DATE_UPDATED.disabled = false;
+		//USER_UPDATED.disabled = false;
+		//LOGICAL_DELETE_IND.disabled = false;
+		//DATE_DELETED.disabled = false;
+		//USER_DELETED.disabled = false;
+		NAGVA_RATING.disabled = false;
+		LOGICAL_DELETE_IND.disabled = false;
+	}
+	else
+	{
+		//PERSON_ID.disabled = true;
+		FIRST_NAME.disabled = true;
+		LAST_NAME.disabled = true;
+		EMAIL.disabled = true;
+		BIRTH_DATE.disabled = true;
+		GENDER.disabled = true;
+		PRIMARY_PHONE_NUM.disabled = true;
+		PHONE2.disabled = true;
+		PHONE3.disabled = true;
+		ADDRESS_LINE1.disabled = true;
+		ADDRESS_LINE2.disabled = true;
+		CITY.disabled = true;
+		STATE.disabled = true;
+		ZIP.disabled = true;
+		EMERGENCY_FIRST_NAME.disabled = true;
+		EMERGENCY_LAST_NAME.disabled = true;
+		EMERGENCY_PHONE.disabled = true;
+		SUPPRESS_EMAIL_IND.disabled = true;
+		SUPPRESS_SNAIL_MAIL_IND.disabled = true;
+		SUPPRESS_LAST_NAME_IND.disabled = true;
+		FIRST_CONTACT_ID.disabled = true;
+		PHOTO_FILENAME.disabled = true;
+		//DATE_ADDED.disabled = true;
+		//USER_ADDED.disabled = true;
+		//DATE_UPDATED.disabled = true;
+		//USER_UPDATED.disabled = true;
+		//LOGICAL_DELETE_IND.disabled = true;
+		//DATE_DELETED.disabled = true;
+		//USER_DELETED.disabled = true;
+		NAGVA_RATING.disabled = true;
+		LOGICAL_DELETE_IND.disabled = true;
+	}
+
+}
+
+//-->
+
+</script>
+</head>
+<!-- #include virtual="/incs/rw.asp" -->
+<!-- #include virtual="/incs/header.asp" -->
+
+<!-- #include virtual="/incs/fragHeaderGraphics.asp" -->
+
+<tr>
+<td valign='top'>
+	<div align='center'>
+	<font class='cfont12'>
+	<b><u>CGVA - Personnel Administration</u></b>
+	</font>
+	</div>
+
+	<br />
+
+	<%
+		'call subroutines'
+		If Request("choice") = "" then
+			Call chooseOption()
+			Call closePage()
+		ElseIf Request("choice") = "modify" then
+			Call modifyRecord()
+			Call closePage()
+		ElseIf Request("choice") = "insert" then
+			Call insertRecord()
+			Call closePage()
+		End If
+
+
+	'******************************************'
+
+	Sub chooseOption()
+	%>
+
+		<form name="CHOICE" method="POST" action="Person.asp">
+
+		<table align='center' border='0' cellpadding='3'>
+
+		<tr>
+		<td>
+			<font class='cfont10'>
+			<input type="radio" name="choice" value="insert" checked> Add New Person
+			</font>
+		</td>
+		</tr>
+
+		<tr>
+		<td>
+			<font class='cfont10'>
+			<input type="radio" name="choice" value="modify"> Modify Existing Person
+			</font>
+		</td>
+		</tr>
+
+		<tr>
+		<td>
+			<input type="submit" value="Next ->">
+		</td>
+		</tr>
+
+		</table>
+
+		</form>
+
+		<table align='center' border='0' cellpadding='3'>
+
+
+		<%
+			If Session("admin") = "insert" then
+				rw("<tr>")
+				rw("<td>")
+					rw("<font class='cfontSuccess10'>")
+					rw("<b>The new person was added successfully.</b>")
+					rw("</font>")
+				rw("</td>")
+				rw("</tr>")
+
+				Session("admin") = ""
+
+			ElseIf Session("admin") = "insertFail" then
+				rw("<tr>")
+				rw("<td>")
+					rw("<font class='cfontError10'>")
+					rw("<b>A person with the same name already exists.</b>")
+					rw("</font>")
+				rw("</td>")
+				rw("</tr>")
+
+				Session("admin") = ""
+
+
+			ElseIf Session("admin") = "modify" then
+
+				notUpdated = Request("notUpdated")
+
+				If notUpdated = "" Then
+					rw("<tr>")
+					rw("<td>")
+						rw("<font class='cfontSuccess10'>")
+						rw("<b>All person information was modified successfully.</b>")
+						rw("</font>")
+					rw("</td>")
+					rw("</tr>")
+				Else
+					rw("<tr>")
+					rw("<td>")
+						rw("<font class='cfontSuccess10'>")
+						rw("<b>All person information was modified successfully, <font class='cfontError10'>except</font> for these IDs: " & notUpdated & "</b>")
+						rw("</font>")
+					rw("</td>")
+					rw("</tr>")
+				End If
+
+				Session("admin") = ""
+
+			ElseIf Session("Err") <> "" then
+				rw(Session("Err"))
+				Session("Err") = ""
+			End If
+		%>
+
+		</table>
+
+	<%
+	End Sub
+
+	'******************************************'
+
+	Sub modifyRecord()
+
+		SQL = "SELECT PERSON_ID, "_
+			& "FIRST_NAME, "_
+			& "LAST_NAME, "_
+			& "EMAIL, "_
+			& "Replace(CONVERT(varchar(12),BIRTH_DATE,101),'01/01/1900','') as 'BIRTH_DATE', "_
+			& "GENDER, "_
+			& "PRIMARY_PHONE_NUM, "_
+			& "[2ND_PHONE_NUM] as 'PHONE2', "_
+			& "[3RD_PHONE_NUM] as 'PHONE3', "_
+			& "ADDRESS_LINE1, "_
+			& "ADDRESS_LINE2, "_
+			& "CITY, "_
+			& "STATE, "_
+			& "ZIP, "_
+			& "EMERGENCY_FIRST_NAME, "_
+			& "EMERGENCY_LAST_NAME, "_
+			& "EMERGENCY_PHONE, "_
+			& "SUPPRESS_EMAIL_IND, "_
+			& "SUPPRESS_SNAIL_MAIL_IND, "_
+			& "SUPPRESS_LAST_NAME_IND, "_
+			& "FIRST_CONTACT_ID, "_
+			& "PHOTO_FILENAME, "_
+			& "NAGVA_RATING, "_
+			& "LOGICAL_DELETE_IND "_
+			& "FROM 		db_accessadmin.PERSON_TBL "_
+			& "ORDER BY 	LOGICAL_DELETE_IND, UPPER(LAST_NAME),UPPER(FIRST_NAME)"
+		rw("<!-- SQL: " & SQL & " -->")
+		Set rs = cn.Execute(SQL)
+
+	%>
+
+		<div align='center'>
+		<font class='cfont10'><b>Select any record(s) to modify, and make any necessary changes.</b></font>
+		<br /><br />
+
+		<%
+	''		If rs.EOF then
+	''			rw("<font class='cfontError12'>* No data available to modify. *</font>")
+	''			Response.End
+	''		End If
+		%>
+
+		</div>
+
+		<form name='MODIFY' method='post' action='Person_Submit.asp'>
+
+
+		<table bgcolor='#9999FF' cellspacing='1' align='center' cellpadding='3'>
+
+		<tr>
+		<td colspan='23'><input type='submit' name="submitChoice" value='Modify Person(s)' onClick="return validateModify();"></td>
+		</tr>
+
+		<tr bgcolor='#000066'>
+		<th valign='bottom'><font class='cfontWhite10'><b>Modify</b></font></th>
+		<th valign='bottom'><font class='cfontWhite10'><b>Person ID</b></font></th>
+		<th valign='bottom'><font class='cfontWhite10'><b>First Name</b></font></th>
+		<th valign='bottom'><font class='cfontWhite10'><b>Last Name</b></font></th>
+		<th valign='bottom'><font class='cfontWhite10'><b>Email</b></font></th>
+		<th valign='bottom'><font class='cfontWhite10'><b>Birth Date</b></font></th>
+		<th valign='bottom'><font class='cfontWhite10'><b>Gender</b></font></th>
+		<th valign='bottom'><font class='cfontWhite10'><b>Primary Phone</b></font></th>
+		<th valign='bottom'><font class='cfontWhite10'><b>2nd Phone</b></font></th>
+		<th valign='bottom'><font class='cfontWhite10'><b>3rd Phone</b></font></th>
+		<th valign='bottom'><font class='cfontWhite10'><b>Address Line 1</b></font></th>
+		<th valign='bottom'><font class='cfontWhite10'><b>Address Line 2</b></font></th>
+		<th valign='bottom'><font class='cfontWhite10'><b>City</b></font></th>
+		<th valign='bottom'><font class='cfontWhite10'><b>State</b></font></th>
+		<th valign='bottom'><font class='cfontWhite10'><b>Zip</b></font></th>
+		<th valign='bottom'><font class='cfontWhite10'><b>Emergency First Name</b></font></th>
+		<th valign='bottom'><font class='cfontWhite10'><b>Emergency Last Name</b></font></th>
+		<th valign='bottom'><font class='cfontWhite10'><b>Emergency Phone</b></font></th>
+		<th valign='bottom'><font class='cfontWhite10'><b>Suppress Email</b></font></th>
+		<th valign='bottom'><font class='cfontWhite10'><b>Suppress Snail Mail</b></font></th>
+		<th valign='bottom'><font class='cfontWhite10'><b>Suppress Last Name</b></font></th>
+		<th valign='bottom'><font class='cfontWhite10'><b>First Contact</b></font></th>
+		<th valign='bottom'><font class='cfontWhite10'><b>Photo Filename</b></font></th>
+		<th valign='bottom'><font class='cfontWhite10'><b>NAGVA Rating</b></font></th>
+		<th valign='bottom'><font class='cfontWhite10'><b>Inactive?</b></font></th>
+		</tr>
+
+		<%
+			Do While not rs.EOF
+
+
+				ODD_ROW = NOT ODD_ROW
+
+				If ODD_ROW Then
+					BGCOLOR = "#FFFFFF"
+				Else
+					BGCOLOR = "#F0F0F0"
+				End If
+		%>
+
+				<tr bgcolor="<%=BGCOLOR%>">
+				<td align='center'><input type="checkbox" id="ID<%=rs("PERSON_ID")%>" name="ID" value="<%=rs("PERSON_ID")%>" onclick="disableCheck(this);"></td>
+				<td align='center'><font class='cfont10'><%=rs("PERSON_ID")%></font></td>
+				<td><input type="text" id="FIRST_NAME<%=rs("PERSON_ID")%>" name="FIRST_NAME" value="<%=rs("FIRST_NAME")%>" size='25' maxlength='25' disabled></td>
+				<td><input type="text" id="LAST_NAME<%=rs("PERSON_ID")%>" name="LAST_NAME" value="<%=rs("LAST_NAME")%>" size='25' maxlength='35' disabled></td>
+				<td><input type="text" id="EMAIL<%=rs("PERSON_ID")%>" name="EMAIL" value="<%=rs("EMAIL")%>" size='30' maxlength='50' disabled></td>
+				<td><input type="text" id="BIRTH_DATE<%=rs("PERSON_ID")%>" name="BIRTH_DATE" value="<%=rs("BIRTH_DATE")%>" size='10' maxlength='10' disabled></td>
+
+				<td>
+					<select id="GENDER<%=rs("PERSON_ID")%>" name="GENDER" disabled>
+					<%
+						rw("<option value='M' ")
+
+						If rs("GENDER") = "M" then
+							rw("selected")
+						End If
+
+						rw(">Male</option>")
+
+						rw("<option value='F' ")
+
+						If rs("GENDER") = "F" then
+							rw("selected")
+						End If
+
+						rw(">Female</option>")
+
+					%>
+
+					</select>
+				</td>
+
+				<td><input type="text" id="PRIMARY_PHONE_NUM<%=rs("PERSON_ID")%>" name="PRIMARY_PHONE_NUM" value="<%=rs("PRIMARY_PHONE_NUM")%>" size='10' maxlength='10' disabled></td>
+				<td><input type="text" id="PHONE2<%=rs("PERSON_ID")%>" name="PHONE2" value="<%=rs("PHONE2")%>" size='10' maxlength='10' disabled></td>
+				<td><input type="text" id="PHONE3<%=rs("PERSON_ID")%>" name="PHONE3" value="<%=rs("PHONE3")%>" size='10' maxlength='10' disabled></td>
+
+				<td><input type="text" id="ADDRESS_LINE1<%=rs("PERSON_ID")%>" name="ADDRESS_LINE1" value="<%=rs("ADDRESS_LINE1")%>" size='30' maxlength='40' disabled></td>
+				<td><input type="text" id="ADDRESS_LINE2<%=rs("PERSON_ID")%>" name="ADDRESS_LINE2" value="<%=rs("ADDRESS_LINE2")%>" size='30' maxlength='40' disabled></td>
+
+				<td><input type="text" id="CITY<%=rs("PERSON_ID")%>" name="CITY" value="<%=rs("CITY")%>" size='20' maxlength='30' disabled></td>
+				<td><input type="text" id="STATE<%=rs("PERSON_ID")%>" name="STATE" value="<%=rs("STATE")%>" size='2' maxlength='2' disabled></td>
+				<td><input type="text" id="ZIP<%=rs("PERSON_ID")%>" name="ZIP" value="<%=rs("ZIP")%>" size='10' maxlength='10' disabled></td>
+
+				<td><input type="text" id="EMERGENCY_FIRST_NAME<%=rs("PERSON_ID")%>" name="EMERGENCY_FIRST_NAME" value="<%=rs("EMERGENCY_FIRST_NAME")%>" size='25' maxlength='25' disabled></td>
+				<td><input type="text" id="EMERGENCY_LAST_NAME<%=rs("PERSON_ID")%>" name="EMERGENCY_LAST_NAME" value="<%=rs("EMERGENCY_LAST_NAME")%>" size='25' maxlength='35' disabled></td>
+				<td><input type="text" id="EMERGENCY_PHONE<%=rs("PERSON_ID")%>" name="EMERGENCY_PHONE" value="<%=rs("EMERGENCY_PHONE")%>" size='10' maxlength='10' disabled></td>
+
+				<td>
+					<select id="SUPPRESS_EMAIL_IND<%=rs("PERSON_ID")%>" name="SUPPRESS_EMAIL_IND" disabled>
+					<%
+						rw("<option value='N' ")
+
+						If rs("SUPPRESS_EMAIL_IND") = "N" then
+							rw("selected")
+						End If
+
+						rw(">No</option>")
+
+						rw("<option value='Y' ")
+
+						If rs("SUPPRESS_EMAIL_IND") = "Y" then
+							rw("selected")
+						End If
+
+						rw(">Yes</option>")
+
+					%>
+
+					</select>
+				</td>
+
+				<td>
+					<select id="SUPPRESS_SNAIL_MAIL_IND<%=rs("PERSON_ID")%>" name="SUPPRESS_SNAIL_MAIL_IND" disabled>
+					<%
+						rw("<option value='N' ")
+
+						If rs("SUPPRESS_SNAIL_MAIL_IND") = "N" then
+							rw("selected")
+						End If
+
+						rw(">No</option>")
+
+						rw("<option value='Y' ")
+
+						If rs("SUPPRESS_SNAIL_MAIL_IND") = "Y" then
+							rw("selected")
+						End If
+
+						rw(">Yes</option>")
+
+					%>
+
+					</select>
+				</td>
+
+				<td>
+					<select id="SUPPRESS_LAST_NAME_IND<%=rs("PERSON_ID")%>" name="SUPPRESS_LAST_NAME_IND" disabled>
+					<%
+						rw("<option value='N' ")
+
+						If rs("SUPPRESS_LAST_NAME_IND") = "N" then
+							rw("selected")
+						End If
+
+						rw(">No</option>")
+
+						rw("<option value='Y' ")
+
+						If rs("SUPPRESS_LAST_NAME_IND") = "Y" then
+							rw("selected")
+						End If
+
+						rw(">Yes</option>")
+
+					%>
+
+					</select>
+				</td>
+
+				<td>
+					<select id="FIRST_CONTACT_ID<%=rs("PERSON_ID")%>" name="FIRST_CONTACT_ID" disabled>
+
+					<%
+						for i = 0 to rsFCRows
+							rw("<option value='" & rsFCData(0,i) & "'")
+
+							If rs("FIRST_CONTACT_ID") = rsFCData(0,i) then
+								rw("selected")
+							End If
+
+							rw(">" & rsFCData(1,i) & "</option>")
+						next
+
+					%>
+
+					</select>
+				</td>
+
+				<td><input type="text" id="PHOTO_FILENAME<%=rs("PERSON_ID")%>" name="PHOTO_FILENAME" value="<%=rs("PHOTO_FILENAME")%>" size='20' maxlength='20' disabled></td>
+				<td><input type="text" id="NAGVA_RATING<%=rs("PERSON_ID")%>" name="NAGVA_RATING" value="<%=rs("NAGVA_RATING")%>" size='10' maxlength='50' disabled></td>
+				<td>
+					<select id="LOGICAL_DELETE_IND<%=rs("PERSON_ID")%>" name="LOGICAL_DELETE_IND" disabled>
+					<%
+						rw("<option value='N' ")
+
+						If rs("LOGICAL_DELETE_IND") = "N" then
+							rw("selected")
+						End If
+
+						rw(">No</option>")
+
+						rw("<option value='Y' ")
+
+						If rs("LOGICAL_DELETE_IND") = "Y" then
+							rw("selected")
+						End If
+
+						rw(">Yes</option>")
+
+					%>
+
+					</select>
+				</td>
+				</tr>
+
+		<%
+				rs.MoveNext
+			Loop
+		%>
+
+		<tr>
+		<td colspan='23'><input type='submit' name="submitChoice" value='Modify Person(s)' onClick="return validateModify();"></td>
+		</tr>
+
+		</table>
+
+		</form>
+
+		<br /><br />
+
+
+	<%
+		call closeRSCNConnection()
+	End Sub
+
+	'******************************************'
+
+	Sub insertRecord()
+
+	%>
+
+		<div align='center'>
+		<font class='cfont10'><b>
+		Please enter the new person information.
+		</b></font>
+		</div>
+
+		<br /><br />
+
+		<form name='INSERT' method='post' action='Person_submit.asp' onSubmit="return validateInsert();">
+
+		<table width='500' bgcolor='#F0F0F0' cellspacing='0' align='center' cellpadding='3'>
+
+		<tr>
+		<td align='right' valign='middle'><font size='2' face='arial'><b>First Name</b></font></td>
+		<td><input type="text" name='FIRST_NAME' size='25' maxlength='25'></td>
+		</tr>
+
+		<tr>
+		<td align='right' valign='middle'><font size='2' face='arial'><b>Last Name</b></font></td>
+		<td><input type="text" name='LAST_NAME' size='25' maxlength='35'></td>
+		</tr>
+
+		<tr>
+		<td align='right' valign='middle'><font size='2' face='arial'><b>Email</b></font></td>
+		<td><input type="text" name='EMAIL' size='40' maxlength='50'></td>
+		</tr>
+
+		<tr>
+		<td align='right' valign='middle'><font size='2' face='arial'><b>Birth Date</b></font></td>
+		<td><input type="text" name='BIRTH_DATE' size='10' maxlength='10'></td>
+		</tr>
+
+		<tr>
+		<td align='right' valign='middle'><font size='2' face='arial'><b>Gender</b></font></td>
+		<td>
+			<select name='GENDER'>
+			<option value='M'>Male</option>
+			<option value='F'>Female</option>
+			</select>
+		</td>
+		</tr>
+
+		<tr>
+		<td align='right' valign='middle'><font size='2' face='arial'><b>Primary Phone Number</b></font></td>
+		<td><input type="text" name='PRIMARY_PHONE_NUM' size='10' maxlength='10'></td>
+		</tr>
+
+		<tr>
+		<td align='right' valign='middle'><font size='2' face='arial'><b>2nd Phone Number</b></font></td>
+		<td><input type="text" name='PHONE2' size='10' maxlength='10'></td>
+		</tr>
+
+		<tr>
+		<td align='right' valign='middle'><font size='2' face='arial'><b>3rd Phone Number</b></font></td>
+		<td><input type="text" name='PHONE3' size='10' maxlength='10'></td>
+		</tr>
+
+		<tr>
+		<td align='right' valign='middle'><font size='2' face='arial'><b>Address Line 1</b></font></td>
+		<td><input type="text" name='ADDRESS_LINE1' size='35' maxlength='40'></td>
+		</tr>
+
+		<tr>
+		<tr>
+		<td align='right' valign='middle'><font size='2' face='arial'><b>Address Line 2</b></font></td>
+		<td><input type="text" name='ADDRESS_LINE2' size='35' maxlength='40'></td>
+		</tr>
+
+		<tr>
+		<td align='right' valign='middle'><font size='2' face='arial'><b>City</b></font></td>
+		<td><input type="text" name='CITY' size='25' maxlength='30'></td>
+		</tr>
+
+		<tr>
+		<td align='right' valign='middle'><font size='2' face='arial'><b>State</b></font></td>
+		<td>
+			<SELECT name="STATE" SINGLE >
+			<OPTION value='AK'>Alaska</OPTION>
+			<OPTION value='AL'>Alabama</OPTION>
+			<OPTION value='AZ'>Arizona</OPTION>
+			<OPTION value='AR'>Arkansas</OPTION>
+			<OPTION value='CA'>California</OPTION>
+			<OPTION value='CO' selected>Colorado</OPTION>
+			<OPTION value='CT'>Connecticut</OPTION>
+			<OPTION value='DC'>District of Columbia</OPTION>
+			<OPTION value='DE'>Deleware</OPTION>
+			<OPTION value='FL'>Florida</OPTION>
+			<OPTION value='GA'>Georgia</OPTION>
+			<OPTION value='HI'>Hawaii</OPTION>
+			<OPTION value='ID'>Idaho</OPTION>
+			<OPTION value='IL'>Illinois</OPTION>
+			<OPTION value='IN'>Indiana</OPTION>
+			<OPTION value='IA'>Iowa</OPTION>
+			<OPTION value='KS'>Kansas</OPTION>
+			<OPTION value='KY'>Kentucky</OPTION>
+			<OPTION value='LA'>Lousiana</OPTION>
+			<OPTION value='ME'>Maine</OPTION>
+			<OPTION value='MD'>Maryland</OPTION>
+			<OPTION value='MA'>Massachussetts</OPTION>
+			<OPTION value='MI'>Michigan</OPTION>
+			<OPTION value='MN'>Minnesota</OPTION>
+			<OPTION value='MS'>Mississippi</OPTION>
+			<OPTION value='MO'>Missouri</OPTION>
+			<OPTION value='MT'>Montana</OPTION>
+			<OPTION value='NE'>Nebraska</OPTION>
+			<OPTION value='NV'>Nevada</OPTION>
+			<OPTION value='NH'>New Hampshire</OPTION>
+			<OPTION value='NJ'>New Jersey</OPTION>
+			<OPTION value='NM'>New Mexico</OPTION>
+			<OPTION value='NY'>New York</OPTION>
+			<OPTION value='NC'>North Carolina</OPTION>
+			<OPTION value='ND'>North Dakota</OPTION>
+			<OPTION value='OH'>Ohio</OPTION>
+			<OPTION value='OK'>Oklahoma</OPTION>
+			<OPTION value='OR'>Oregon</OPTION>
+			<OPTION value='PA'>Pennsylvania</OPTION>
+			<OPTION value='RI'>Rhode Island</OPTION>
+			<OPTION value='SC'>South Carloina</OPTION>
+			<OPTION value='SD'>South Dakota</OPTION>
+			<OPTION value='TN'>Tennessee</OPTION>
+			<OPTION value='TX'>Texas</OPTION>
+			<OPTION value='UT'>Utah</OPTION>
+			<OPTION value='VE'>Vermont</OPTION>
+			<OPTION value='VA'>Virginia</OPTION>
+			<OPTION value='WA'>Washington</OPTION>
+			<OPTION value='WV'>West Virginia</OPTION>
+			<OPTION value='WI'>Wisconsin</OPTION>
+			<OPTION value='WY'>Wyoming</OPTION>
+			</SELECT>
+		</td>
+		</tr>
+
+		<tr>
+		<td align='right' valign='middle'><font size='2' face='arial'><b>Zip Code</b></font></td>
+		<td><input type="text" name='ZIP' size='10' maxlength='10'></td>
+		</tr>
+
+		<tr>
+		<td align='right' valign='middle'><font size='2' face='arial'><b>Emergency First Name</b></font></td>
+		<td><input type="text" name='EMERGENCY_FIRST_NAME' size='25' maxlength='25'></td>
+		</tr>
+
+		<tr>
+		<td align='right' valign='middle'><font size='2' face='arial'><b>Emergency Last Name</b></font></td>
+		<td><input type="text" name='EMERGENCY_LAST_NAME' size='25' maxlength='35'></td>
+		</tr>
+
+		<tr>
+		<td align='right' valign='middle'><font size='2' face='arial'><b>Emergency Phone</b></font></td>
+		<td><input type="text" name='EMERGENCY_PHONE' size='10' maxlength='10'></td>
+		</tr>
+
+		<tr>
+		<td align='right' valign='middle'><font size='2' face='arial'><b>Suppress Email?</b></font></td>
+		<td>
+			<select name='SUPPRESS_EMAIL_IND'>
+			<option value='N'>No</option>
+			<option value='Y'>Yes</option>
+			</select>
+		</td>
+		</tr>
+
+		<tr>
+		<td align='right' valign='middle'><font size='2' face='arial'><b>Suppress Snail Mail?</b></font></td>
+		<td>
+			<select name='SUPPRESS_SNAIL_MAIL_IND'>
+			<option value='N'>No</option>
+			<option value='Y'>Yes</option>
+			</select>
+		</td>
+		</tr>
+
+		<tr>
+		<td align='right' valign='middle'><font size='2' face='arial'><b>Suppress Last Name?</b></font></td>
+		<td>
+			<select name='SUPPRESS_LAST_NAME_IND'>
+			<option value='N'>No</option>
+			<option value='Y'>Yes</option>
+			</select>
+		</td>
+		</tr>
+
+		<tr>
+		<td align='right' valign='middle'><font size='2' face='arial'><b>First Contact?</b></font></td>
+		<td>
+			<select name='FIRST_CONTACT_ID'>
+			<option value='0'>-select-</option>
+
+			<%
+				For i = 0 to rsFCRows
+					rw("<option value='" & rsFCData(0,i) & "'>" & rsFCData(1,i) & "</option>")
+				Next
+			%>
+
+			</select>
+		</td>
+		</tr>
+
+		<tr>
+		<td align='right' valign='middle'><font size='2' face='arial'><b>Photo Filename</b></font></td>
+		<td><input type="text" name='PHOTO_FILENAME' size='20' maxlength='20'></td>
+		</tr>
+
+		<tr>
+		<td align='right' valign='middle'><font size='2' face='arial'><b>NAGVA Rating</b></font></td>
+		<td><input type="text" name='NAGVA_RATING' size='10' maxlength='50'></td>
+		</tr>
+
+		<tr>
+		<td colspan='2' align='right'><font size="3" face='arial'><input type='submit' name="submitChoice" value='Add Person'></font></td>
+		</tr>
+
+		</table>
+
+		</form>
+
+		<script>
+		<!--
+			INSERT.FIRST_NAME.focus();
+		-->
+		</script>
+	<%
+
+		closeRSCNConnection()
+	End Sub
+	%>
+</td>
+</tr>
+
+<!--#include virtual="/incs/fragContact.asp"-->
+
+</table>
+
+<%
+'******************************************'
+
+Sub closePage()
+	rw("</body>")
+	rw("</html>")
+End Sub
+
+'******************************************'
+
+%>
+
+

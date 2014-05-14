@@ -1,0 +1,1030 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+ 
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<link rel=Original-File
+href="file:///C:\inetpub\wwwroot\CGVA_PRODCOPY\tournament\2012SL_110.xls">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 10">
+<link rel=File-List href="2012SL_110_files/filelist.xml">
+<link rel=Edit-Time-Data href="2012SL_110_files/editdata.mso">
+<link rel=OLE-Object-Data href="2012SL_110_files/oledata.mso">
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>John Hausman</o:Author>
+  <o:LastAuthor>T</o:LastAuthor>
+  <o:LastPrinted>2008-03-23T09:10:50Z</o:LastPrinted>
+  <o:Created>2007-03-25T19:12:44Z</o:Created>
+  <o:LastSaved>2012-03-29T21:41:07Z</o:LastSaved>
+  <o:Company>Fehr &amp; Peers</o:Company>
+  <o:Version>10.6870</o:Version>
+ </o:DocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:DownloadComponents/>
+  <o:LocationOfComponents HRef="file:///\\"/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+<style> 
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+@page
+	{margin:.5in .75in .5in .75in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;}
+.font8
+	{color:windowtext;
+	font-size:10.0pt;
+	font-weight:700;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Arial, sans-serif;
+	mso-font-charset:0;}
+.font9
+	{color:windowtext;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Arial, sans-serif;
+	mso-font-charset:0;}
+tr
+	{mso-height-source:auto;}
+col
+	{mso-width-source:auto;}
+br
+	{mso-data-placement:same-cell;}
+.style0
+	{mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	white-space:nowrap;
+	mso-rotate:0;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:windowtext;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Arial;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	border:none;
+	mso-protection:locked visible;
+	mso-style-name:Normal;
+	mso-style-id:0;}
+td
+	{mso-style-parent:style0;
+	padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:windowtext;
+	font-size:10.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Arial;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-protection:locked visible;
+	white-space:nowrap;
+	mso-rotate:0;}
+.xl24
+	{mso-style-parent:style0;
+	mso-number-format:"\@";}
+.xl25
+	{mso-style-parent:style0;
+	font-weight:700;
+	mso-number-format:"\@";}
+.xl26
+	{mso-style-parent:style0;
+	mso-number-format:"\@";
+	text-align:right;}
+.xl27
+	{mso-style-parent:style0;
+	font-weight:700;
+	mso-number-format:"\@";
+	text-align:left;
+	border-top:none;
+	border-right:none;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;}
+.xl28
+	{mso-style-parent:style0;
+	font-weight:700;
+	mso-number-format:"\@";
+	border-top:.5pt solid windowtext;
+	border-right:.5pt solid windowtext;
+	border-bottom:none;
+	border-left:none;}
+.xl29
+	{mso-style-parent:style0;
+	mso-number-format:"\@";
+	text-align:left;}
+.xl30
+	{mso-style-parent:style0;
+	mso-number-format:"\@";
+	text-align:right;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:none;
+	border-left:none;}
+.xl31
+	{mso-style-parent:style0;
+	mso-number-format:"mm\/dd\/yy\;\@";
+	text-align:right;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:none;
+	border-left:none;}
+.xl32
+	{mso-style-parent:style0;
+	font-weight:700;
+	mso-number-format:"\@";
+	border-top:none;
+	border-right:none;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;}
+.xl33
+	{mso-style-parent:style0;
+	font-weight:700;
+	mso-number-format:"\@";
+	text-align:center;}
+.xl34
+	{mso-style-parent:style0;
+	font-weight:700;
+	mso-number-format:"\@";
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:none;
+	border-left:none;}
+.xl35
+	{mso-style-parent:style0;
+	mso-number-format:"\@";
+	text-align:center;
+	border-top:.5pt solid windowtext;
+	border-right:.5pt solid windowtext;
+	border-bottom:none;
+	border-left:none;}
+.xl36
+	{mso-style-parent:style0;
+	font-style:italic;
+	mso-number-format:"\@";
+	text-align:right;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:none;
+	border-left:none;}
+.xl37
+	{mso-style-parent:style0;
+	mso-number-format:"\@";
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:none;
+	border-left:none;}
+.xl38
+	{mso-style-parent:style0;
+	font-weight:700;
+	font-family:Arial, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:"\@";}
+.xl39
+	{mso-style-parent:style0;
+	font-weight:700;
+	font-family:Arial, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:"\@";
+	text-align:right;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:none;
+	border-left:none;}
+.xl40
+	{mso-style-parent:style0;
+	font-weight:700;
+	mso-number-format:"\@";
+	text-align:center;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;}
+.xl41
+	{mso-style-parent:style0;
+	mso-number-format:"\@";
+	text-align:center;}
+.xl42
+	{mso-style-parent:style0;
+	font-weight:700;
+	mso-number-format:"\@";
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;}
+.xl43
+	{mso-style-parent:style0;
+	font-weight:700;
+	mso-number-format:"\@";
+	text-align:left;}
+.xl44
+	{mso-style-parent:style0;
+	mso-number-format:"\@";
+	border-top:.5pt solid windowtext;
+	border-right:.5pt solid windowtext;
+	border-bottom:none;
+	border-left:none;}
+.xl45
+	{mso-style-parent:style0;
+	font-weight:700;
+	mso-number-format:"\@";
+	text-align:center;
+	border-top:none;
+	border-right:none;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;}
+.xl46
+	{mso-style-parent:style0;
+	mso-number-format:"\@";
+	text-align:center;
+	border-top:.5pt solid windowtext;
+	border-right:none;
+	border-bottom:none;
+	border-left:none;}
+.xl47
+	{mso-style-parent:style0;
+	font-family:Arial, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:"\@";
+	text-align:center;
+	border-top:.5pt solid windowtext;
+	border-right:.5pt solid windowtext;
+	border-bottom:none;
+	border-left:none;}
+.xl48
+	{mso-style-parent:style0;
+	mso-number-format:"mm\/dd\/yy\;\@";
+	text-align:right;}
+.xl49
+	{mso-style-parent:style0;
+	font-weight:700;
+	font-family:Arial, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:"\@";
+	text-align:center;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:none;
+	border-left:none;}
+.xl50
+	{mso-style-parent:style0;
+	font-style:italic;
+	mso-number-format:"\@";
+	text-align:right;}
+.xl51
+	{mso-style-parent:style0;
+	font-weight:700;
+	mso-number-format:"\@";
+	text-align:left;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:none;
+	border-left:none;}
+.xl52
+	{mso-style-parent:style0;
+	mso-number-format:"\@";
+	text-align:center;
+	border-top:.5pt solid windowtext;
+	border-right:.5pt dashed windowtext;
+	border-bottom:none;
+	border-left:none;}
+.xl53
+	{mso-style-parent:style0;
+	mso-number-format:"\@";
+	border-top:none;
+	border-right:.5pt dashed windowtext;
+	border-bottom:none;
+	border-left:none;}
+.xl54
+	{mso-style-parent:style0;
+	font-weight:700;
+	mso-number-format:"\@";
+	text-align:left;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;}
+.xl55
+	{mso-style-parent:style0;
+	font-style:italic;
+	font-family:Arial, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:"\@";
+	text-align:right;
+	border-top:none;
+	border-right:.5pt dashed windowtext;
+	border-bottom:none;
+	border-left:none;}
+.xl56
+	{mso-style-parent:style0;
+	mso-number-format:"\@";
+	text-align:right;
+	border-top:none;
+	border-right:.5pt dashed windowtext;
+	border-bottom:none;
+	border-left:none;}
+.xl57
+	{mso-style-parent:style0;
+	font-weight:700;
+	mso-number-format:"\@";
+	text-align:center;
+	border-top:none;
+	border-right:none;
+	border-bottom:.5pt dashed windowtext;
+	border-left:none;}
+.xl58
+	{mso-style-parent:style0;
+	mso-number-format:"\@";
+	text-align:right;
+	border-top:.5pt solid windowtext;
+	border-right:.5pt solid windowtext;
+	border-bottom:none;
+	border-left:none;}
+.xl59
+	{mso-style-parent:style0;
+	mso-number-format:"\@";
+	text-align:center;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:none;
+	border-left:none;}
+.xl60
+	{mso-style-parent:style0;
+	font-weight:700;
+	mso-number-format:"\@";
+	text-align:left;
+	border-top:none;
+	border-right:.5pt dashed windowtext;
+	border-bottom:.5pt dashed windowtext;
+	border-left:none;}
+.xl61
+	{mso-style-parent:style0;
+	font-family:Arial, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:"\@";
+	text-align:right;
+	border-top:none;
+	border-right:.5pt solid windowtext;
+	border-bottom:none;
+	border-left:none;}
+.xl62
+	{mso-style-parent:style0;
+	font-size:16.0pt;
+	font-weight:700;
+	font-family:Arial, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:"\@";
+	text-align:center;}
+.xl63
+	{mso-style-parent:style0;
+	font-weight:700;
+	mso-number-format:"\@";
+	text-align:center;
+	border-top:none;
+	border-right:none;
+	border-bottom:.5pt solid windowtext;
+	border-left:.5pt solid windowtext;}
+.xl64
+	{mso-style-parent:style0;
+	mso-number-format:"\@";
+	text-align:center;
+	border-top:.5pt solid windowtext;
+	border-right:none;
+	border-bottom:none;
+	border-left:.5pt solid windowtext;}
+.xl65
+	{mso-style-parent:style0;
+	mso-number-format:"\@";
+	text-align:center;
+	border-top:.5pt solid windowtext;
+	border-right:.5pt solid black;
+	border-bottom:none;
+	border-left:none;}
+.xl66
+	{mso-style-parent:style0;
+	font-weight:700;
+	mso-number-format:"\@";
+	text-align:center;
+	border-top:none;
+	border-right:.5pt solid black;
+	border-bottom:.5pt solid windowtext;
+	border-left:none;}
+.xl67
+	{mso-style-parent:style0;
+	font-family:Arial, sans-serif;
+	mso-font-charset:0;
+	text-align:left;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <x:ExcelWorkbook>
+  <x:ExcelWorksheets>
+   <x:ExcelWorksheet>
+    <x:Name>Division 4</x:Name>
+    <x:WorksheetOptions>
+     <x:FitToPage/>
+     <x:FitToPage/>
+     <x:Print>
+      <x:ValidPrinterInfo/>
+      <x:Scale>62</x:Scale>
+      <x:HorizontalResolution>300</x:HorizontalResolution>
+      <x:VerticalResolution>300</x:VerticalResolution>
+     </x:Print>
+     <x:Zoom>75</x:Zoom>
+     <x:Selected/>
+     <x:Panes>
+      <x:Pane>
+       <x:Number>3</x:Number>
+       <x:ActiveRow>30</x:ActiveRow>
+      </x:Pane>
+     </x:Panes>
+     <x:ProtectContents>False</x:ProtectContents>
+     <x:ProtectObjects>False</x:ProtectObjects>
+     <x:ProtectScenarios>False</x:ProtectScenarios>
+    </x:WorksheetOptions>
+   </x:ExcelWorksheet>
+  </x:ExcelWorksheets>
+  <x:WindowHeight>9210</x:WindowHeight>
+  <x:WindowWidth>15195</x:WindowWidth>
+  <x:WindowTopX>0</x:WindowTopX>
+  <x:WindowTopY>60</x:WindowTopY>
+  <x:ProtectStructure>False</x:ProtectStructure>
+  <x:ProtectWindows>False</x:ProtectWindows>
+ </x:ExcelWorkbook>
+</xml><![endif]-->
+</head>
+ 
+<body link=blue vlink=purple class=xl24>
+ 
+<table x:str border=0 cellpadding=0 cellspacing=0 width=1242 style='border-collapse:
+ collapse;table-layout:fixed;width:933pt'>
+ <col class=xl24 width=289 style='mso-width-source:userset;mso-width-alt:10569;
+ width:217pt'>
+ <col class=xl24 width=228 style='mso-width-source:userset;mso-width-alt:8338;
+ width:171pt'>
+ <col class=xl24 width=145 span=5 style='mso-width-source:userset;mso-width-alt:
+ 5302;width:109pt'>
+ <col class=xl24 width=62 span=249 style='mso-width-source:userset;mso-width-alt:
+ 2267;width:47pt'>
+ <tr height=27 style='height:20.25pt'>
+  <td colspan=7 height=27 class=xl62 width=1242 style='height:20.25pt;
+  width:933pt'>Division 4</td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl24 style='height:12.75pt'></td>
+  <td class=xl25>(1) 41 - Seven Jerks and a Squirt</td>
+  <td colspan=2 class=xl24 style='mso-ignore:colspan'></td>
+  <td class=xl26></td>
+  <td class=xl26>1st</td>
+  <td class=xl27>&nbsp;</td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl24 style='height:12.75pt'></td>
+  <td class=xl28>&nbsp;</td>
+  <td colspan=2 class=xl24 style='mso-ignore:colspan'></td>
+  <td colspan=2 class=xl26 style='mso-ignore:colspan'></td>
+  <td class=xl29></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl24 style='height:12.75pt'></td>
+  <td class=xl30>Match 4.4</td>
+  <td colspan=2 class=xl24 style='mso-ignore:colspan'></td>
+  <td class=xl26></td>
+  <td class=xl26>2nd</td>
+  <td class=xl27>&nbsp;</td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl24 style='height:12.75pt'></td>
+  <td class=xl31 x:num="40998">03/30/12</td>
+  <td colspan=2 class=xl24 style='mso-ignore:colspan'></td>
+  <td colspan=2 class=xl26 style='mso-ignore:colspan'></td>
+  <td class=xl29></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl32 style='height:12.75pt'>(4) 45 - Queen Marys</td>
+  <td class=xl30>8:00 Ct 4</td>
+  <td class=xl33></td>
+  <td class=xl24></td>
+  <td class=xl26></td>
+  <td class=xl26>3rd</td>
+  <td class=xl27>&nbsp;</td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl34 style='height:12.75pt'>&nbsp;</td>
+  <td class=xl30>Ref: Loser of 4.2</td>
+  <td class=xl35>&nbsp;</td>
+  <td colspan=3 class=xl24 style='mso-ignore:colspan'></td>
+  <td class=xl29></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl30 style='height:12.75pt'>Match 4.1</td>
+  <td class=xl36>Loser to C</td>
+  <td class=xl37>&nbsp;</td>
+  <td colspan=4 class=xl24 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl31 style='height:12.75pt' x:num="40998">03/30/12</td>
+  <td class=xl36>&nbsp;</td>
+  <td class=xl37>&nbsp;</td>
+  <td class=xl24></td>
+  <td class=xl26></td>
+  <td colspan=2 class=xl24 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl39 style='height:12.75pt'>6:30 Ct 4</td>
+  <td class=xl40>&nbsp;</td>
+  <td class=xl37>&nbsp;</td>
+  <td colspan=4 class=xl24 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl30 style='height:12.75pt'>Ref: Seed 7</td>
+  <td class=xl41></td>
+  <td class=xl37>&nbsp;</td>
+  <td colspan=4 class=xl24 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl36 style='height:12.75pt'>Loser to D</td>
+  <td class=xl24></td>
+  <td class=xl37>&nbsp;</td>
+  <td colspan=4 class=xl24 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl36 style='height:12.75pt'>&nbsp;</td>
+  <td class=xl24></td>
+  <td class=xl37>&nbsp;</td>
+  <td colspan=4 class=xl24 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl42 style='height:12.75pt'>(5) 47 - Team Tardy</td>
+  <td class=xl24></td>
+  <td class=xl37>&nbsp;</td>
+  <td colspan=4 class=xl24 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 colspan=2 class=xl24 style='height:12.75pt;mso-ignore:colspan'></td>
+  <td class=xl37>&nbsp;</td>
+  <td colspan=4 class=xl24 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 colspan=2 class=xl24 style='height:12.75pt;mso-ignore:colspan'></td>
+  <td class=xl30>Match 4.6</td>
+  <td colspan=4 class=xl24 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl43 style='height:12.75pt'>(3) 44 - Like A Lollipop</td>
+  <td class=xl24></td>
+  <td class=xl31 x:num="41005">04/06/12</td>
+  <td colspan=4 class=xl24 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl44 style='height:12.75pt'>&nbsp;</td>
+  <td class=xl24></td>
+  <td class=xl30>6:55 Ct 4</td>
+  <td colspan=2 class=xl63 style='border-left:none'>&nbsp;</td>
+  <td colspan=2 class=xl24 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl30 style='height:12.75pt'>Match 4.2</td>
+  <td class=xl24></td>
+  <td class=xl30>Ref: Loser of 4.5</td>
+  <td colspan=2 class=xl64 style='border-right:.5pt solid black;border-left:
+  none'>&nbsp;</td>
+  <td colspan=2 class=xl24 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl31 style='height:12.75pt' x:num="40998">03/30/12</td>
+  <td class=xl24></td>
+  <td class=xl36>Loser to F</td>
+  <td class=xl24></td>
+  <td class=xl37>&nbsp;</td>
+  <td colspan=2 class=xl24 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl61 style='height:12.75pt'>7:15 Ct 3</td>
+  <td class=xl33></td>
+  <td class=xl37>&nbsp;</td>
+  <td class=xl26></td>
+  <td class=xl37>&nbsp;</td>
+  <td colspan=2 class=xl24 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl30 style='height:12.75pt'>Ref: Seed 4</td>
+  <td class=xl47>&nbsp;</td>
+  <td class=xl37>&nbsp;</td>
+  <td class=xl26></td>
+  <td class=xl37>&nbsp;</td>
+  <td colspan=2 class=xl24 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl36 style='height:12.75pt'>Loser to A</td>
+  <td class=xl30>&nbsp;</td>
+  <td class=xl37>&nbsp;</td>
+  <td class=xl48></td>
+  <td class=xl37>&nbsp;</td>
+  <td colspan=2 class=xl24 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl36 style='height:12.75pt'>&nbsp;</td>
+  <td class=xl31>&nbsp;</td>
+  <td class=xl37>&nbsp;</td>
+  <td class=xl48></td>
+  <td class=xl37>&nbsp;</td>
+  <td colspan=2 class=xl24 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl42 style='height:12.75pt'>(6) 42 - Kiss My Pass</td>
+  <td class=xl30>Match 4.5</td>
+  <td class=xl37>&nbsp;</td>
+  <td class=xl26></td>
+  <td class=xl37>&nbsp;</td>
+  <td colspan=2 class=xl24 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl24 style='height:12.75pt'></td>
+  <td class=xl31 x:num="40998">03/30/12</td>
+  <td class=xl37>&nbsp;</td>
+  <td class=xl48></td>
+  <td class=xl37>&nbsp;</td>
+  <td colspan=2 class=xl24 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl24 style='height:12.75pt'></td>
+  <td class=xl30>8:00 Ct 3</td>
+  <td class=xl49>&nbsp;</td>
+  <td class=xl26></td>
+  <td class=xl37>&nbsp;</td>
+  <td colspan=2 class=xl24 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl43 style='height:12.75pt'>(7) 46 - Victorious Secret</td>
+  <td class=xl30>Ref: Loser of 4.3</td>
+  <td class=xl46>&nbsp;</td>
+  <td class=xl26></td>
+  <td class=xl37>&nbsp;</td>
+  <td class=xl43></td>
+  <td class=xl24></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl44 style='height:12.75pt'>&nbsp;</td>
+  <td class=xl36>Loser to E</td>
+  <td class=xl24></td>
+  <td class=xl50></td>
+  <td class=xl37>&nbsp;</td>
+  <td colspan=2 class=xl24 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl30 style='height:12.75pt'>Match 4.3</td>
+  <td class=xl51>&nbsp;</td>
+  <td class=xl41></td>
+  <td class=xl24></td>
+  <td class=xl37>&nbsp;</td>
+  <td colspan=2 class=xl24 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl37 style='height:12.75pt'>&nbsp;</td>
+  <td class=xl51>&nbsp;</td>
+  <td colspan=2 class=xl24 style='mso-ignore:colspan'></td>
+  <td class=xl37>&nbsp;</td>
+  <td colspan=2 class=xl24 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl61 style='height:12.75pt'>7:15 Ct 4</td>
+  <td class=xl40>&nbsp;</td>
+  <td colspan=2 class=xl24 style='mso-ignore:colspan'></td>
+  <td class=xl30>Match 4.12</td>
+  <td class=xl33></td>
+  <td class=xl24></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl30 style='height:12.75pt'>Ref: Seed 5</td>
+  <td class=xl41></td>
+  <td colspan=2 class=xl24 style='mso-ignore:colspan'></td>
+  <td class=xl31 x:num="41005">04/06/12</td>
+  <td class=xl33></td>
+  <td class=xl24></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl36 style='height:12.75pt'>Loser to B</td>
+  <td colspan=3 class=xl24 style='mso-ignore:colspan'></td>
+  <td class=xl30>8:10 Ct 3</td>
+  <td class=xl52>&nbsp;</td>
+  <td class=xl24></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl30 style='height:12.75pt'>&nbsp;</td>
+  <td colspan=3 class=xl24 style='mso-ignore:colspan'></td>
+  <td class=xl30>Ref: Loser of 4.11</td>
+  <td class=xl53>&nbsp;</td>
+  <td class=xl24></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl54 style='height:12.75pt'>(2) 43 - Take That</td>
+  <td class=xl29></td>
+  <td colspan=2 class=xl24 style='mso-ignore:colspan'></td>
+  <td class=xl36>(Loser to G if 1st Loss)</td>
+  <td class=xl53>&nbsp;</td>
+  <td class=xl24></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl24 style='height:12.75pt'></td>
+  <td class=xl26></td>
+  <td colspan=2 class=xl24 style='mso-ignore:colspan'></td>
+  <td class=xl30>&nbsp;</td>
+  <td class=xl53>&nbsp;</td>
+  <td class=xl24></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl24 style='height:12.75pt'></td>
+  <td colspan=2 class=xl26 style='mso-ignore:colspan'></td>
+  <td class=xl24></td>
+  <td class=xl30>&nbsp;</td>
+  <td class=xl55>&nbsp;</td>
+  <td class=xl24></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl24 style='height:12.75pt'></td>
+  <td class=xl26></td>
+  <td class=xl48></td>
+  <td class=xl24></td>
+  <td class=xl30>&nbsp;</td>
+  <td class=xl56>&nbsp;</td>
+  <td class=xl24></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl24 style='height:12.75pt'></td>
+  <td colspan=2 class=xl26 style='mso-ignore:colspan'></td>
+  <td class=xl38 x:str="(F) ">(F)<span style='mso-spacerun:yes'> </span></td>
+  <td class=xl30>&nbsp;</td>
+  <td class=xl55>&nbsp;</td>
+  <td class=xl24></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl24 style='height:12.75pt'></td>
+  <td colspan=2 class=xl26 style='mso-ignore:colspan'></td>
+  <td class=xl47>&nbsp;</td>
+  <td class=xl31>&nbsp;</td>
+  <td class=xl56>&nbsp;</td>
+  <td class=xl24></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl24 style='height:12.75pt'></td>
+  <td class=xl26></td>
+  <td class=xl50></td>
+  <td class=xl37>&nbsp;</td>
+  <td class=xl37>&nbsp;</td>
+  <td class=xl55>(If Necessary)</td>
+  <td class=xl24></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl24 style='height:12.75pt'></td>
+  <td class=xl26></td>
+  <td class=xl24></td>
+  <td class=xl30>&nbsp;</td>
+  <td class=xl37>&nbsp;</td>
+  <td class=xl56>Match 4.13</td>
+  <td class=xl24></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl24 style='height:12.75pt'></td>
+  <td class=xl43 x:str="( C) ">( C)<span style='mso-spacerun:yes'> </span></td>
+  <td class=xl24></td>
+  <td class=xl37>&nbsp;</td>
+  <td class=xl37>&nbsp;</td>
+  <td class=xl31 x:num="41005">04/06/12</td>
+  <td class=xl57>&nbsp;</td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl24 style='height:12.75pt'></td>
+  <td class=xl58>&nbsp;</td>
+  <td class=xl24></td>
+  <td class=xl37>&nbsp;</td>
+  <td class=xl37>&nbsp;</td>
+  <td class=xl56>8:55 Ct 3</td>
+  <td class=xl41></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl24 style='height:12.75pt'></td>
+  <td class=xl30>&nbsp;</td>
+  <td class=xl24></td>
+  <td class=xl37>&nbsp;</td>
+  <td class=xl37>&nbsp;</td>
+  <td class=xl56>Ref: Loser of 4.11</td>
+  <td class=xl24></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl24 style='height:12.75pt'></td>
+  <td class=xl30>Match 4.9</td>
+  <td class=xl24></td>
+  <td class=xl30>Match 4.11</td>
+  <td class=xl37>&nbsp;</td>
+  <td class=xl53>&nbsp;</td>
+  <td class=xl24></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl43 style='height:12.75pt' x:str="(A) ">(A)<span
+  style='mso-spacerun:yes'> </span></td>
+  <td class=xl31 x:num="41005">04/06/12</td>
+  <td class=xl45>&nbsp;</td>
+  <td class=xl31 x:num="41005">04/06/12</td>
+  <td class=xl40>&nbsp;</td>
+  <td class=xl53>&nbsp;</td>
+  <td class=xl24></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl44 style='height:12.75pt'>&nbsp;</td>
+  <td class=xl30>6:55 Ct 3</td>
+  <td class=xl59>&nbsp;</td>
+  <td class=xl30>7:45 Ct 3</td>
+  <td class=xl41></td>
+  <td class=xl53>&nbsp;</td>
+  <td class=xl24></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl30 style='height:12.75pt'>&nbsp;</td>
+  <td class=xl30>Ref: Loser of 4.7</td>
+  <td class=xl37>&nbsp;</td>
+  <td class=xl30>Ref: Loser of 4.10</td>
+  <td class=xl24></td>
+  <td class=xl53>&nbsp;</td>
+  <td class=xl24></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl30 style='height:12.75pt'>Match 4.7</td>
+  <td class=xl51>&nbsp;</td>
+  <td class=xl37>&nbsp;</td>
+  <td class=xl37>&nbsp;</td>
+  <td class=xl24></td>
+  <td class=xl53>&nbsp;</td>
+  <td class=xl24></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl31 style='height:12.75pt' x:num="41005">04/06/12</td>
+  <td class=xl40>&nbsp;</td>
+  <td class=xl30>&nbsp;</td>
+  <td class=xl37>&nbsp;</td>
+  <td class=xl24></td>
+  <td class=xl53>&nbsp;</td>
+  <td class=xl24></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl39 style='height:12.75pt'>6:30 Ct 3</td>
+  <td class=xl41></td>
+  <td class=xl30>&nbsp;</td>
+  <td class=xl37>&nbsp;</td>
+  <td class=xl24></td>
+  <td class=xl53>&nbsp;</td>
+  <td class=xl24></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl30 style='height:12.75pt'>Ref: Loser of 4.4</td>
+  <td class=xl24></td>
+  <td class=xl30>&nbsp;</td>
+  <td class=xl37>&nbsp;</td>
+  <td class=xl24></td>
+  <td class=xl60 x:str="(G) ">(G)<span style='mso-spacerun:yes'> </span></td>
+  <td class=xl24></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl36 style='height:12.75pt'>&nbsp;</td>
+  <td class=xl24></td>
+  <td class=xl30>Match 4.10</td>
+  <td class=xl37>&nbsp;</td>
+  <td class=xl24></td>
+  <td class=xl43></td>
+  <td class=xl24></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl54 style='height:12.75pt' x:str="(B) ">(B)<span
+  style='mso-spacerun:yes'> </span></td>
+  <td class=xl29></td>
+  <td class=xl31 x:num="41005">04/06/12</td>
+  <td class=xl49>&nbsp;</td>
+  <td class=xl24></td>
+  <td class=xl43></td>
+  <td class=xl24></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 colspan=2 class=xl24 style='height:12.75pt;mso-ignore:colspan'></td>
+  <td class=xl30>7:20 Ct 3</td>
+  <td class=xl46>&nbsp;</td>
+  <td class=xl24></td>
+  <td class=xl43></td>
+  <td class=xl24></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 colspan=2 class=xl24 style='height:12.75pt;mso-ignore:colspan'></td>
+  <td class=xl30>Ref: Loser of 4.9</td>
+  <td colspan=4 class=xl24 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl43 style='height:12.75pt' x:str="(D) ">(D)<span
+  style='mso-spacerun:yes'> </span></td>
+  <td class=xl24></td>
+  <td class=xl37>&nbsp;</td>
+  <td colspan=4 class=xl24 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl44 style='height:12.75pt'>&nbsp;</td>
+  <td class=xl24></td>
+  <td class=xl37>&nbsp;</td>
+  <td colspan=4 class=xl24 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl30 style='height:12.75pt'>&nbsp;</td>
+  <td class=xl24></td>
+  <td class=xl37>&nbsp;</td>
+  <td colspan=4 class=xl24 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl30 style='height:12.75pt'>Match 4.8</td>
+  <td class=xl24></td>
+  <td class=xl37>&nbsp;</td>
+  <td colspan=4 class=xl24 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl31 style='height:12.75pt' x:num="41005">04/06/12</td>
+  <td colspan=2 class=xl63 style='border-right:.5pt solid black;border-left:
+  none'>&nbsp;</td>
+  <td colspan=4 class=xl24 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl39 style='height:12.75pt'>6:30 Ct 4</td>
+  <td colspan=2 class=xl64 style='border-left:none'>&nbsp;</td>
+  <td colspan=2 class=xl24 style='mso-ignore:colspan'></td>
+  <td class=xl43></td>
+  <td class=xl24></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl30 style='height:12.75pt'>Ref: Loser of 4.6</td>
+  <td colspan=4 class=xl24 style='mso-ignore:colspan'></td>
+  <td class=xl43></td>
+  <td class=xl24></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl61 style='height:12.75pt'>&nbsp;</td>
+  <td colspan=4 class=xl24 style='mso-ignore:colspan'></td>
+  <td class=xl43></td>
+  <td class=xl24></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 class=xl54 style='height:12.75pt' x:str="(E) ">(E)<span
+  style='mso-spacerun:yes'> </span></td>
+  <td colspan=6 class=xl24 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 colspan=7 class=xl24 style='height:12.75pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr height=17 style='height:12.75pt'>
+  <td height=17 colspan=7 class=xl24 style='height:12.75pt;mso-ignore:colspan'></td>
+ </tr>
+ <tr class=xl29 height=17 style='height:12.75pt'>
+  <td colspan=7 height=17 class=xl67 style='height:12.75pt'>Bold times are <font
+  class=font8>actual</font><font class=font9> start times; all other matches
+  start 5 mins after the preceding match ends.</font></td>
+ </tr>
+ <tr class=xl29 height=17 style='height:12.75pt'>
+  <td colspan=5 height=17 class=xl29 style='height:12.75pt'>Winners
+  bracket:<span style='mso-spacerun:yes'>     </span>2 of 3 (first two games to
+  21 starting at 0 [cap of 23], third to 15 starting at 0 [no cap]).</td>
+  <td colspan=2 class=xl29 style='mso-ignore:colspan'></td>
+ </tr>
+ <tr class=xl29 height=17 style='height:12.75pt'>
+  <td colspan=5 height=17 class=xl29 style='height:12.75pt'>Elimination
+  bracket: 1 game to 21 starting at 0 [no cap].</td>
+  <td colspan=2 class=xl29 style='mso-ignore:colspan'></td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=289 style='width:217pt'></td>
+  <td width=228 style='width:171pt'></td>
+  <td width=145 style='width:109pt'></td>
+  <td width=145 style='width:109pt'></td>
+  <td width=145 style='width:109pt'></td>
+  <td width=145 style='width:109pt'></td>
+  <td width=145 style='width:109pt'></td>
+ </tr>
+ <![endif]>
+</table>
+ 
+</body>
+ 
+</html>
+

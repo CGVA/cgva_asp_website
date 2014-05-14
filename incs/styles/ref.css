@@ -1,0 +1,53 @@
+.ref,
+.ref td{
+	font-family:sans-serif;
+	font-size:1.15em;
+	line-height:2em;
+}
+.ref header{
+	display:block;
+}
+.ref img,
+.ref fieldset.id,
+.ref h1{
+	float:left;
+	display:block;
+	margin-right:80px;
+}
+
+.ref figure,
+.ref fieldset.id{
+	margin:1em;
+}
+.ref figcaption,
+.ref .caption{
+	
+}
+.ref .clearfix{
+	content:" ";
+	clear:both;
+}
+.ref fieldset.questions{
+	margin-top:80px;
+}
+.ref h1,
+.ref h2{
+	display:inline-block;
+}
+.ref h2{
+	color:grey;
+}
+
+.ref em{
+	font-weight:bolder;
+}
+.ref tr, 
+.ref td{
+	border-bottom:3px dotted grey;
+}
+.ref tr.right{
+	background-color:#79DA79;
+}
+.ref tr.wrong{
+	background-color:#DAB379;
+}

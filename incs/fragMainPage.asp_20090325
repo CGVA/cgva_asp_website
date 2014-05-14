@@ -1,0 +1,133 @@
+<!-- BEGIN:fragMainPage.asp -->
+<table width='100%' border="0" cellpadding="0">
+
+<tr bgcolor="#FF3300">
+<td height="20" class="style8">Latest News</td>
+</tr>
+
+<!--
+<tr>
+  <td height="185"><p align="center"><strong>CGVA Beer Bust Fundraiser at the Denver Wrangler </strong><strong></strong></p>
+    <p>CGVA will be pouring beer at the Denver Wrangler on <span id="lw_1234272115_0">   Sunday, February 15 from 4-8PM. </span>The <a href="http://www.denverwrangler.com/">Denver Wrangler bar</a> is    located at <span id="lw_1234272115_1">1700   Logan Street in Denver</span>. The cost is only $8 for a bottomless cup of beer and hours of fun!&nbsp;</p>
+    <p>If you   are interested in volunteering to pour beer, please email Brian Seiber at <a href="mailto:brian@cgva.org" target="_blank" rel="nofollow" ymailto="mailto:brian@cgva.org"><span id="lw_1234272115_2">brian@cgva.org</span></a> ASAP.&nbsp;</p>
+    <p align="center"><br />
+      <strong>Last Dig in </strong><strong>Denver</strong><strong> XII Draws  Near! </strong></p>
+    <p align="center">Registration is open for the  CGVA-hosted Last Dig in Denver XII tournament April 18 and 19, 2009.&nbsp; Teams are already signing up as they know we  have a limited number of teams in each of three divisions (Modified A/AA, BB  and B).&nbsp; Get your team signed up today so  you&rsquo;re not left out!</p>
+    <p align="center">Please visit the <a href="fragLastDig.asp">Last Dig</a> page  for more details on the tournament.&nbsp;  Please continue to visit often as updated information will continue to  be posted &ndash; i.e. Registration dates and times, Saturday seeding information,  Sunday&rsquo;s end-of-tournament banquet, host hotel, and more!</p>
+    <p align="center">&nbsp;</p></td>
+</tr>
+-->
+
+<tr>
+<td height="185">
+	<font class='cfont12'>
+	<p align="center"><b>Attention all Monday and Friday Night League Players!</b></p>
+	</font>
+	<div>Check out the updated CGVA photo page for pictures   from the 2008 Fall end of league parties and CGVA's interleague social held   2/21/09 at Hamburger Mary's. </div>
+	<div><br />
+	  </div>
+	<div>If you did not get your league t-shirt, first check   with others on your team -- as shirts were handed out by team. If no one from   your team picked up shirts, please see your league directors.</div>
+	<font class='cfont12'>
+	<p align="center" /><br />
+	  <strong>Last Dig in Denver XII Draws  Near! </strong>
+	<p>Registration is open for the  CGVA-hosted Last Dig in Denver XII tournament April 18 and 19, 2009.&nbsp; Teams are already signing up as they know we  have a limited number of teams in each of three divisions (Modified A/AA, BB  and B).&nbsp; Get your team signed up today so  you&rsquo;re not left out!</p>
+	<p>Please visit the <a href="index.asp?PAGE=LastDig">Last Dig</a> page  for more details on the tournament.&nbsp;  Please continue to visit often as updated information will continue to  be posted &ndash; i.e. Registration dates and times, Saturday seeding information,  Sunday&rsquo;s end-of-tournament banquet, host hotel, and more!</p>
+	<p>&nbsp;</p>
+	</font></td>
+</tr>
+
+
+<tr>
+<td height="203">
+  <font class='cfont12'>
+  <p align="center"><strong>CGVA's Spring Leagues</strong></p>
+  CGVA's spring leagues are up and running <span id="lw_1234271182_0">on   Fridays</span> and Mondays. See the pages for each league for standings,   schedules, team rosters and more.<br />
+  <ul>
+    <li><a href="http://www.cgva.org/index.asp?EVENT_CD=2009SD">Spring 2009 Fridays at DU </a></li>
+    <li><a href="http://www.cgva.org/index.asp?EVENT_CD=2009SL">Spring 2009 Mondays at SportsBridge</a></li>
+  </ul>
+  <p align="center">&nbsp;</p>
+  <p align="center">&nbsp;</p>
+  </font>
+  </td>
+</tr>
+
+
+<tr>
+<td height="20" bgcolor="#FF3300"><span class="style8">Important Dates</span></td>
+</tr>
+
+<tr>
+<td>
+
+	<table width='100%' cellpadding='0' cellspacing='2' border='1'>
+
+	<tr>
+	<th width="20%" bordercolor="#000000"><font class='cfont12'>Date</font></th>
+	<th width="80%" bordercolor="#000000"><font class='cfont12'>Detail</font></th>
+	</tr>
+
+	<!--
+	<tr>
+	  <td height="28" valign='top' nowrap="nowrap" bordercolor="#000000"><strong>Sunday, Feb. 15 </strong></td>
+	  <td valign='top' bordercolor="#000000">Wrangler Beer Bust fundraiser from 4-8PM. $8 for all the beer you can drink. If interested in volunteering to pour beer, please contact Brian Seiber at <a href="mailto:brian@cgva.org">brian@cgva.org</a>. <br /></td>
+	  </tr>
+	-->
+
+	<tr>
+	  <td height="28" valign='top' nowrap="nowrap" bordercolor="#000000"><strong>Tuesday, March 10 </strong></td>
+	  <td valign='top' bordercolor="#000000">CGVA Board meeting. If you are interested in attending, please contact the CGVA Secretary, Dave Lamont, via email at <a href="mailto:dave_nj35@yahoo.com.">dave_nj35@yahoo.com.</a></td>
+	  </tr>
+	<tr>
+	  <td height="28" valign='top' nowrap="nowrap" bordercolor="#000000"><strong>March 20 </strong></td>
+	  <td valign='top' bordercolor="#000000"><a href="http://www.cgva.org/index.asp?PAGE=LastDig">Last Dig Tournament</a> early registration deadline. </td>
+	  </tr>
+	<tr>
+	  <td height="28" valign='top' nowrap="nowrap" bordercolor="#000000"><strong>March 27 </strong></td>
+	  <td valign='top' bordercolor="#000000"><a href="http://www.cgva.org/index.asp?PAGE=LastDig">Last Dig Tournament</a> final registration deadline. </td>
+	  </tr>
+	<tr>
+	  <td height="28" valign='top' nowrap="nowrap" bordercolor="#000000"><strong>March 27 &amp; April 3 </strong></td>
+	  <td valign='top' bordercolor="#000000"><a href="http://www.cgva.org/index.asp?EVENT_CD=2009SD">Spring 2009 Fridays at DU </a>end of league tournament. </td>
+	  </tr>
+	<tr>
+	  <td height="28" valign='top' nowrap="nowrap" bordercolor="#000000"><strong>March 30 &amp; April 6 </strong></td>
+	  <td valign='top' bordercolor="#000000"><a href="http://www.cgva.org/index.asp?EVENT_CD=2009SL">Spring 2009 Mondays at SportsBridge</a> end of league tournament. </td>
+	  </tr>
+	<tr>
+	  <td height="28" valign='top' nowrap="nowrap" bordercolor="#000000"><strong>Tuesday, April 7 </strong></td>
+	  <td valign='top' bordercolor="#000000">CGVA Board meeting. If you are interested in attending, please contact the CGVA Secretary, Dave Lamont, via email at <a href="mailto:dave_nj35@yahoo.com.">dave_nj35@yahoo.com.</a></td>
+	  </tr>
+	<tr>
+	  <td height="28" valign='top' nowrap="nowrap" bordercolor="#000000"><strong>April 18 &amp; 19 </strong></td>
+	  <td valign='top' bordercolor="#000000"><a href="http://www.cgva.org/index.asp?PAGE=LastDig">Last Dig Tournament </a></td>
+	  </tr>
+	<tr>
+	  <td height="28" valign='top' nowrap="nowrap" bordercolor="#000000"><strong>Sunday, May 3 </strong></td>
+	  <td valign='top' bordercolor="#000000">Wrangler Beer Bust fundraiser from 4-8PM. $8 for all the beer you can drink. If interested in volunteering to pour beer, please contact Brian Seiber at <a href="mailto:brian@cgva.org">brian@cgva.org</a>. </td>
+	  </tr>
+	<tr>
+	  <td height="28" valign='top' nowrap="nowrap" bordercolor="#000000"><strong>Tuesday, May 12 </strong></td>
+	  <td valign='top' bordercolor="#000000">CGVA Board meeting. If you are interested in attending, please contact the CGVA Secretary, Dave Lamont, via email at <a href="mailto:dave_nj35@yahoo.com.">dave_nj35@yahoo.com.</a></td>
+	  </tr>
+	<tr>
+	  <td height="28" valign='top' nowrap="nowrap" bordercolor="#000000"><strong>Tuesday, June 9 </strong></td>
+	  <td valign='top' bordercolor="#000000">CGVA Board meeting. If you are interested in attending, please contact the CGVA Secretary, Dave Lamont, via email at <a href="mailto:dave_nj35@yahoo.com.">dave_nj35@yahoo.com.</a></td>
+	  </tr>
+	<tr>
+	  <td height="28" valign='top' nowrap="nowrap" bordercolor="#000000"><strong>Saturday, July 11 </strong></td>
+	  <td valign='top' bordercolor="#000000">CGVA Annual Meeting - All Day! If you are interested in attending, please contact the CGVA Secretary, Dave Lamont, via email at <a href="mailto:dave_nj35@yahoo.com.">dave_nj35@yahoo.com.</a></td>
+	  </tr>
+
+
+	<!--
+	<tr>
+	<td width='20%' valign='top' height="28" nowrap><strong><font class='cfont10'>Monday, Oct. 13 </font></strong></td>
+	<td valign='top'><font class='cfont10'>CGVA Board Meeting. Please contact secretary Ernest Coca @ <strong><font size="3" face="Tahoma, Times New Roman, Arial"><strong><font color="#000000" size="2"><a href="mailto:ernest@cgva.org">ernest@cgva.org</a></font></strong></font></strong> for information on attending the meeting. </font></td>
+	</tr>
+-->
+	</table></td>
+</tr>
+</table>
+
+<!-- END:fragMainPage.asp -->

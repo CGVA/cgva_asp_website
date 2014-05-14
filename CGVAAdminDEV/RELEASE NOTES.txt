@@ -1,0 +1,48 @@
+RELEASE NOTES
+comment out the session USER_ID for prod releases for now
+
+
+
+
+
+
+
+
+3/15/2008
+x	RESULTS proc needs to be moved to prod
+X	add week ind to prod?
+x	Event/Event_submit
+x	Modify RESULTS proc to return the same result order for division and cumulative
+
+
+3/22/2008
+	TeamMember_submit.asp
+	MatchGame.asp
+	
+	PROC 
+	----
+	MATCH_GAME	
+	RESULTS
+	
+	
+	ALTER MATCH_GAME_TBL
+	ADD DBL_FORFEIT_IND	char(1) DEFAULT('N')
+
+	UPDATE MATCH_GAME_TBL
+	set DBL_FORFEIT_IND = 'N'
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

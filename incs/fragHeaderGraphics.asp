@@ -16,7 +16,7 @@
 		</tr>
 
 		<tr>
-		<td><img src="../images/volley don karcz 2-16-07.jpg" alt="Denver Skyline with CGVA Logo - Artwork created by Don Karz" width="700" height="115" /></td>
+		<td><img src="../images/banner.jpg" alt="CGVA VolleyPalooza 2014" width="700" height="115" /></td>
 		<!--<td><a href="http://www.lastdigindenver.org" target="_blank"><img border="0" src="../images/last_dig_2010_banner.jpg" alt="Last Dig in Denver - 2010" width="700" height="115" /></a></td>-->
 		</tr>
 		</table>

@@ -45,7 +45,8 @@
 
 		<div align='center'>
 		<font class='cfont10'><b>
-		Please read the following information. If you agree, electronically sign the waiver to continue with registration.
+		Please read the following information. If you agree, electronically sign the waiver to 
+		continue with registration.
 		</b>
 		<br />
         </div>
@@ -67,8 +68,8 @@
         <font class='cfont9'>
             RELEASE OF LIABILITY AND AUTHORIZATION FOR EVENT PROMOTION
             <p />
-            This release and authorization is for the CGVA Spring League occurring at DIVE Volleyball & Sports Center, 
-            from January 17 through April 7, 2014.
+            This release and authorization is for the CGVA Fall League occurring at DIVE, 
+            from August 25, 2014 through November 17, 2014.
             <p />
             KNOW ALL PERSONS BY THESE PRESENTS that the undersigned, intending to be legally bound, and 
             being of lawful age, do/does hereby for myself, and for my heirs,

@@ -20,11 +20,11 @@
 	<table width='100%' border="3" cellpadding="5">
 
 	<tr>
-	<th scope="col"><img src="images/Board Of Directors Photos/New/Matt_Paradise.JPG" width="192" alt="Matt Paradise"/></th>
+	<th scope="col"><img src="images/Board Of Directors Photos/New/Terry_Burke.JPG" width="192" /></th>
 	<th bgcolor="#FFFFFF" scope="col">
-		<p align="center"><font class='cfont12'><strong>Matt Paradise</strong></font></p>
+		<p align="center"><font class='cfont12'><strong>Terry Burke</strong></font></p>
 		<p align="center"><font class='cfont12'>President</font></p>
-		<p align="center"><font class='cfont12'>Email: <a href="mailto:mattp@cgva.org">mattp@cgva.org</a></font></p>
+		<p align="center"><font class='cfont12'>Email: <a href="mailto:terryb@cgva.org">terryb@cgva.org</a></font></p>
 	</th>
 	</tr>
 
@@ -61,10 +61,10 @@
 
 
 	<tr>
-	<th scope="col"><img src="images/Board Of Directors Photos/New/Terry_Burke.JPG" alt="Terry Burke" width="192" /></th>
+	<th scope="col"><img src="images/Board Of Directors Photos/New/Matt_Paradise.JPG" alt="Matt Paradise" width="192" /></th>
 	<th bgcolor="#FFFFFF" scope="col">
-		<p align="center"><font class='cfont12'><strong>Terry Burke</strong></font></p>
-		<p align="center"><font class='cfont12'><strong><font color="#000000">Member at Large and Board Advisor </font></strong></font></p>
+		<p align="center"><font class='cfont12'><strong>Matt Paradise</strong></font></p>
+		<p align="center"><font class='cfont12'><strong><font color="#000000">Player Development Committee Chair </font></strong></font></p>
 		<p align="center"><font class='cfont12'><strong><font color="#000000">Email: <a href="mailto:mattp@cgva.org">mattp@cgva.org</a></font></strong></font></p>
 	</th>
 	</tr>
@@ -90,6 +90,15 @@
 	</th>
 	</tr>
 	
+
+	<tr>
+	<th scope="col"><img src="images/Board Of Directors Photos/New/Jim_Harold.JPG" width="192" /></th>
+	<th bgcolor="#FFFFFF" scope="col">
+		<p align="center"><font class='cfont12'><strong>Jim Harold</strong></font></p>
+		<p align="center"><font class='cfont12'>Fundraising Committee Chair, Facilities Committee Chair</font></p>
+		<p align="center"><font class='cfont12'>Email: <a href="mailto:JimH@cgva.org">JimH@cgva.org</a></font></p>
+	</th>
+	</tr>
 
 	<tr>
 	<th scope="col"><img src="images/Board Of Directors Photos/New/Luke_List.JPG" width="192" /></th>

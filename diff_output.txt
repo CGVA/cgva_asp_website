@@ -1,0 +1,491 @@
+diff --git a/CGVAAdmin/Event_submit.asp b/CGVAAdmin/Event_submit.asp
+index 78cd327..fe64440 100644
+--- a/CGVAAdmin/Event_submit.asp
++++ b/CGVAAdmin/Event_submit.asp
+@@ -95,7 +95,7 @@
+ 				& "'" & REGISTRAR_EMAIL & "')"
+ 
+ 			rw(sql & "<br />")
+-			''Response.End
++			'Response.End
+ 
+ 			cn.Execute(sql)
+ 		else
+diff --git a/MyCGVA/IPNHandler.aspx.vb b/MyCGVA/IPNHandler.aspx.vb
+index 778ea92..d142cae 100644
+--- a/MyCGVA/IPNHandler.aspx.vb
++++ b/MyCGVA/IPNHandler.aspx.vb
+@@ -47,7 +47,7 @@ Partial Class IPNHandler
+         Dim aryTextFile() As String
+ 
+         Dim vEmailFrom As String = "cgva@cgva.org"
+-        Dim emailTo As String = "jcrossin@aol.com"
++        Dim emailTo As String = "jcrossin11@gmail.com"
+         Dim emailCC As String = ""
+         Dim emailBCC As String = "support@cgva.org"
+         Dim emailSubject As String = ""
+@@ -63,7 +63,7 @@ Partial Class IPNHandler
+             'check that receiver_email is your Primary PayPal email
+             'check that payment_amount/payment_currency are correct
+             'process payment
+-            emailSubject = "VERIFIED - CGVA 2014 SPRING LEAGUE REGISTRATION"
++            emailSubject = "VERIFIED - CGVA REGISTRATION"
+             Try
+                 aryTextFile = Request.Form("custom").Split("~")
+ 
+@@ -191,7 +191,7 @@ Partial Class IPNHandler
+             End Try
+         ElseIf strResponse = "INVALID" Then
+             'log for manual investigation
+-            emailSubject = "INVALID - CGVA 2014 SPRING LEAGUE REGISTRATION"
++            emailSubject = "INVALID - CGVA REGISTRATION"
+ 
+             Try
+                 aryTextFile = Request.Form("custom").Split("~")
+@@ -217,7 +217,7 @@ Partial Class IPNHandler
+             End Try
+         Else
+             'Response wasn't VERIFIED or INVALID, log for manual investigation
+-            emailSubject = "Response not VERIFIED or INVALID - CGVA 2014 SPRING LEAGUE REGISTRATION"
++            emailSubject = "Response not VERIFIED or INVALID - CGVA REGISTRATION"
+             Try
+                 aryTextFile = Request.Form("custom").Split("~")
+ 
+diff --git a/MyCGVA/MyEvents.aspx b/MyCGVA/MyEvents.aspx
+index 6e852df..345da0b 100644
+--- a/MyCGVA/MyEvents.aspx
++++ b/MyCGVA/MyEvents.aspx
+@@ -49,7 +49,7 @@
+ 		</b></font>
+ 		<p />
+ 		 <font class="cfontSuccess10">
+-		* The registration fee for CGVA leagues can be paid via PayPal, even if you don’t have a PayPal account. *
++		* The registration fee for CGVA events can be paid via PayPal, even if you don’t have a PayPal account. *
+ 		</font>
+ 		</div>
+ 
+diff --git a/MyCGVA/MyEvents3.aspx b/MyCGVA/MyEvents3.aspx
+index 285d68b..a7f1a65 100644
+--- a/MyCGVA/MyEvents3.aspx
++++ b/MyCGVA/MyEvents3.aspx
+@@ -45,7 +45,8 @@
+ 
+ 		<div align='center'>
+ 		<font class='cfont10'><b>
+-		Please read the following information. If you agree, electronically sign the waiver to continue with registration.
++		Please read the following information. If you agree, electronically sign the waiver to 
++		continue with registration.
+ 		</b>
+ 		<br />
+         </div>
+@@ -67,8 +68,8 @@
+         <font class='cfont9'>
+             RELEASE OF LIABILITY AND AUTHORIZATION FOR EVENT PROMOTION
+             <p />
+-            This release and authorization is for the CGVA Spring League occurring at DIVE Volleyball & Sports Center, 
+-            from January 17 through April 7, 2014.
++            This release and authorization is for the CGVA Fall League occurring at DIVE, 
++            from August 25, 2014 through November 17, 2014.
+             <p />
+             KNOW ALL PERSONS BY THESE PRESENTS that the undersigned, intending to be legally bound, and 
+             being of lawful age, do/does hereby for myself, and for my heirs,
+diff --git a/MyCGVA/MyEvents5.aspx b/MyCGVA/MyEvents5.aspx
+index 2339a13..09a1b15 100644
+--- a/MyCGVA/MyEvents5.aspx
++++ b/MyCGVA/MyEvents5.aspx
+@@ -51,7 +51,8 @@
+ 		<font class='cfont10'><b>
+ 		Click on the PayPal button to make your payment.</b></font>
+ 		<p />
+-        <font class='cfontError14'>***IMPORTANT!***</font>
++        <!-- LEAGUES -->
++<%--        <font class='cfontError14'>***IMPORTANT!***</font>
+         <br /><br />
+         <font class='cfont10'><b>
+         On the final Paypal screen, 
+@@ -59,9 +60,23 @@
+         please make sure to click on the 'Return To CGVA' button for your registration to be completed.</b></font>
+         <br />
+         <br />
++--%>
++        
++        <!-- LEAGUES -->
++        
++        <!-- VOLLEYPALOOZA ONLY -->
++        
++		<font class='cfont10'><b>
++		Choose how many players you are paying for, and then click the PayPal button to make 
++		your payment.
++		<br />
++        <br />
+         <font class='cfontError14'>***IMPORTANT!***</font>
+-           <br />
+- 
++        <br /><br />
++            If you are paying for additional players, please include the player names in the 
++            &#39;Add Special Instructions To Merchant&#39; field on the payment screen.</b></font><p />
++        <!-- VOLLEYPALOOZA ONLY -->
++        
+         <form runat="server" id="form1">
+         
+         <table cellspacing='0' align='center' cellpadding='3'>
+@@ -69,9 +84,14 @@
+         <td valign="middle">
+         <font class='cfont10'>Event(s) chosen:
+         &nbsp;
+-<%--    use this if there is to be more than one value in the DDL <asp:DropDownList ID="leagueChoiceDropDownList" runat="server" autopostback="true"></asp:DropDownList>--%>
++    <!--    use this if there is to be more than one value in the DDL -->
++        <asp:DropDownList ID="leagueChoiceDropDownList" runat="server" autopostback="true"></asp:DropDownList>
++
++    <!--    use this if there is to be more than one value in the DDL -->
++<%--        
+         <asp:DropDownList ID="leagueChoiceDropDownList" runat="server" disabled="true"></asp:DropDownList>
+-            </font>   
++--%>            
++        </font>   
+         </td></tr>
+         
+                 <tr>
+@@ -81,7 +101,7 @@
+             <input type="hidden" name="currency_code" value="USD">
+             <input type="hidden" name="cmd" value="_xclick">
+             <asp:HiddenField ID="amount" value="" runat="server" />
+-            <asp:HiddenField ID="item_name" value="2014 Spring League" runat="server" />
++            <asp:HiddenField ID="item_name" value="2014 Fall League" runat="server" />
+             <asp:HiddenField ID="return" value="http://cgva.org/MyCGVA/MyEvents6.aspx" runat="server" />
+ 
+ 
+diff --git a/MyCGVA/MyEvents5.aspx.vb b/MyCGVA/MyEvents5.aspx.vb
+index 591ec5c..fe9fa29 100644
+--- a/MyCGVA/MyEvents5.aspx.vb
++++ b/MyCGVA/MyEvents5.aspx.vb
+@@ -123,18 +123,18 @@ Partial Class MyEvents5
+         Next
+ 
+ 
+-        ' FALL LEAGUE 2013
+-        leagueChoiceDropDownList.Items.Insert(0, New ListItem("$75.00 - 2014 Spring League Fee", "75"))
++        ' LEAGUES
++        leagueChoiceDropDownList.Items.Insert(0, New ListItem("$75.00 - 2014 Fall League Fee", "75"))
+         Session("Amount") = intAmount.ToString
+         Me.amount.Value = Session("Amount")
+ 
+         'for now hardcode this
+-        'VOLLEYPALOOZA 2013
++        'VOLLEYPALOOZA
+         'If Not IsPostBack Then
+         '    intAmount = 35
+-        '    leagueChoiceDropDownList.Items.Insert(0, New ListItem("$35.00 - 2013 Volleypalooza Fee", "35"))
+-        '    leagueChoiceDropDownList.Items.Insert(1, New ListItem("$140.00 - 2013 Volleypalooza Team Fee - Four Players", "140"))
+-        '    leagueChoiceDropDownList.Items.Insert(2, New ListItem("$175.00 - 2013 Volleypalooza Team Fee - Five Players", "175"))
++        '    leagueChoiceDropDownList.Items.Insert(0, New ListItem("$35.00 - 2014 Volleypalooza Fee", "35"))
++        '    leagueChoiceDropDownList.Items.Insert(1, New ListItem("$140.00 - 2014 Volleypalooza Team Fee - Four Players", "140"))
++        '    leagueChoiceDropDownList.Items.Insert(2, New ListItem("$175.00 - 2014 Volleypalooza Team Fee - Five Players", "175"))
+         '    Me.leagueChoiceDropDownList.Enabled = True
+         '    Session("Amount") = intAmount.ToString
+         '    Me.amount.Value = Session("Amount")
+diff --git a/MyCGVA/PayPal.aspx.vb b/MyCGVA/PayPal.aspx.vb
+index b507f01..a28f47a 100644
+--- a/MyCGVA/PayPal.aspx.vb
++++ b/MyCGVA/PayPal.aspx.vb
+@@ -22,7 +22,7 @@ Partial Class PayPal
+     Protected cmd As String = "_xclick"
+     Protected business As String = ""
+     'Protected item_name As String = AppSettings("item_name")
+-    Protected item_name As String = "2014 Spring League"
++    Protected item_name As String = "2014 Fall League"
+     Protected item_number As String = ""    'used to hold person ID of the transaction
+ 
+     Protected amount As String
+diff --git a/incs/2014VP.asp b/incs/2014VP.asp
+index 1727e2c..9566ba8 100644
+--- a/incs/2014VP.asp
++++ b/incs/2014VP.asp
+@@ -33,22 +33,25 @@ All skill levels welcome!
+ <table>
+ 	<tr>
+ 		<td width="45%">
+- REGISTRATION INFO:
++ <b>Registration and Payment:</b>
+ <br />
+- All players/teams must be registered by <font style="color:#990000">Friday June 20th, 9:00pm</font>
++ All players/teams must be registered by <b><font style="color:#D00000">Friday June 20th, 9:00pm</font></b>
+ <br />
+-All Registrations will be on-line at www.cgva.org or in person at the registration party.
++Teams and individual players can register <a href="http://www.cgva.org/MyCGVA/MyEvents.aspx"> here</a> or in person at the registration party.
+ <br />
+ <br />
+-<b>To register online for you or your entire team, 
+-click on the <a href="/MyCGVA/MyEvents.aspx">MyCGVA</a> link, sign in and click on 'My Events'. 
+-<u>If you are registering a whole team, please include all the player names on that team 
+-in the 'Add Special Instructions To Merchant' field on the payment screen.</u></b>
++<b>To register online for you or your entire team:</b> 
++Visit <a href="/MyCGVA/MyEvents.aspx">MyCGVA</a>, sign in or register. Click 'My Events', and choose 2014 Volleypalooza.
++<br /><br />
++If you are registering a whole team, <b>please include all the player names on that team</b> 
++in the 'Add Special Instructions To Merchant' field on the payment screen.
+ <br />
+ <br />
+- Registration Party: Friday, June 20th @ X Bar from 6-9pm
++ <b>Registration Party:</b> Thursday, June 19th at <a href="http://www.xbardenver.com">X Bar</a> from 6-9pm
+ <br /><br />
+- Registration Cost: $140 per team of 4 players, $35 for each additional player. Your registration dues include registration party, tournament t-shirt, water, and Coors Light!
++ <b>Registration Cost:</b> $140 per team of 4 players, $35 for each additional player. 
++ <br />
++ Your registration dues include tournament t-shirt, water, and Coors Light!
+ <br />
+ </td>
+ <td width="5%"></td>
+@@ -89,10 +92,15 @@ in the 'Add Special Instructions To Merchant' field on the payment screen.</u></
+  		</tr>
+  		<tr>
+  			<td colspan=2>
+- 				<p>Note: We will have a couple open courts for "walk-up" players to play pick-up games as part of our recruiting efforts during the Colorado Sportsfest</p>
++ 				<p> <font size=2> Note: We will have a couple open courts for "walk-up" players to play pick-up games as part of our recruiting efforts during the Colorado Sportsfest</font></p>
+  				</td>
+  			</tr>
+  	</table>
++ 	<br />
++ 	Games will be self-reffed. 
++ 	<br />
++ 	<br />
++ 	Teams must supply their own volleyballs. CGVA will provide an air pump for use if needed. 
+ 
+ 
+ 
+@@ -106,16 +114,18 @@ in the 'Add Special Instructions To Merchant' field on the payment screen.</u></
+ <br />
+  
+ <br /><br />
+- Volleypalooza Tournament Location: Congress Park, Denver
+-<br />
+- Directions/Location: Intersection of Josephine Street and East 8th Avenue: Central Denver
+-<br />
+- Volleyball will be played at the north / top section of the park
+-
++<div align=center>
++<h3>Volleypalooza Tournament Location: Congress Park, Denver</h3>
++<br /><br />
++<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3068.396614820272!2d-104.95826734145508!3d39.73074092378351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x904a38265973605b!2sCongress+Park!5e0!3m2!1sen!2sus!4v1400100263444" width="600" height="450" frameborder="0" style="border:0"></iframe>
++<br/><br />
++ 
++We will be playing at the northern/top area of the park.
++</div>
+ 
+ 
+ </td>
+ </tr>
+ 
+ </table>
+-<!-- END: 2014VP.asp -->
++<!-- END: 2014VP.asp -->
+\ No newline at end of file
+diff --git a/incs/fragBOD.asp b/incs/fragBOD.asp
+index 6ec6dd2..50be287 100644
+--- a/incs/fragBOD.asp
++++ b/incs/fragBOD.asp
+@@ -20,11 +20,11 @@
+ 	<table width='100%' border="3" cellpadding="5">
+ 
+ 	<tr>
+-	<th scope="col"><img src="images/Board Of Directors Photos/New/Terry_Burke.JPG" width="192" /></th>
++	<th scope="col"><img src="images/Board Of Directors Photos/New/Matt_Paradise.JPG" width="192" alt="Matt Paradise"/></th>
+ 	<th bgcolor="#FFFFFF" scope="col">
+-		<p align="center"><font class='cfont12'><strong>Terry Burke</strong></font></p>
++		<p align="center"><font class='cfont12'><strong>Matt Paradise</strong></font></p>
+ 		<p align="center"><font class='cfont12'>President</font></p>
+-		<p align="center"><font class='cfont12'>Email: <a href="mailto:terryb@cgva.org">terryb@cgva.org</a></font></p>
++		<p align="center"><font class='cfont12'>Email: <a href="mailto:mattp@cgva.org">mattp@cgva.org</a></font></p>
+ 	</th>
+ 	</tr>
+ 
+@@ -61,10 +61,10 @@
+ 
+ 
+ 	<tr>
+-	<th scope="col"><img src="images/Board Of Directors Photos/New/Matt_Paradise.JPG" alt="Matt Paradise" width="192" /></th>
++	<th scope="col"><img src="images/Board Of Directors Photos/New/Terry_Burke.JPG" alt="Terry Burke" width="192" /></th>
+ 	<th bgcolor="#FFFFFF" scope="col">
+-		<p align="center"><font class='cfont12'><strong>Matt Paradise</strong></font></p>
+-		<p align="center"><font class='cfont12'><strong><font color="#000000">Player Development Committee Chair </font></strong></font></p>
++		<p align="center"><font class='cfont12'><strong>Terry Burke</strong></font></p>
++		<p align="center"><font class='cfont12'><strong><font color="#000000">Member at Large and Board Advisor </font></strong></font></p>
+ 		<p align="center"><font class='cfont12'><strong><font color="#000000">Email: <a href="mailto:mattp@cgva.org">mattp@cgva.org</a></font></strong></font></p>
+ 	</th>
+ 	</tr>
+@@ -92,15 +92,6 @@
+ 	
+ 
+ 	<tr>
+-	<th scope="col"><img src="images/Board Of Directors Photos/New/Jim_Harold.JPG" width="192" /></th>
+-	<th bgcolor="#FFFFFF" scope="col">
+-		<p align="center"><font class='cfont12'><strong>Jim Harold</strong></font></p>
+-		<p align="center"><font class='cfont12'>Fundraising Committee Chair, Facilities Committee Chair</font></p>
+-		<p align="center"><font class='cfont12'>Email: <a href="mailto:JimH@cgva.org">JimH@cgva.org</a></font></p>
+-	</th>
+-	</tr>
+-
+-	<tr>
+ 	<th scope="col"><img src="images/Board Of Directors Photos/New/Luke_List.JPG" width="192" /></th>
+ 	<th bgcolor="#FFFFFF" scope="col">
+ 		<p align="center"><font class='cfont12'><strong>Luke List</strong></font></p>
+diff --git a/incs/fragHeaderGraphics.asp b/incs/fragHeaderGraphics.asp
+index 02edcff..6cf16d4 100644
+--- a/incs/fragHeaderGraphics.asp
++++ b/incs/fragHeaderGraphics.asp
+@@ -16,7 +16,7 @@
+ 		</tr>
+ 
+ 		<tr>
+-		<td><img src="../images/volley don karcz 2-16-07.jpg" alt="Denver Skyline with CGVA Logo - Artwork created by Don Karz" width="700" height="115" /></td>
++		<td><img src="../images/banner.jpg" alt="CGVA VolleyPalooza 2014" width="700" height="115" /></td>
+ 		<!--<td><a href="http://www.lastdigindenver.org" target="_blank"><img border="0" src="../images/last_dig_2010_banner.jpg" alt="Last Dig in Denver - 2010" width="700" height="115" /></a></td>-->
+ 		</tr>
+ 		</table>
+diff --git a/incs/fragMainPage.asp b/incs/fragMainPage.asp
+index 68be4a8..03491d1 100644
+--- a/incs/fragMainPage.asp
++++ b/incs/fragMainPage.asp
+@@ -1,11 +1,37 @@
+ <!-- BEGIN:fragMainPage.asp -->
+ <table width='100%' border="0" cellpadding="0">
+   <tr bgcolor="#FF3300">
+-    <td height="20" class="style8">Latest News</td>
++    <td height="20" class="style8" colspan="3">Latest News</td>
+   </tr>
++<tr>
++    <td width=20%></td>
++    <td width=60% style="text-align:justify;" class="style6">
++        <h2>AIDS Walk Colorado</h2>
++
++        <p>The Colorado Gay Volleyball Association has again partnered with AIDS Walk Colorado to offer the sixth annual AIDS Walk Colorado Volleyball Tournament!  The grass tournament will take place in Cheesman Park on Saturday, August 16, 2014, as part of the AIDS Walk Colorado festival.</p>
++ 
++        <p>Pool play for the tournament will begin at 10:30 following the AIDS Walk, which tournament participants are encouraged to take part in.  We encourage you to invite friends, family members, and co-workers to take part in this charity tournament.  The four-person pre-formed teams will be divided into three divisions (beginner, intermediate, and advanced), as participation allows.  Regardless of skill level, there is a place for everyone in the tournament!</p>
++ 
++        <p>Registration closes at 10PM on Wednesday, August 13, 2014.  The number of teams may be capped, so please register as soon as possible.</p>
++ 
++        <p>The minimum donation per person is $25 ($100 per team); however, we encourage you and your teammates to raise additional donations.  All registration fees and proceeds benefit Colorado AIDS Project and the fundraising teams of more than 20 AIDS service organizations throughout Colorado.  All participants will receive a commemorative t-shirt, and the top teams in each division will also receive prizes.</p>
++ 
++        <p>For more information, please visit http://www.aidswalkcolorado.org/.  To register for the tournament, click on Register Volleyball on the main page.  Team captains should register first to create a team name, after which time other team members will be able to register and add themselves to the team.  If you are looking for a team or need an extra player or two, you can use MatchMate on CGVA's site at http://www.cgva.org or contact the Tournament Director, Shane Speciale, at shane@avanzasystems.com for assistance or with any questions.</p>
++ 
++        <p>We look forward to seeing you there!</p>
++
++        
++
++        <h2> Fall Season and Open Play</h2>
++
++        <p>Keep an eye on our Calendar for upcoming open house play and fall season play.</p>
+ 
++
++    </td>
++    <td width=20%></td>
++</tr>
+ <tr>
+-<td style="text-align:center;">
++<td style="text-align:center;" colspan="3">
+ <p />   <style type="text/css">
+ 
+             p
+@@ -49,16 +75,48 @@
+ 
+         </style>
+ 
+-    <p><img src="images/volleypalooza2014_banner.png" width="600"/></p>
+-    <p>Details for Volleypalooza 2014 coming soon!</p>
+-    <br />
+-      
+     <p><a href="http://www.facebook.com/CGVA1" ><img src="images/likeus.gif" border="0" /></a></p>
+ 
+     <p><a href="http://www.facebook.com/CGVA1" >www.facebook.com/CGVA1</a></p>
++    <br />
++    <br />
+ 
+-<p><a class="gel_button" href="mailto:cgva@cgva.org?subject=Join%20the%20Mailing%20List&body=Required:%0A-First%20and%20Last%20Name%0A-Email%20Address%0A%0AOptional:%0A-Mailing%20Address%0A-Phone%20#%0A-NAGVA%20Rating%20-%20AA,%20A,%20BB,B,%20C%20(if%20known)%0A%0AIf%20you%20are%20interested%20in%20Only%20Last%20Dig%20emails,%20type%20YES%20here:">Join Our Email List</a></p>
+ 
++<!-- Begin MailChimp Signup Form -->
++<link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
++<style type="text/css">
++    #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif;  width:400px;}
++    /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
++       We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
++</style>
++<div id="mc_embed_signup" style="width: 400px; margin:0 auto;">
++<form action="//cgva.us8.list-manage.com/subscribe/post?u=a7b9e1b38536656203dbad30e&amp;id=dfbc34e23e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
++    <h2>Subscribe to our mailing list</h2>
++<div class="mc-field-group">
++    <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
++</label>
++    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
++</div>
++<div class="mc-field-group">
++    <label for="mce-FNAME">First Name </label>
++    <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
++</div>
++<div class="mc-field-group">
++    <label for="mce-LNAME">Last Name </label>
++    <input type="text" value="" name="LNAME" class="" id="mce-LNAME">
++</div>
++    <div id="mce-responses" class="clear">
++        <div class="response" id="mce-error-response" style="display:none"></div>
++        <div class="response" id="mce-success-response" style="display:none"></div>
++    </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
++    <div style="position: absolute; left: -5000px;"><input type="text" name="b_a7b9e1b38536656203dbad30e_dfbc34e23e" tabindex="-1" value=""></div>
++    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
++</form>
++</div>
++
++<!--End mc_embed_signup-->
++<br />
++<br />
+ <!---->
+ 
+ 
+@@ -71,7 +129,7 @@
+ </tr>
+ 
+   <tr>
+-    <td height="19" bgcolor="#FF3300" class="style8">CGVA Calendar </td>
++    <td height="19" bgcolor="#FF3300" class="style8" colspan="3">CGVA Calendar </td>
+   </tr>
+ </table>
+ <iframe src="http://www.google.com/calendar/embed?showTitle=0&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=cgva%40cgva.org&amp;color=%232952A3&amp;src=usa__en%40holiday.calendar.google.com&amp;color=%23AB8B00&amp;src=p%23weather%40group.v.calendar.google.com&amp;color=%23A32929&amp;ctz=America%2FDenver" style=" border:solid 1px #777 " width="800" height="600" frameborder="0" scrolling="no"></iframe>
+diff --git a/incs/fragPhotos.asp b/incs/fragPhotos.asp
+index ec0adcf..079f6fe 100644
+--- a/incs/fragPhotos.asp
++++ b/incs/fragPhotos.asp
+@@ -5,6 +5,10 @@
+ <td bgcolor="#FF3300"><span class="style8">CGVA Photos and Video Links </span></td>
+ </tr>
+ <tr>
++	<td>Looking for more photos? Check out our<a href="http://www.facebook.com/cgva1"> Facebook page</a> for more!
++	</td>
++</tr>
++<tr>
+   <td bgcolor="#FFFFFF"><div align="center"><em><strong><font class='cfont16'>2013</font></strong></em></div></td>
+ </tr>
+ <tr> 
+diff --git a/incs/fragSiteHeaderGraphics.asp b/incs/fragSiteHeaderGraphics.asp
+index 362403d..8098388 100644
+--- a/incs/fragSiteHeaderGraphics.asp
++++ b/incs/fragSiteHeaderGraphics.asp
+@@ -12,7 +12,7 @@
+ 	</tr>
+ 
+ 	<tr>
+-		<td><img src="../images/volley don karcz 2-16-07.jpg" alt="Denver Skyline with CGVA Logo - Artwork created by Don Karz" width="700" height="115" /></td>
++		<td><img src="../images/banner.jpg" alt="CGVA VolleyPalooza 2014" width="700" height="115" /></td>
+ 		<!--<td><a href="http://www.lastdigindenver.org" target="_blank"><img border="0" src="../images/last_dig_2010_banner.jpg" alt="Last Dig in Denver - 2010" width="700" height="115" /></a></td>-->
+ 	</tr>
+ 	</table>
+diff --git a/incs/style.css b/incs/style.css
+index a86232c..5d187d2 100644
+--- a/incs/style.css
++++ b/incs/style.css
+@@ -5,6 +5,7 @@
+ .style3 {font-family: Arial, Times, serif; font-size: 18px; color: #FFFFFF;}
+ .style4 {font-size: small}
+ .style5 {color: #FFFFFF}
++.style6 {font-family: Arial; font-size: 16px;}
+ .style8 {font-family: Arial; font-size: 24px; color: #FFFFFF; }
+ body {background-color: #000066;}
+ 

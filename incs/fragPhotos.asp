@@ -5,6 +5,10 @@
 <td bgcolor="#FF3300"><span class="style8">CGVA Photos and Video Links </span></td>
 </tr>
 <tr>
+	<td>Looking for more photos? Check out our<a href="http://www.facebook.com/cgva1"> Facebook page</a> for more!
+	</td>
+</tr>
+<tr>
   <td bgcolor="#FFFFFF"><div align="center"><em><strong><font class='cfont16'>2013</font></strong></em></div></td>
 </tr>
 <tr> 

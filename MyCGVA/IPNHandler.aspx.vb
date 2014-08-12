@@ -47,7 +47,7 @@ Partial Class IPNHandler
         Dim aryTextFile() As String
 
         Dim vEmailFrom As String = "cgva@cgva.org"
-        Dim emailTo As String = "jcrossin@aol.com"
+        Dim emailTo As String = "jcrossin11@gmail.com"
         Dim emailCC As String = ""
         Dim emailBCC As String = "support@cgva.org"
         Dim emailSubject As String = ""
@@ -63,7 +63,7 @@ Partial Class IPNHandler
             'check that receiver_email is your Primary PayPal email
             'check that payment_amount/payment_currency are correct
             'process payment
-            emailSubject = "VERIFIED - CGVA 2014 SPRING LEAGUE REGISTRATION"
+            emailSubject = "VERIFIED - CGVA REGISTRATION"
             Try
                 aryTextFile = Request.Form("custom").Split("~")
 
@@ -191,7 +191,7 @@ Partial Class IPNHandler
             End Try
         ElseIf strResponse = "INVALID" Then
             'log for manual investigation
-            emailSubject = "INVALID - CGVA 2014 SPRING LEAGUE REGISTRATION"
+            emailSubject = "INVALID - CGVA REGISTRATION"
 
             Try
                 aryTextFile = Request.Form("custom").Split("~")
@@ -217,7 +217,7 @@ Partial Class IPNHandler
             End Try
         Else
             'Response wasn't VERIFIED or INVALID, log for manual investigation
-            emailSubject = "Response not VERIFIED or INVALID - CGVA 2014 SPRING LEAGUE REGISTRATION"
+            emailSubject = "Response not VERIFIED or INVALID - CGVA REGISTRATION"
             Try
                 aryTextFile = Request.Form("custom").Split("~")
 

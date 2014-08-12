@@ -33,22 +33,25 @@ All skill levels welcome!
 <table>
 	<tr>
 		<td width="45%">
- REGISTRATION INFO:
+ <b>Registration and Payment:</b>
 <br />
- All players/teams must be registered by <font style="color:#990000">Friday June 20th, 9:00pm</font>
+ All players/teams must be registered by <b><font style="color:#D00000">Friday June 20th, 9:00pm</font></b>
 <br />
-All Registrations will be on-line at www.cgva.org or in person at the registration party.
-<br />
-<br />
-<b>To register online for you or your entire team, 
-click on the <a href="/MyCGVA/MyEvents.aspx">MyCGVA</a> link, sign in and click on 'My Events'. 
-<u>If you are registering a whole team, please include all the player names on that team 
-in the 'Add Special Instructions To Merchant' field on the payment screen.</u></b>
+Teams and individual players can register <a href="http://www.cgva.org/MyCGVA/MyEvents.aspx"> here</a> or in person at the registration party.
 <br />
 <br />
- Registration Party: Friday, June 20th @ X Bar from 6-9pm
+<b>To register online for you or your entire team:</b> 
+Visit <a href="/MyCGVA/MyEvents.aspx">MyCGVA</a>, sign in or register. Click 'My Events', and choose 2014 Volleypalooza.
 <br /><br />
- Registration Cost: $140 per team of 4 players, $35 for each additional player. Your registration dues include registration party, tournament t-shirt, water, and Coors Light!
+If you are registering a whole team, <b>please include all the player names on that team</b> 
+in the 'Add Special Instructions To Merchant' field on the payment screen.
+<br />
+<br />
+ <b>Registration Party:</b> Thursday, June 19th at <a href="http://www.xbardenver.com">X Bar</a> from 6-9pm
+<br /><br />
+ <b>Registration Cost:</b> $140 per team of 4 players, $35 for each additional player. 
+ <br />
+ Your registration dues include tournament t-shirt, water, and Coors Light!
 <br />
 </td>
 <td width="5%"></td>
@@ -89,10 +92,15 @@ in the 'Add Special Instructions To Merchant' field on the payment screen.</u></
  		</tr>
  		<tr>
  			<td colspan=2>
- 				<p>Note: We will have a couple open courts for "walk-up" players to play pick-up games as part of our recruiting efforts during the Colorado Sportsfest</p>
+ 				<p> <font size=2> Note: We will have a couple open courts for "walk-up" players to play pick-up games as part of our recruiting efforts during the Colorado Sportsfest</font></p>
  				</td>
  			</tr>
  	</table>
+ 	<br />
+ 	Games will be self-reffed. 
+ 	<br />
+ 	<br />
+ 	Teams must supply their own volleyballs. CGVA will provide an air pump for use if needed. 
 
 
 
@@ -106,12 +114,14 @@ in the 'Add Special Instructions To Merchant' field on the payment screen.</u></
 <br />
  
 <br /><br />
- Volleypalooza Tournament Location: Congress Park, Denver
-<br />
- Directions/Location: Intersection of Josephine Street and East 8th Avenue: Central Denver
-<br />
- Volleyball will be played at the north / top section of the park
-
+<div align=center>
+<h3>Volleypalooza Tournament Location: Congress Park, Denver</h3>
+<br /><br />
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3068.396614820272!2d-104.95826734145508!3d39.73074092378351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x904a38265973605b!2sCongress+Park!5e0!3m2!1sen!2sus!4v1400100263444" width="600" height="450" frameborder="0" style="border:0"></iframe>
+<br/><br />
+ 
+We will be playing at the northern/top area of the park.
+</div>
 
 
 </td>

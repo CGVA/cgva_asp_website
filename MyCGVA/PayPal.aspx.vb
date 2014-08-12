@@ -22,7 +22,7 @@ Partial Class PayPal
     Protected cmd As String = "_xclick"
     Protected business As String = ""
     'Protected item_name As String = AppSettings("item_name")
-    Protected item_name As String = "2014 Spring League"
+    Protected item_name As String = "2014 Fall League"
     Protected item_number As String = ""    'used to hold person ID of the transaction
 
     Protected amount As String

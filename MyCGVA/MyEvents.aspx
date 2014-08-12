@@ -49,7 +49,7 @@
 		</b></font>
 		<p />
 		 <font class="cfontSuccess10">
-		* The registration fee for CGVA leagues can be paid via PayPal, even if you don’t have a PayPal account. *
+		* The registration fee for CGVA events can be paid via PayPal, even if you don’t have a PayPal account. *
 		</font>
 		</div>
 

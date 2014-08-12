@@ -123,18 +123,18 @@ Partial Class MyEvents5
         Next
 
 
-        ' FALL LEAGUE 2013
-        leagueChoiceDropDownList.Items.Insert(0, New ListItem("$75.00 - 2014 Spring League Fee", "75"))
+        ' LEAGUES
+        leagueChoiceDropDownList.Items.Insert(0, New ListItem("$75.00 - 2014 Fall League Fee", "75"))
         Session("Amount") = intAmount.ToString
         Me.amount.Value = Session("Amount")
 
         'for now hardcode this
-        'VOLLEYPALOOZA 2013
+        'VOLLEYPALOOZA
         'If Not IsPostBack Then
         '    intAmount = 35
-        '    leagueChoiceDropDownList.Items.Insert(0, New ListItem("$35.00 - 2013 Volleypalooza Fee", "35"))
-        '    leagueChoiceDropDownList.Items.Insert(1, New ListItem("$140.00 - 2013 Volleypalooza Team Fee - Four Players", "140"))
-        '    leagueChoiceDropDownList.Items.Insert(2, New ListItem("$175.00 - 2013 Volleypalooza Team Fee - Five Players", "175"))
+        '    leagueChoiceDropDownList.Items.Insert(0, New ListItem("$35.00 - 2014 Volleypalooza Fee", "35"))
+        '    leagueChoiceDropDownList.Items.Insert(1, New ListItem("$140.00 - 2014 Volleypalooza Team Fee - Four Players", "140"))
+        '    leagueChoiceDropDownList.Items.Insert(2, New ListItem("$175.00 - 2014 Volleypalooza Team Fee - Five Players", "175"))
         '    Me.leagueChoiceDropDownList.Enabled = True
         '    Session("Amount") = intAmount.ToString
         '    Me.amount.Value = Session("Amount")

@@ -95,7 +95,7 @@
 				& "'" & REGISTRAR_EMAIL & "')"
 
 			rw(sql & "<br />")
-			''Response.End
+			'Response.End
 
 			cn.Execute(sql)
 		else

@@ -3,6 +3,62 @@
   <tr bgcolor="#FF3300">
     <td height="20" class="style8" colspan="3">Latest News</td>
   </tr>
+  <tr>
+  <style type="text/css">
+  
+.announcement {
+font-family: sans-serif;
+}
+
+.announcement h1 {
+display: inline-block;
+}
+.announcement h1>span {
+display: block;
+color: gray;
+font-size: .75em;
+}
+.announcement >a.button {
+text-decoration: none;
+display: inline-block;
+margin: 0px 2px;
+padding: 1em;
+color: white;
+color: white;
+background-color: rgb(0, 163, 255);
+font-size: 1.5em;
+border-bottom: 2px solid rgb(0, 143, 255);
+border-right: 2px solid rgb(0, 173, 255);
+
+}
+.announcement >a{
+
+vertical-align:middle;
+display:inline-block;
+}
+
+.announcement >a.button span {
+display: none;
+font-size: 0.5em;
+}
+
+</style>
+    <td height="20" colspan="4">
+    <div class="announcement">
+    <h1> Fall League
+    <span>IS NOW OPEN</span>
+    </h1> 
+    <a href="http://www.facebook.com/CGVA1" ><img src="images/likeus.gif" border="0" /></a>
+    <a class="button" href="/index.asp?EVENT_CD=2014FL" target="_blank">More Info</a>
+    <a class="button" href="/MyCGVA/MyEvents.aspx" class="button" target="_blank">Register Now
+    <span>Login to MyCGVA and pick from "Events"</span></a>
+    
+    </div></td>
+
+
+
+  </tr>
+  
 <tr>
     <td width=20%></td>
     <td width=60% style="text-align:justify;" class="style6">
